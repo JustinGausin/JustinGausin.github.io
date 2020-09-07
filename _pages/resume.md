@@ -23,8 +23,8 @@ title: "Resume"
     </tr>
     <tr>
       <td><a href="#">Jane Doe</a></td>
-      <td>$100K</td>
       <td>For all the bloggaskjhdkahsdkjhaksdhakHDSKAhdkahskdHAskdhkasdhKASHDKASHDKAHSkdhking she does.</td>
+      <td></td>
     </tr>
   </tbody>
 </table>
