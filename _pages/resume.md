@@ -7,7 +7,7 @@ title: "Resume"
 <h6> Address: </h6>
 
 
-<div">
+<div>
                <div>
                             <h3>Senior Web Developer</h3>
                             <div >Intelitec Solutions</div>
