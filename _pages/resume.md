@@ -10,7 +10,16 @@ title: "Resume"
   <div>
    <h3>Cybersecurity Analyst</h3>
      <div>NAVSEA</div>
-       <p></p>
+       <p> 
+    <ul>
+      <li> Hey </li>
+      <li> Hey boo </li>
+      <li> hey girl </li>
+    
+    </ul>
+    
+    
+       </p>
    </div>
   <div> <span> March 2013 - Present</span></div>
 </div>
