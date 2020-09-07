@@ -7,24 +7,11 @@ title: "Resume"
 <h6> Address: </h6>
 
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>&nbsp;</th>
-      <th>Year</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="#">Cyber Analyst</a></td>
-      <td></td>
-      <td>Summer 2020</td>
-    </tr>
-    <tr>
-      <td><a href="#">Jane Doe</a></td>
-      <td>For all the bloggaskjhdkahsdkjhaksdhakHDSKAhdkahskdHAskdhkasdhKASHDKASHDKAHSkdhking she does.</td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
+<div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Senior Web Developer</h3>
+                            <div class="subheading mb-3">Intelitec Solutions</div>
+                            <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">March 2013 - Present</span></div>
+                    </div>
