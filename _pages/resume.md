@@ -12,9 +12,9 @@ title: "Resume"
      <div>NAVSEA</div>
     <p>
     <ul>
-      <li> Hey </li>
-      <li> Hey boo </li>
-      <li> hey girl </li>
+      <li> Perform network analysis on computer systems. </li>
+      <li> Developing cybersecurity related software in support of the projects assigned by the division.</li>
+      <li> Perform vulnerability scans and develop reports for legacy systems. </li>
     </ul>
     </p>
    </div>
