@@ -52,3 +52,34 @@ title: "Resume"
    </div>
   <div> <span> August 2020 - Present</span></div>
 </div>
+
+<!--                                                                  EDUCATION                                                                   -->
+
+<div>
+ <h2>Education</h2>
+   <div>
+     <div>
+      <h3>Old Dominion University</h3>
+         <div>Bachelor of Science</div>
+          <div>Cybersecurity</div>
+         <div>Bachelor of Science</div>
+         <div> Applied Mathematics</div>
+       <div> Minor: Information Technology </div>
+       <div> Minor: Computer Science </div>
+         <p> Overall GPA: 3.90 </p>
+       
+     </div>
+     <div ><span>August 2006 - May 2010</span></div>
+    </div>               
+   <div>
+     <div>
+       <h3>James Buchanan High School</h3>
+       <div >Technology Magnet Program</div>
+       <p>GPA: 3.56</p>
+     </div>
+     <div >August 2002 - May 2006</span></div>
+    </div>
+</div>
+
+
+
