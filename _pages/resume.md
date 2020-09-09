@@ -86,10 +86,10 @@ title: "Resume"
 <div>
   <h2> Related Coursework </h2>
   <div>
-    <a href="#" class="btn btn--primary">Problem Solving and Programming (C++)</a>
-    <a href="#" class="btn btn--primary">Introduction to Network and Security </a>
-    <a href="#" class="btn btn--primary">Problem Solving and Programming (C++)</a>
-    <a href="#" class="btn btn--primary">Introduction to Network and Security </a>
+    <a href="#" class="btn btn--primary .btn--small">Problem Solving and Programming (C++)</a>
+    <a href="#" class="btn btn--primary .btn--small">Introduction to Network and Security </a>
+    <a href="#" class="btn btn--primary .btn--small">Problem Solving and Programming (C++)</a>
+    <a href="#" class="btn btn--primary .btn--small">Introduction to Network and Security </a>
     
     
   </div>
