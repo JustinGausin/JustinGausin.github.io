@@ -9,14 +9,12 @@ title: "Resume"
 <div>
   <div>
    <h3>Cybersecurity Analyst</h3>
-     <div>NAVSEA</div>
-    <p>
+     <div>USN NSWCDD Dam Neck Activity - Virginia Beach, VA</div>
     <ul>
       <li> Perform network analysis on computer systems. </li>
       <li> Developing cybersecurity related software in support of the projects assigned by the division.</li>
       <li> Perform vulnerability scans and develop reports for legacy systems. </li>
     </ul>
-    </p>
    </div>
-  <div> <span> March 2013 - Present</span></div>
+  <div> <span> August 2020 - Present</span></div>
 </div>
