@@ -2,8 +2,10 @@
 permalink: /resume/
 title: "Resume"
 ---
-<h6> Email: jgaus001@odu.edu </h6>
-<h6> Address: </h6>
+<div> Justine Gausin </div>
+<div> Email: jgaus001@odu.edu </div>
+<div> Address: </div>
+
 
 <div>
   <h2> Experience </h2>
@@ -84,6 +86,11 @@ title: "Resume"
 <div>
   <h2> Related Coursework </h2>
   <div>
+    <a href="#" class="btn btn--primary">Problem Solving and Programming (C++)</a>
+    <a href="#" class="btn btn--primary">Introduction to Network and Security </a>
+    <a href="#" class="btn btn--primary">Problem Solving and Programming (C++)</a>
+    <a href="#" class="btn btn--primary">Introduction to Network and Security </a>
+    
     
   </div>
 </div>
