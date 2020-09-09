@@ -6,6 +6,7 @@ title: "Resume"
 <h6> Address: </h6>
 
 <div>
+  <h2> Experience </h2>
   <div>
    <h3>Cybersecurity Analyst</h3>
      <div>USN NSWCDD Dam Neck Activity - Virginia Beach, VA</div>
@@ -74,7 +75,7 @@ title: "Resume"
      <div>
        <h3>Granby High School </h3>
        <div> International Baccalaureate </div>
-       <p>GPA: 4.9 </p>
+       <p>GPA: 5.1 </p>
      </div>
      <div >September 2011 - June 2015</span></div>
     </div>
