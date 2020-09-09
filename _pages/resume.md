@@ -66,18 +66,17 @@ title: "Resume"
          <div> Applied Mathematics</div>
        <div> Minor: Information Technology </div>
        <div> Minor: Computer Science </div>
-         <p> Overall GPA: 3.90 </p>
-       
+       <p> Overall GPA: 3.90 </p>
      </div>
-     <div ><span>August 2006 - May 2010</span></div>
+     <div ><span>August 2016 - December 2020</span></div>
     </div>               
    <div>
      <div>
-       <h3>James Buchanan High School</h3>
-       <div >Technology Magnet Program</div>
-       <p>GPA: 3.56</p>
+       <h3>Granby High School </h3>
+       <div> International Baccalaureate </div>
+       <p>GPA: 4.9 </p>
      </div>
-     <div >August 2002 - May 2006</span></div>
+     <div >September 2011 - June 2015</span></div>
     </div>
 </div>
 
