@@ -5,7 +5,6 @@ title: "Resume"
 <h6> Email: jgaus001@odu.edu </h6>
 <h6> Address: </h6>
 
-
 <div>
   <div>
    <h3>Cybersecurity Analyst</h3>
@@ -21,6 +20,7 @@ title: "Resume"
   <div> <span> August 2020 - Present</span></div>
 </div>
 <!--                                                                                         -->
+<div> </div>
 <div>
   <div>
    <h3>Data and Operations Analyst</h3>
@@ -36,6 +36,7 @@ title: "Resume"
   <div> <span> July 2020 - August 2020 </span></div>
 </div>
 <!--                                                                                         -->
+<div> </div>
 <div>
   <div>
    <h3>Undergraduate Research Student (NSF) </h3>
