@@ -81,5 +81,12 @@ title: "Resume"
     </div>
 </div>
 
+<div>
+  <h2> Related Coursework </h2>
+  <div>
+    
+  </div>
+</div>
+ 
 
 
