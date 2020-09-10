@@ -89,6 +89,7 @@ title: "Resume"
    <div>
      <div>
       <h3>Programming Language and Tools</h3>
+       <div> do logos instead </div>
          <div>C</div>
          <div>Python</div>
          <div>C++</div>
@@ -103,8 +104,6 @@ title: "Resume"
            <li> Strong ability to work independently and in groups </li>
            <li> ----- </li>
        </ul>
-  
-
      </div>
    </div>   
 </div>
