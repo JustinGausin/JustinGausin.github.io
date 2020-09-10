@@ -108,10 +108,41 @@ title: "Resume"
    </div>   
 </div>
 
+<div>
+ <h2>Research Studies</h2>
+   <div>
+     <div>
+      <h3>IEEE</h3>
+       <div> Application of Homomorphic Encryption in Mesh smoothing (IEEE) </div>
+     </div>
+   </div>               
+</div>
+
+<div>
+ <h2>Interests</h2>
+   <p> 
+     aksjdfalsdfjslkdjfalkjflaskfjlasjflkajsdlf
+     asdfkjasldfjlakdsjlfkjadsklfjlsadkfjlasdkfjkalsdf
+  </p>
+  <p>
+     kljasdfljasldfjldsakjflksadjflkjdsalfjlsad
+   </p> 
+</div>
 
 
 
-
+<div>
+ <h2>Achievements</h2>           
+ <div>
+      <ul>
+        <li> International Baccalaureate Diploma Recipient</li>
+        <li> Virginia Aerospace Science and Technology Scholars alumni </li>
+        <li> Norfolk Science and Technology for Advance Research alumni</li>
+        <li> Bloomberg Marketing Concepts </li>
+        <li> National Science Foundation Cyber-Infrastructure Certificate </li>
+       </ul>
+ </div>   
+</div>
 
 <div>
   <h2> Related Coursework </h2>
