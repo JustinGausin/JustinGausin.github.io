@@ -1,9 +1,9 @@
----
-title:  "CYSE 368 Portfolio"
+title: "Welcome to CYSE!"
+date: 2019-04-18T15:34:30-04:00
 categories:
   - blog
 tags:
-  - Portfolio
+  - Jekyll
   - update
 ---
-Hello 
+HELLO
