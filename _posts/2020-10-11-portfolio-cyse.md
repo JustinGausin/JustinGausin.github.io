@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "CYSE 368 Portfolio"
 categories:
   - blog
