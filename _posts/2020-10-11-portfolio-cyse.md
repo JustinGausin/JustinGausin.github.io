@@ -12,6 +12,6 @@ tags:
   <div class = "notice--warning">
     <p> Date Posted: September 11, 2020 </p>
   </div>
-  you can [get the PDF](/assets/file.pdf) directly. <
+  you can [get the PDF](/assets/file.pdf) directly.
 </div>
 
