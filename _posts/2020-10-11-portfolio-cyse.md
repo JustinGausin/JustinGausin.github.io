@@ -11,7 +11,7 @@ tags:
   <h2> Refection Paper 1 </h2>
   <div class = "notice--info">
     <p> Date Posted: September 11, 2020 </p>
-    <a href="/assets/#" class="btn btn--info .btn--small"> Download PDF</a> 
+    <a href="/assets/#" class="btn btn--success .btn--small"> Download PDF</a> 
   </div>
 </div>
 
@@ -19,7 +19,7 @@ tags:
   <h2> Refection Paper 2 </h2>
   <div class = "notice--info">
     <p> Date Posted: XX/XX/XX </p>
-    <a href="/assets/#" class="btn btn--info .btn--small"> Download PDF</a> 
+    <a href="/assets/#" class="btn btn--success .btn--small"> Download PDF</a> 
   </div>
 </div>
 
@@ -27,7 +27,7 @@ tags:
   <h2> Refection Paper 3 </h2>
   <div class = "notice--info">
     <p> Date Posted: XX/XX/XX </p>
-    <a href="/assets/#" class="btn btn--info .btn--small"> Download PDF</a> 
+    <a href="/assets/#" class="btn btn--success .btn--small"> Download PDF</a> 
   </div>
 </div>
 
@@ -35,7 +35,7 @@ tags:
   <h2> Final Paper </h2>
   <div class = "notice--danger">
     <p> Date Posted: XX/XX/XX </p>
-    <a href="/assets/#" class="btn btn--info .btn--small"> Download PDF</a> 
+    <a href="/assets/#" class="btn btn--primary .btn--small"> Download PDF</a> 
   </div>
 </div>
 
