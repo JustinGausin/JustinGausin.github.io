@@ -146,7 +146,7 @@ title: "Resume"
 
 <div>
   <h2> Related Coursework </h2>
-  <div class = "notice--info">
+  <div class = "notice">
     <a href="#" class="btn btn--primary .btn--small">Problem Solving and Programming (C++)</a>
     <a href="#" class="btn btn--primary .btn--small">Introduction to Network and Security </a>
     <a href="#" class="btn btn--primary .btn--small">Programming in C</a>
