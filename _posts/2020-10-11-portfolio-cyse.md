@@ -6,7 +6,7 @@ tags:
   - Jekyll
   - update
 ---
-<p> This page is dedicated for my internship experience at NAVSEA </p>
+<p> This page is dedicated for my internship experience at NAVSEA.  Download the files below.  Password Proected. </p>
 <div> 
   <h2> Refection Paper 1 </h2>
   <div class = "notice--info">
