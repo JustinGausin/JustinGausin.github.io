@@ -3,8 +3,9 @@ title: "Welcome to CYSE Portfolio!"
 categories:
   - blog
 tags:
-  - Jekyll
-  - update
+  - Porfolio
+  - CYSE368
+  - ODU
 ---
 <p> This page is dedicated for my internship experience at NAVSEA.  Download the files below.  Password Proected. </p>
 <div> 
@@ -35,7 +36,7 @@ tags:
   <h2> Final Paper </h2>
   <div class = "notice--danger">
     <p> Date Posted: XX/XX/XX </p>
-    <a href="/assets/#" class="btn btn--info .btn--small"> Download PDF</a> 
+    <a href="/assets/#" class="btn btn--inverse .btn--small"> Download PDF</a> 
   </div>
 </div>
 
