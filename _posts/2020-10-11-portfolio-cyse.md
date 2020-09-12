@@ -11,6 +11,6 @@ tags:
   <h2> Refection Paper 1 </h2>
   <div class = "notice--warning">
     <p> Date Posted: September 11, 2020 </p>
-    <p class = ".btn .btn--info" > <a href="/assets/file.pdf"> Download</a> </p>
+    <a href="/assets/file.pdf" class="btn btn--primary .btn--small"> Download</a> 
   </div>
 </div>
