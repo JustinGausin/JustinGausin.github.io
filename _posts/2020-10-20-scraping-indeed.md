@@ -25,7 +25,6 @@ To find interesting 'stories' that can be mined from the data set.
 To understand key data points of a company.
 To understand the topics of positive and negative reviews by each company (Benefits, compensation, etc.)
 
-### Web Scraping:
 
 Each review scraped contains the following elements: Company name, Occupation of Employee, Status (Current or Former), Location, Date, Pros, and Cons. For this analysis, I did not scrape the main body of the review due to it not being part of my objectives.  
 ![image-center](/assets/images/web/Snip20200709_2.png){: .align-center}
@@ -63,9 +62,9 @@ One of the most simple yet efficient methods of presenting data is using Wordclo
 As seen below, the number of reviews has peaked in 2018, with the numbers decreasing again in 2019-2020.  Additionally, the reviews are more likely to be posted at the beginning of the week, with Saturday being the last day of posting. 
 
 <figure class="third">
-	<a href=""><img src="/assets/images/R/CountofReviewsbyCompany& Year.png"></a>
-	<a href=""><img src="/assets/images/R/Count of Reviews by weekdays per Year.png"></a>
-	<a href=""><img src="/assets/images/R/totalreviews.png"></a>
+	<a href="/assets/images/R/CountofReviewsbyCompany& Year.png"><img src="/assets/images/R/CountofReviewsbyCompany& Year.png"></a>
+	<a href="Count of Reviews by weekdays per Year.png"><img src="/assets/images/R/Count of Reviews by weekdays per Year.png"></a>
+	<a href="/assets/images/R/totalreviews.png"><img src="/assets/images/R/totalreviews.png"></a>
 	<figcaption>Several Visualization that can be done in R</figcaption>
 </figure>
 
