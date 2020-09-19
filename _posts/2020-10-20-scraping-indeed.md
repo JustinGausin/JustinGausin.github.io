@@ -47,33 +47,33 @@ One of the most simple yet efficient methods of presenting data is using Wordclo
 <figure class="half">
     <a href="/assets/images/wordclouds/BoeingProsExcel.png"><img src="/assets/images/wordclouds/BoeingProsExcel.png"></a>
     <a href="/assets/images/wordclouds/BoeingderivedUPDATED_Pros.png"><img src="/assets/images/wordclouds/BoeingderivedUPDATED_Pros.png"></a>
-    <figcaption>Left: Excel, Right: R Cons</figcaption>
+    <figcaption>An overwhelming Pros in Boeing are the benefits and pay </figcaption>
 </figure>
 
 ##### Boeing Cons
 <figure class="half">
     <a href="/assets/images/wordclouds/BoeingConsExcel.png"><img src="/assets/images/wordclouds/BoeingConsExcel.png"></a>
     <a href="/assets/images/wordclouds/BoeingderivedUPDATED_Cons.png"><img src="/assets/images/wordclouds/BoeingderivedUPDATED_Cons.png"></a>
-    <figcaption>Left: SpaceX Pros, Right: SpaceX Cons</figcaption>
+    <figcaption> Management is a significant Con for Boeing</figcaption>
 </figure>
 
 ##### SpaceX Pros
 <figure class="half">
     <a href="/assets/images/wordclouds/SpaceXProsExcel.png"><img src="/assets/images/wordclouds/SpaceXProsExcel.png"></a>
     <a href="/assets/images/wordclouds/SpacexderivedUPDATED_Pros.png"><img src="/assets/images/wordclouds/SpacexderivedUPDATED_Pros.png"></a>
-    <figcaption>Left: Excel, Right: R Cons</figcaption>
+    <figcaption> Almost 1/3 of the top 30 words consists of food related benefits and perks </figcaption>
 </figure>
 
 ##### SpaceX Cons
 <figure class="half">
     <a href="/assets/images/wordclouds/SpaceXConsExcel.png"><img src="/assets/images/wordclouds/SpaceXConsExcel.png"></a>
     <a href="/assets/images/wordclouds/SpacexderivedUPDATED_Cons.png"><img src="/assets/images/wordclouds/SpacexderivedUPDATED_Cons.png"></a>
-    <figcaption>Left: Excel, Right: R Cons</figcaption>
+    <figcaption>The number of hours is a significant Con in SpaceX</figcaption>
 </figure>
 
 #### Using R for more analysis:
 
-As seen below, the number of reviews has peaked in 2018, with the numbers decreasing again in 2019-2020.  Additionally, the reviews are more likely to be posted at the beginning of the week, with Saturday being the last day of posting. 
+As seen below, the number of reviews has peaked in 2018, with the numbers decreasing again in 2019-2020.  Additionally, the reviews are more likely to be posted at the beginning of the week, with Saturday being the least day of posting. 
 
 <figure class="third">
 	<a href="/assets/images/R/CountofReviewsbyCompany& Year.png"><img src="/assets/images/R/CountofReviewsbyCompany& Year.png"></a>
