@@ -19,11 +19,11 @@ toc_icon: "cog"
 ### Web Scraping:
 For this project, I wanted to analyze aerospace and defense-related firms using company reviews from Indeed, a job aggregator site that updates frequently.  I scraped the company reviews for 5 AeroDefense Companies (Boeing, Raytheon Tech., SpaceX, Northrop Grumman, and Lockheed Martin) using the libraries, such as requests, BeautifulSoup, and pandas. 
 
-###Objectives
-The scope of the analysis was limited to these primary objectives:
-To find interesting 'stories' that can be mined from the data set.
-To understand key data points of a company.
-To understand the topics of positive and negative reviews by each company (Benefits, compensation, etc.)
+#### Objectives
+- The scope of the analysis was limited to these primary objectives:
+- To find interesting 'stories' that can be mined from the data set.
+- To understand key data points of a company.
+- To understand the topics of positive and negative reviews by each company (Benefits, compensation, etc.)
 
 
 Each review scraped contains the following elements: Company name, Occupation of Employee, Status (Current or Former), Location, Date, Pros, and Cons. For this analysis, I did not scrape the main body of the review due to it not being part of my objectives.  
@@ -41,21 +41,35 @@ Some reviews were unusable as a result of the scraping: either from duplicated r
 ///insert code hurrrr
 ```
 #### Results: 
-One of the most simple yet efficient methods of presenting data is using Wordclouds. Python and R have libraries that allow for simple wordcloud presentation.  For this project, I used Python as a testing ground for creating the wordcloud files of each company. 
+One of the most simple yet efficient methods of presenting data is using Wordclouds. Python and R have libraries that allow for simple wordcloud presentation.  For this project, I used Python as a testing ground for creating the wordcloud files of each company.
+
+##### Boeing Pros
 <figure class="half">
+    <a href="/assets/images/wordclouds/BoeingProsExcel.png"><img src="/assets/images/wordclouds/BoeingProsExcel.png"></a>
     <a href="/assets/images/wordclouds/BoeingderivedUPDATED_Pros.png"><img src="/assets/images/wordclouds/BoeingderivedUPDATED_Pros.png"></a>
-    <a href="/assets/images/wordclouds/BoeingderivedUPDATED_Cons.png"><img src="/assets/images/wordclouds/BoeingderivedUPDATED_Cons.png"></a>
-    <figcaption>Left: Boeing Pros, Right: Boeing Cons</figcaption>
+    <figcaption>Left: Excel, Right: R Cons</figcaption>
 </figure>
 
-
+##### Boeing Cons
 <figure class="half">
-    <a href="/assets/images/wordclouds/SpacexderivedUPDATED_Pros.png"><img src="/assets/images/wordclouds/SpacexderivedUPDATED_Pros.png"></a>
-    <a href="/assets/images/wordclouds/SpacexderivedUPDATED_Cons.png"><img src="/assets/images/wordclouds/SpacexderivedUPDATED_Cons.png"></a>
+    <a href="/assets/images/wordclouds/BoeingConsExcel.png"><img src="/assets/images/wordclouds/BoeingConsExcel.png"></a>
+    <a href="/assets/images/wordclouds/BoeingderivedUPDATED_Cons.png"><img src="/assets/images/wordclouds/BoeingderivedUPDATED_Cons.png"></a>
     <figcaption>Left: SpaceX Pros, Right: SpaceX Cons</figcaption>
 </figure>
 
+##### SpaceX Pros
+<figure class="half">
+    <a href="/assets/images/wordclouds/SpaceXProsExcel.png"><img src="/assets/images/wordclouds/SpaceXProsExcel.png"></a>
+    <a href="/assets/images/wordclouds/SpacexderivedUPDATED_Pros.png"><img src="/assets/images/wordclouds/SpacexderivedUPDATED_Pros.png"></a>
+    <figcaption>Left: Excel, Right: R Cons</figcaption>
+</figure>
 
+##### SpaceX Cons
+<figure class="half">
+    <a href="/assets/images/wordclouds/SpaceXConsExcel.png"><img src="/assets/images/wordclouds/SpaceXConsExcel.png"></a>
+    <a href="/assets/images/wordclouds/SpacexderivedUPDATED_Cons.png"><img src="/assets/images/wordclouds/SpacexderivedUPDATED_Cons.png"></a>
+    <figcaption>Left: Excel, Right: R Cons</figcaption>
+</figure>
 
 #### Using R for more analysis:
 
@@ -63,7 +77,7 @@ As seen below, the number of reviews has peaked in 2018, with the numbers decrea
 
 <figure class="third">
 	<a href="/assets/images/R/CountofReviewsbyCompany& Year.png"><img src="/assets/images/R/CountofReviewsbyCompany& Year.png"></a>
-	<a href="Count of Reviews by weekdays per Year.png"><img src="/assets/images/R/Count of Reviews by weekdays per Year.png"></a>
+	<a href="/assets/images/R/Count of Reviews by weekdays per Year.png"><img src="/assets/images/R/Count of Reviews by weekdays per Year.png"></a>
 	<a href="/assets/images/R/totalreviews.png"><img src="/assets/images/R/totalreviews.png"></a>
 	<figcaption>Several Visualization that can be done in R</figcaption>
 </figure>
