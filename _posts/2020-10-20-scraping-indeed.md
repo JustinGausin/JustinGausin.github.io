@@ -31,8 +31,21 @@ Each review scraped contains the following elements: Company name, Occupation of
 
 #### At a Glance:
 
-I gathered around approximately 26,000 reviews from the five firms, notably Boeing having the highest reviews at 7,800. See CSV file below.
-
+I gathered around approximately 26,000 reviews from the five firms, notably Lockheed Martin having the highest reviews at 7,800.
+An excerpt of the code is shown below:
+~~~ Python3.0
+for x in results:
+	# strips the employee position from the html page
+        position = x.find('span', attrs={"class":"cmp-ReviewAuthor"})
+        if position:
+            #print('Position:', position.text.strip() )			
+            companyPosition = position.text.strip()
+	# strips the rating from the review from the html page
+        rating = x.find('div', attrs={'class': "cmp-ReviewRating-text"})
+        if rating:
+            #print('Rating:', rating.text.strip() )
+            companyRating = rating.text.strip()
+~~~
 
 
 #### Cleaning:
