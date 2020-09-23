@@ -51,13 +51,11 @@ for x in results:
 #### Cleaning:
 Some reviews were unusable as a result of the scraping: either from duplicated reviews or mismatch data row to its column (e.g. a Job Title inside the Date column).  I cleaned the data using the combination of Python and R.  Python curated the duplicates, and R allowed to strip the Dates into its columns using regex. An excerpt of the code below to create independent columns of day, month, year, and weekday using R. 
 ~~~ R
-#mydata = read.csv("Indeed_records.csv", sep =";")
 rawdata <- fread('Indeed/filtered.csv', fill = TRUE)
-# extract year, month, date from fulldate
+# extract year, month, date, and weekday from fulldate
 rawdata$year <- format(as.Date(rawdata$Date, format="%B %d, %Y"),"%Y")
 rawdata$month <- format(as.Date(rawdata$Date, format="%B %d, %Y"),"%m")
 rawdata$day <- format(as.Date(rawdata$Date, format="%B %d, %Y"),"%d")
-#rawdata$weekdays <- weekdays(as.Date(rawdata$Date, format="%B %d, %Y"),label = TRUE)
 rawdata$weekdays = format(as.Date(rawdata$Date,format="%B %d, %Y"), "%A")
 
 # remove reviews with NA year/month/day (only 5 observations removed)
