@@ -33,7 +33,7 @@ Each review scraped contains the following elements: Company name, Occupation of
 
 I gathered around approximately 26,000 reviews from the five firms, notably Lockheed Martin having the highest reviews at 7,800.
 An excerpt of the code is shown below:
-~~~ Python3.0
+~~~ Python
 for x in results:
 	# strips the employee position from the html page
         position = x.find('span', attrs={"class":"cmp-ReviewAuthor"})
