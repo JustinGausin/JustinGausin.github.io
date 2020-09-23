@@ -32,7 +32,7 @@ Each review scraped contains the following elements: Company name, Occupation of
 #### At a Glance:
 
 I gathered around approximately 26,000 reviews from the five firms, notably Lockheed Martin having the highest reviews at 7,800.
-An excerpt of the code is shown below:
+An excerpt of the Python code is shown below:
 ~~~ Python
 for x in results:
 	# strips the employee position from the html page
@@ -49,7 +49,7 @@ for x in results:
 
 
 #### Cleaning:
-Some reviews were unusable as a result of the scraping: either from duplicated reviews or mismatch data row to its column (e.g. a Job Title inside the Date column).  I cleaned the data using the combination of Python and R.  Python curated the duplicates, and R allowed to strip the Dates into its columns using regex. 
+Some reviews were unusable as a result of the scraping: either from duplicated reviews or mismatch data row to its column (e.g. a Job Title inside the Date column).  I cleaned the data using the combination of Python and R.  Python curated the duplicates, and R allowed to strip the Dates into its columns using regex. An excerpt of the code below to create independent columns of day, month, year, and weekday using R. 
 ~~~ R
 #mydata = read.csv("Indeed_records.csv", sep =";")
 rawdata <- fread('Indeed/filtered.csv', fill = TRUE)
