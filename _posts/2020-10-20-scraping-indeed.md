@@ -50,7 +50,7 @@ for x in results:
 
 #### Cleaning:
 Some reviews were unusable as a result of the scraping: either from duplicated reviews or mismatch data row to its column (e.g. a Job Title inside the Date column).  I cleaned the data using the combination of Python and R.  Python curated the duplicates, and R allowed to strip the Dates into its columns using regex. An excerpt of the code below to create independent columns of day, month, year, and weekday using R. 
-~~~ R
+''' R
 #mydata = read.csv("Indeed_records.csv", sep =";")
 rawdata <- fread('Indeed/filtered.csv', fill = TRUE)
 # extract year, month, date from fulldate
@@ -64,7 +64,7 @@ rawdata$weekdays = format(as.Date(rawdata$Date,format="%B %d, %Y"), "%A")
 rawdata <- rawdata[!is.na(rawdata$year),]
 rawdata <- rawdata[!is.na(rawdata$month),]
 rawdata <- rawdata[!is.na(rawdata$day),]
-~~~
+'''
 #### Results: 
 One of the most simple yet efficient methods of presenting data is using Wordclouds. Python and R have libraries that allow for simple wordcloud presentation.  For this project, I used Python as a testing ground for creating the wordcloud files of each company.
 
