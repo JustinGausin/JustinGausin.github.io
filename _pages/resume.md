@@ -148,22 +148,22 @@ title: "Resume"
 <div>
   <h2> Related Coursework </h2>
   <div class = "notice">
-    <a href="#" class="btn btn--primary .btn--small">Problem Solving and Programming (C++)</a>
-    <a href="#" class="btn btn--primary .btn--small">Introduction to Network and Security </a>
-    <a href="#" class="btn btn--primary .btn--small">Programming in C</a>
-    <a href="#" class="btn btn--primary .btn--small">Cybercrime and Cybersecurity </a>
-    <a href="#" class="btn btn--primary .btn--small">Information Assurance (NIST RMF)</a>
-    <a href="#" class="btn btn--primary .btn--small">Database Concepts</a>
-    <a href="#" class="btn btn--primary .btn--small">Information Systems</a>
-    <a href="#" class="btn btn--primary .btn--small">Calculus I – IV </a>
-    <a href="#" class="btn btn--primary .btn--small">Data Analysis</a>
-    <a href="#" class="btn btn--primary .btn--small">Reverse Software Engineering-Malware </a>
-    <a href="#" class="btn btn--primary .btn--small">Cryptography</a>
-    <a href="#" class="btn btn--primary .btn--small">Cyber Forensics </a>
-    <a href="#" class="btn btn--primary .btn--small">Machine Learning </a>
-    <a href="#" class="btn btn--primary .btn--small">Partial Derivatives </a>
-    <a href="#" class="btn btn--primary .btn--small">Applied Complex Variables</a>
-    <a href="#" class="btn btn--primary .btn--small">Complex Analysis and Optimization </a>
+    <a href="#" class="btn btn--inverse .btn--small">Problem Solving and Programming (C++)</a>
+    <a href="#" class="btn btn--inverse .btn--small">Introduction to Network and Security </a>
+    <a href="#" class="btn btn--inverse .btn--small">Programming in C</a>
+    <a href="#" class="btn btn--inverse .btn--small">Cybercrime and Cybersecurity </a>
+    <a href="#" class="btn btn--inverse .btn--small">Information Assurance (NIST RMF)</a>
+    <a href="#" class="btn btn--inverse .btn--small">Database Concepts</a>
+    <a href="#" class="btn btn--inverse .btn--small">Information Systems</a>
+    <a href="#" class="btn btn--inverse .btn--small">Calculus I – IV </a>
+    <a href="#" class="btn btn--inverse .btn--small">Data Analysis</a>
+    <a href="#" class="btn btn--inverse .btn--small">Reverse Software Engineering-Malware </a>
+    <a href="#" class="btn btn--inverse .btn--small">Cryptography</a>
+    <a href="#" class="btn btn--inverse .btn--small">Cyber Forensics </a>
+    <a href="#" class="btn btn--inverse .btn--small">Machine Learning </a>
+    <a href="#" class="btn btn--inverse .btn--small">Partial Derivatives </a>
+    <a href="#" class="btn btn--inverse .btn--small">Applied Complex Variables</a>
+    <a href="#" class="btn btn--inverse .btn--small">Complex Analysis and Optimization </a>
   </div>
 </div>
  
