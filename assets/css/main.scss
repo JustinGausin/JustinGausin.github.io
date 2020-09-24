@@ -8,6 +8,9 @@
 @import "minimal-mistakes"; // main partials
 
 
-.col{
+.col-1{
   max-width: 33.3333%
+}
+.col-2{
+  max-width: 66.6666%
 }
