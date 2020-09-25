@@ -2,6 +2,8 @@
 permalink: /resume/
 title: "Resume"
 ---
+<link rel="stylesheet" href="/assets/css/new.css">
+
 <div> Justine Gausin </div>
 <div> Email: jgaus001@odu.edu </div>
 <div> Address: </div>
@@ -54,7 +56,7 @@ title: "Resume"
     </ul>
     </p>
    </div>
-     <div> <span class="text-color"> August 2020 - Present x</span></div>
+     <div> <span class="text-color"> August 2020 - Present xx</span></div>
 </div>
 
 <!--                                                                  EDUCATION                                                                   -->
