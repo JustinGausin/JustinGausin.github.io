@@ -44,7 +44,7 @@ title: "Resume"
 <div> </div>
 <div>
   <div>
-   <h3>Undergraduate Research Student (NSF) </h3>
+   <h3 class="heading">Undergraduate Research Student (NSF) </h3>
     <div> 
      <div class="col-2">Old Dominion University - Norfolk, VA</div>
     <div class = "col-1"> <span class="text-color"> August 2020 - Present xx</span></div>
