@@ -14,6 +14,7 @@ title: "Resume"
   <div>
    <h3>Cybersecurity Analyst</h3>
      <div>USN NSWCDD Dam Neck Activity - Virginia Beach, VA</div>
+      <div> <span class="text-color"> August 2020 - Present</span></div>
     <p>
     <ul>
       <li> Perform network analysis on computer systems. </li>
@@ -22,7 +23,6 @@ title: "Resume"
     </ul>
     </p>
    </div>
-  <div> <span> August 2020 - Present</span></div>
 </div>
 <!--                                                                                         -->
 <div> </div>
@@ -30,6 +30,7 @@ title: "Resume"
   <div>
    <h3>Data and Operations Analyst</h3>
      <div>OSD Cost Assessment and Program Evaluation (CAPE) - Washington, D.C.</div>
+      <div> <span class="text-color"> July 2020 - August 2020 </span></div>
     <p>
     <ul>
       <li> Perform data analysis on attrition and retention of civilian forces using Python and R. </li>
@@ -38,7 +39,6 @@ title: "Resume"
     </ul>
     </p>
    </div>
-  <div> <span> July 2020 - August 2020 </span></div>
 </div>
 <!--                                                                                         -->
 <div> </div>
@@ -46,8 +46,8 @@ title: "Resume"
   <div>
    <h3 class="heading">Undergraduate Research Student (NSF) </h3>
     <div> 
-     <div class="col-2">Old Dominion University - Norfolk, VA</div>
-    <div class = "col-1"> <span class="text-color"> August 2020 - Present xx</span></div>
+     <div>Old Dominion University - Norfolk, VA</div>
+    <div> <span class="text-color"> August 2020 - Present xx</span></div>
     <p>
     <ul>
       <li> Developing solutions for hole-filling and smoothing 3D polygon mesh encrypted by homomorphic encryption. </li>
@@ -93,11 +93,7 @@ title: "Resume"
    <div>
      <div>
       <h3>Programming Language and Tools</h3>
-       <div> do logos instead </div>
-         <div>C</div>
-         <div>Python</div>
-         <div>C++</div>
-         <div>R</div>
+         <div>C, Python, C++, R, Matlab</div>
      </div>
    </div>               
 <div>
@@ -146,7 +142,7 @@ title: "Resume"
 
 <div>
   <h2> Related Coursework </h2>
-  <div class = "notice">
+  <div class = "notice--warning">
     <a href="#" class="btn btn--inverse .btn--small">Problem Solving and Programming (C++)</a>
     <a href="#" class="btn btn--inverse .btn--small">Introduction to Network and Security </a>
     <a href="#" class="btn btn--inverse .btn--small">Programming in C</a>
