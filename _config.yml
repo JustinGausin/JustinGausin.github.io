@@ -69,13 +69,16 @@ author:
       url: "https://github.com/JustinGausin/"
     - label: "Linkedin"
       icon: "fab fa-fw fa-linkedin"
-      url: "#"
+      url: "https://www.linkedin.com/in/justin-gausin-6b801417a"
 
 footer:
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/JustinGausin/"
+    - label: "Linkedin"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/justin-gausin-6b801417a"
 
 defaults:
   # _posts
