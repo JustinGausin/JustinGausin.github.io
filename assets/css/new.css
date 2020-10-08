@@ -1,5 +1,5 @@
 .text-color{
-  color: red !important;
+  color: #6c757d !important;
 }
 
 .heading{
@@ -9,16 +9,3 @@
 .dateStamp{
   color:    color: #bd5d38 !important;
 }
-  
-.col-1{
-  max-width: 33.333%
-  display: block;
-  flex-shrink: 0; 
-  }
-  
-.col-2{
-  max-width: 66.666%
-  display: block;  
-  flex-shrink: 1; 
-
-  }
