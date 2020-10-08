@@ -47,7 +47,7 @@ title: "Resume"
    <h3 class="heading">Undergraduate Research Student (NSF) </h3>
     <div> 
      <div>Old Dominion University - Norfolk, VA</div>
-    <div> <span class="text-color"> August 2020 - Present xx</span></div>
+    <div> <span class="text-color"> August 2020 - Present </span></div>
     <p>
     <ul>
       <li> Developing solutions for hole-filling and smoothing 3D polygon mesh encrypted by homomorphic encryption. </li>
@@ -63,7 +63,7 @@ title: "Resume"
 <!--                                                                  EDUCATION                                                                   -->
 
 <div>
- <h2>Education</h2>
+ <h2>EDUCATION</h2>
    <div>
      <div>
       <h3>Old Dominion University</h3>
