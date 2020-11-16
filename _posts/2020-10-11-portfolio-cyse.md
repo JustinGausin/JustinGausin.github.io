@@ -30,8 +30,8 @@ last_modified_at: 2020-09-11T16:20:02-05:00
 <div> 
   <h2> Reflection Paper 3 </h2>
   <div class = "notice--info">
-    <p> Date Posted: XX/XX/XX </p>
-    <a href="/assets/#" class="btn btn--inverse .btn--small"> Download PDF</a> 
+    <p> Date Posted: November 16, 2020 </p>
+    <a href="/assets/downloads/CYSE_368_Reflection_Paper_1.pdf" class="btn btn--inverse .btn--small"> Download PDF</a> 
   </div>
 </div>
 
