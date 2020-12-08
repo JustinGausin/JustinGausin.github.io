@@ -7,7 +7,7 @@ tags:
   - Porfolio
   - CYSE368
   - ODU
-last_modified_at: 2020-09-11T16:20:02-05:00
+last_modified_at: 2020-12-08T16:20:02-05:00
 
 ---
 <p> This page is dedicated for my internship experience at NAVSEA.  Download the files below.  Password Proected. </p>
@@ -38,8 +38,8 @@ last_modified_at: 2020-09-11T16:20:02-05:00
 <div> 
   <h2> Final Paper </h2>
   <div class = "notice--danger">
-    <p> Date Posted: XX/XX/XX </p>
-    <a href="/assets/#" class="btn btn--inverse .btn--small"> Download PDF</a> 
+    <p> Date Posted: December 08, 2020 </p>
+    <a href="/assets/downloads/Final paper_2PW.pdf" class="btn btn--inverse .btn--small"> Download PDF</a> 
   </div>
 </div>
 
