@@ -1,5 +1,5 @@
 ---
-title: "ODU Decemeber 2020 Featured Student."
+title: "ODU December 2020 Featured Student."
 categories:
   - blog
   - link
