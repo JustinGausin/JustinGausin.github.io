@@ -14,4 +14,4 @@ This is a testing page
 
 
 LaTeX? 
-$ y_1 + y_2 $
+<html> $ y_1 + y_2 $ </html>
