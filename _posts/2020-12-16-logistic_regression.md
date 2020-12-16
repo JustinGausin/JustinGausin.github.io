@@ -14,4 +14,5 @@ This is a testing page
 
 
 LaTeX? 
-<html> $ y_1 + y_2 $ </html>
+<html> $y_1 + y_2$ </html>
+`\(x_1 + x_2\)`
