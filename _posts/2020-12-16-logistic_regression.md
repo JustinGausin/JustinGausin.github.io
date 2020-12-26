@@ -81,7 +81,7 @@ from numpy import linalg as lu
 mu=0.1
 mA_t=np.transpose(mA)
 mI=np.eye(2) # generate the 2x2 idenity matrix, or use np.identity(mA.shape[1])
-vw_st=lu.solve(mA_t@mA + mu*mI, mA_t@vy)
+vw_st=lu.solve(mA_t@mA + mu*mI, mA_t@Y)
 ```
 which will give us w* = [-1.94594595  3.59555556] or in other words, w0 = -1.94594595 and w1 = 3.59555556.
 
