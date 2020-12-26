@@ -75,7 +75,7 @@ Next we solve the following equation:
  
 $\nabla F(w) = 2A^T(Aw-y) $
 
-Set $ \nabla F(w)=0$ to solve the minimizer $(A^T A )w^*=A^T y$  ***or***  $w^* = (A^T A)^{-1}A^T y$ (see How)
+Set $ \nabla F(w)=0$ to solve the minimizer $$ (A^T A )w^*=A^T y $$  **or**  $w^* = (A^T A)^{-1}A^T y$ (see How)
 
 ``` python
 from numpy import linalg as lu
