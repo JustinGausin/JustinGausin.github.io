@@ -60,18 +60,18 @@ mu = .1
 mA=np.array([np.ones(N),X])
 mA=np.transpose(mA)
 
-%The result should be similar to the expected 'A' matrix.
-[[ 1.  -1. ]
- [ 1.  -0.8]
- [ 1.  -0.6]
- [ 1.  -0.4]
- [ 1.  -0.2]
- [ 1.   0. ]
- [ 1.   0.2]
- [ 1.   0.4]
- [ 1.   0.6]
- [ 1.   0.8]
- [ 1.   1. ]]
+#The result should be similar to the expected 'A' matrix:
+#[[ 1.  -1. ]
+# [ 1.  -0.8]
+# [ 1.  -0.6]
+# [ 1.  -0.4]
+# [ 1.  -0.2]
+# [ 1.   0. ]
+# [ 1.   0.2]
+# [ 1.   0.4]
+# [ 1.   0.6]
+# [ 1.   0.8]
+# [ 1.   1. ]]
 ```
 
 
