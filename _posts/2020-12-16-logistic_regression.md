@@ -72,10 +72,12 @@ mA=np.transpose(mA)
 # [ 1.   1. ]]
 ```
 Next we solve the following equation:
-$\nabla F(w) = 2A^T(Aw-y) + 2\mu w$
-Set $F(w)=0$ to solve the minimizer $(A^T A + \mu I)w^*=A^T y$ or $w^* = (A^T A + \mu I)^{-1}A^T y$ (see How)
+ 
+$\nabla F(w) = 2A^T(Aw-y) $
 
-``` python3
+Set $ \nabla F(w)=0$ to solve the minimizer $(A^T A )w^*=A^T y$  ***or***  $w^* = (A^T A)^{-1}A^T y$ (see How)
+
+``` python
 from numpy import linalg as lu
 # use x=LA.solve(A,b) to solve Ax=b
 mu=0.1
@@ -83,6 +85,7 @@ mA_t=np.transpose(mA)
 mI=np.eye(2) # generate the 2x2 idenity matrix, or use np.identity(mA.shape[1])
 vw_st=lu.solve(mA_t@mA + mu*mI, mA_t@Y)
 ```
+
 which will give us w* = [-1.94594595  3.59555556] or in other words, w0 = -1.94594595 and w1 = 3.59555556.
 
 
