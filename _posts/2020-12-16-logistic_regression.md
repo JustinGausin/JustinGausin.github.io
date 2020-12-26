@@ -55,12 +55,10 @@ We first initialize the inputs and the outputs.
 X = np.array([-1, -0.8, -0.6, -0.4, -0.2, 0, 0.2, 0.4, 0.6, 0.8, 1])
 Y = np.array([-5.4, -4.9, -4.5, -3.6, -2.7, -2, -1.1, -0.1, 0.1, 1.1, 1.5])
 N=X.shape[0]
-mu = .1
-
 mA=np.array([np.ones(N),X])
 mA=np.transpose(mA)
 
-#The result should be similar to the expected 'A' matrix:
+#The result of mA should be similar to the expected 'A' matrix for our formula:
 #[[ 1.  -1. ]
 # [ 1.  -0.8]
 # [ 1.  -0.6]
@@ -73,5 +71,19 @@ mA=np.transpose(mA)
 # [ 1.   0.8]
 # [ 1.   1. ]]
 ```
+Next we solve the following equation:
+$\nabla F(w) = 2A^T(Aw-y) + 2\mu w$
+Set $F(w)=0$ to solve the minimizer $(A^T A + \mu I)w^*=A^T y$ or $w^* = (A^T A + \mu I)^{-1}A^T y$ (see How)
+
+``` python3
+from numpy import linalg as lu
+# use x=LA.solve(A,b) to solve Ax=b
+mu=0.1
+mA_t=np.transpose(mA)
+mI=np.eye(2) # generate the 2x2 idenity matrix, or use np.identity(mA.shape[1])
+vw_st=lu.solve(mA_t@mA + mu*mI, mA_t@vy)
+```
+which will give us w* = [-1.94594595  3.59555556] or in other words, w0 = -1.94594595 and w1 = 3.59555556.
+
 
 
