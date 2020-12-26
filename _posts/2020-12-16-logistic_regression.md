@@ -51,7 +51,7 @@ where $\mu=0.1$.
 <br>
 
 We first initialize the inputs and the outputs. 
-```python3
+``` python3
 X = np.array([-1, -0.8, -0.6, -0.4, -0.2, 0, 0.2, 0.4, 0.6, 0.8, 1])
 Y = np.array([-5.4, -4.9, -4.5, -3.6, -2.7, -2, -1.1, -0.1, 0.1, 1.1, 1.5])
 N=X.shape[0]
