@@ -1,5 +1,5 @@
 ---
-title: "Naive Implementation of Cryptographic ."
+title: "Naive Cryptographic Algorithm-Github ."
 categories:
   - blog
   - link
