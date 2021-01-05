@@ -125,3 +125,9 @@ print(fn[-1]
 The last value for the array **fn** should result in approximately the same value found in **F(w\*)**, showing us that the gradient descent method is correct. 
 As for the last value of **wk**, it should be approximate to [-1.94594595, 3.59555553]. 
 
+<figure class="half">
+    <a href="/assets/images/mlearning/Err.png"><img src="/assets/images/mlearning/Err.png"></a>
+    <a href="/assets/images/mlearning/Fw.png"><img src="/assets/images/mlearning/Fw.png"></a>
+    <figcaption> (Left) Error from True Value converging to 9, (Right) F(w) for each iteration converging to F(w*) </figcaption>
+</figure>
+
