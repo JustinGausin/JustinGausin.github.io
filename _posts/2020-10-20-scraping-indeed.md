@@ -4,7 +4,6 @@ categories:
   - project
 tags:
   - data analysis
-  - project
   - programming
   - python
 toc: true
