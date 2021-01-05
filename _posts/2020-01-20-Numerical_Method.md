@@ -1,7 +1,7 @@
 ---
 title: "Numerical Methods-Matlab"
 categories:
-  - projects
+  - project
 tags:
   - Numerical
   - programming
