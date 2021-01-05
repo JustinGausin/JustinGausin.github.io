@@ -64,10 +64,13 @@ Many algorithms and methodologies have been researched to create a more robust s
 
 
 The formula for the Laplacian smoothing follows:
-$ V_{new} =  V_i + k(\delta V_i) $ where $ 0 < k < 1 $ and $ \delta V_i$ is defined as:
+$ V_{new} =  V_i + k(\Delta V_i) $ where $ 0 < k < 1 $ and $ \Delta V_i$ is defined as:
+
 <br>
+
 $$ V_i = V_c - V_i $$
-$$ V_c = (1/N_{V_{N}}\sum V_{N} $$ 
+
+$$ V_c = (1/N_{V_{N}})\sum V_{N} $$ 
 
 
 Laplacian smoothing can be performed simultaneously or sequentially. Simultaneous change modifies all vertex $$ V_i \rightarrow V_{new} $$ in one step (batching). The second variant, sequential smoothing, modifies each $$ V_i \rightarrow V_{new} $$ immediately after the visit (single). In this case, the computation of $$ V_i $$ is dependent on the previous calculations of its adjacent points. The simultaneous calculation of all vertex points requires more storage space for holding all old positions $$ V_i $$  and its neighboring vertices. However, the results are better for simultaneous calculations under homomorphic encryption.
