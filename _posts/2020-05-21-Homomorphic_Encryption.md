@@ -69,6 +69,11 @@ Laplacian smoothing can be performed simultaneously or sequentially. Simultaneou
 
 ## Results
 As seen from Fig. 4(a) to 4(c), we show that the Paillier, CKKS, and a plaintext algorithm resulted in the same output with 100% accuracy. The difference between the models to the plaintext control was quantified using the Hausdorff distance tool from Meshlab. Hausdorff values of the minimum, maximum, and Root-Mean-Square (RMS) values were 0.000000, showing that the CKKS and Paillier models were identical 100% to the plaintext control.
+
+#### Plaintext, CKKS, Paillier Crypto 
+![image-center](/assets/images/hEncryption/Snip20210105_2.png){: .align-center}
+
+#### Table
 ![image-center](/assets/images/hEncryption/Picture1.png){: .align-center}
 
 > Further results are discussed in the paper. 
