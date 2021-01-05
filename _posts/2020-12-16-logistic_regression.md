@@ -78,10 +78,14 @@ vw_st=lu.solve(mA_t@mA + mu*mI, mA_t@Y)
 ```
 
 which will give us w* = [-1.94594595  3.59555556] or in other words, w0 = -1.94594595 and w1 = 3.59555556.
+
 <br>
+
 Recall that: 
 $$ F(w)=\|Aw-y\|_{\ell^2}^2 + \mu \|w\|_{\ell^2}^2 $$
+
 <br>
+
 In Python we can represent it like:
 ``` python
 ssq = np.sum((mA@vw-Y)**2) + mu*(np.sum(vw**2))
@@ -93,7 +97,9 @@ Which should result in: F(w\*):  2.151478678678679
 That is to solve the following equation: 
 
 $$(w^{k+1}_0,w^{k+1}_1)=(w^k_0,w^k_1) - \eta \nabla F(w^k_0,w^k_1) $$ 
+
 <div align="center"> or </div>
+
 $$ w^{k+1}=w^k - \eta \nabla F(w^k)$$ 
 
 <br>
@@ -121,5 +127,5 @@ print(fn[-1]
     
 ```
 The last value for the array **fn** should result in approximately the same value found in **F(w\*)**, showing us that the gradient descent method is correct. 
-As for the last value of **wk** should be approximate to [-1.94594595, 3.59555553]. 
+As for the last value of **wk**, it should be approximate to [-1.94594595, 3.59555553]. 
 
