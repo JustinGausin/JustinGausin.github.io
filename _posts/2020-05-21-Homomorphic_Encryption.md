@@ -54,6 +54,19 @@ In conjunction with using Paillier and SEAL, this paper used the OpenMesh softwa
 ## Algorithm
 Many algorithms and methodologies have been researched to create a more robust smoothing algorithm. For instance, the HC algorithm is a robust smoothing algorithm developed for optimized computations. The complexity of arithmetic operations on homomorphic encrypted values limits our demands of a smoothing algorithm. We used a method called Laplacian smoothing, an algorithm to smooth polygonal mesh by allowing a center vertex to move towards the average of its adjacent vertices, as shown in Fig. 2. An undesirable effect of iterative Laplacian smoothing is the shrinkage of the mesh. For this research, we did not primarily focus on the correctness of smoothing in the mesh, but on computation efficiency between two FHE schemes compared to a plaintext control.
 
+The formula for the Laplacian smoothing follows:
 
+
+Laplacian smoothing can be performed simultaneously or sequentially. Simultaneous change modifies all vertex Vi à Vnew in one step (batching). The second variant, sequential smoothing, modifies each Vi àVnew immediately after the visit (single). In this case, the computation of Vi is dependent on the previous calculations of its adjacent points. The simultaneous calculation of all vertex points requires more storage space for holding all old positions Vi and its neighboring vertices. However, the results are better for simultaneous calculations under homomorphic encryption.
+
+## Results
+As seen from Fig. 4(a) to 4(c), we show that the Paillier, CKKS, and a plaintext algorithm resulted in the same output with 100% accuracy. The difference between the models to the plaintext control was quantified using the Hausdorff distance tool from Meshlab. Hausdorff values of the minimum, maximum, and Root-Mean-Square (RMS) values were 0.000000, showing that the CKKS and Paillier models were identical 100% to the plaintext control.
+
+
+##  Discussion
+accuracy equal to the plaintext control algorithm. However, the Paillier cryptosystem did not perform adequately during the implementation of the Laplacian smoothing. Large data sets took considerable time to process, indicating that Paillier is not an appropriate scheme for large data sets. We approached the Laplacian smoothing in an individual computer as a proof of concept in its future use in the cloud. Hence, a problem arising from this experiment was the lack of experimentation in large data sets consisting of millions of vertex points. With each adjacent neighbor divided into separate vector arrays, a significant amount of memory was utilized. To address this problem for a future study, more powerful hardware is required to replicate the resources of a cloud server. Likewise, the future direction of the research is to develop a hole-filling algorithm that can be implemented in batch homomorphic encryption.
+
+
+#### insert image here
 > IEEE preprinted version. 
 
