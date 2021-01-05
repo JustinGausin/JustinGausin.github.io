@@ -1,11 +1,11 @@
 ---
 title: "Building Page....!"
 categories:
-  - Project
+  - project
   
 tags:
-  - Python
-  - Machine Learning 
+  - python
+  - machine learning 
   - ODU
 
 ---
