@@ -87,7 +87,9 @@ vw_st=lu.solve(mA_t@mA + mu*mI, mA_t@Y)
 ```
 
 which will give us w* = [-1.94594595  3.59555556] or in other words, w0 = -1.94594595 and w1 = 3.59555556.
-Recall:  $F(w)=\|Aw-y\|_{\ell^2}^2 + \mu \|w\|_{\ell^2}^2$
+Recall: 
+$$ F(w)=\|Aw-y\|_{\ell^2}^2 + \mu \|w\|_{\ell^2}^2 $$
+<br>
 ``` python
 ssq = np.sum((mA@vw-Y)**2) + mu*(np.sum(vw**2))
 print('F(w_0*,w_1*): ',ssq)
@@ -96,8 +98,8 @@ Should yield: F(w_0*,w_1*):  2.151478678678679
 
 ### Using Gradient descent method to find the approximate minimizer.
 That is to solve the following equation: 
-$(w^{k+1}_0,w^{k+1}_1)=(w^k_0,w^k_1) - \eta \nabla F(w^k_0,w^k_1)$ 
+$$(w^{k+1}_0,w^{k+1}_1)=(w^k_0,w^k_1) - \eta \nabla F(w^k_0,w^k_1)$$ 
 
-$w^{k+1}=w^k - \eta \nabla F(w^k)${: .align-center}
+$$ w^{k+1}=w^k - \eta \nabla F(w^k)$$ 
 
 
