@@ -28,7 +28,7 @@ The development of Fully Homomorphic Encryption (FHE) schemes has generated cons
 + FHE comes with a high overhead, thus having costly computations.
 + Homomorphic encryption schemes like Paillier has been researched in the use of electronic voting.
 
-![image-center](/assets/images/hEncryption/Snip20210105_1.png){: .align-center} // insert image here
+![image-center](/assets/images/hEncryption/Snip20210105_1.png){: .align-center} 
 
 ## Significance
 + Computations on encrypted data does not forsake privacy that may be identifiable to a user or a client. 
