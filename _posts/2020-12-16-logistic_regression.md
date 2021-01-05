@@ -1,5 +1,5 @@
 ---
-title: "Building Page....!"
+title: "Logistic Regreasion Introduction"
 categories:
   - project
   
@@ -30,16 +30,7 @@ autoNumber: "AMS"
 });
 </script>
 
-
-This is a testing page
-
-LaTeX? 
-\\( a^2 = b^2 \\)
-
-
-
-Latex 2.0
-$$ \begin{equation} \label{label} 1+1 \end{equation} $$
+# Building Page....!
 
 Logistic Regression is a Machine Learning classification algorithm that is used to predict the probability of the dependent variable. In logistic regression, the dependent variable is a binary value of either 1 or 0. 
 
@@ -96,15 +87,39 @@ In Python we can represent it like:
 ssq = np.sum((mA@vw-Y)**2) + mu*(np.sum(vw**2))
 print('F(w_0*,w_1*): ',ssq)
 ```
-Which should result in: F(w_0\*,w_1\*):  2.151478678678679
+Which should result in: F(w\*):  2.151478678678679
 
-### Using Gradient descent method to find the approximate minimizer.
+## Using Gradient descent method to find the approximate minimizer.
 That is to solve the following equation: 
 
 $$(w^{k+1}_0,w^{k+1}_1)=(w^k_0,w^k_1) - \eta \nabla F(w^k_0,w^k_1) $$ 
-
 <div align="center"> or </div>
-
 $$ w^{k+1}=w^k - \eta \nabla F(w^k)$$ 
 
+<br>
+We can include F(w) for each iteration to check if we converge to the real answer we found 'analytically' above (**F(w\*)**). Our stopping criterion is *N* number of iterations (another stopping criterion would be to introduce an *error*):
+
+``` python
+f_X = lambda __w: 2*(np.transpose(mA@__w)-Y)@mA + mu*2*(np.transpose(__w))
+
+w_0_0 = np.zeros(2)
+w_k = np.zeros([200,2]) 
+#print(w_k)
+iter_N = 200 % We will run this part for 200 iterations
+gradF = 0
+eta = .01
+fn = np.zeros(iter_N) #reserve the array slots
+
+for __ in range (1,iter_N):  #we start at 1 since 0 is already initialize
+    gradF = f_X(w_k[__-1])
+    w_k[__] = w_k[__-1] - eta*gradF
+    fn[__] =np.sum((mA@w_k[__]-Y)**2) + mu*(np.sum(w_k[__]**2)) 
+
+
+print(w_k[-1,:])
+print(fn[-1]
+    
+```
+The last value for the array **fn** should result in approximately the same value found in **F(w\*)**, showing us that the gradient descent method is correct. 
+As for the last value of **wk** should be approximate to [-1.94594595, 3.59555553]. 
 
