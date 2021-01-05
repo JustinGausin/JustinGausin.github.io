@@ -1,5 +1,5 @@
 ---
-title: "Homomorphic Encryption on Mesh smoothing!"
+title: "Homomorphic Encryption on Mesh smoothing- NSF&IEEE"
 categories:
   - project
   
