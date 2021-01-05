@@ -128,6 +128,6 @@ As for the last value of **wk**, it should be approximate to [-1.94594595, 3.595
 <figure class="half">
     <a href="/assets/images/mlearning/Err.png"><img src="/assets/images/mlearning/Err.png"></a>
     <a href="/assets/images/mlearning/Fw.png"><img src="/assets/images/mlearning/Fw.png"></a>
-    <figcaption> (Left) Error from True Value converging to 9, (Right) F(w) for each iteration converging to F(w*) </figcaption>
+    <figcaption> (Left) Error from True Value converging to 0, (Right) F(w) for each iteration converging to F(w*) </figcaption>
 </figure>
 
