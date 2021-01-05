@@ -66,7 +66,7 @@ Many algorithms and methodologies have been researched to create a more robust s
 The formula for the Laplacian smoothing follows:
 $ V_{new} =  V_i + k(\Delta V_i) $ where $ 0 < k < 1 $ and $ \Delta V_i$ is defined as:
 
-$$ V_i = V_c - V_i $$
+$$ \Delta V_i = V_c - V_i $$
 
 $$ V_c = (1/N_{V_{N}})\sum V_{N} $$ 
 
