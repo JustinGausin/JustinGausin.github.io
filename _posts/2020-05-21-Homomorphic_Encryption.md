@@ -50,5 +50,10 @@ Paillier cryptosystem is another schema developed for homomorphic encryption. Co
 ### OPENMESH
 In conjunction with using Paillier and SEAL, this paper used the OpenMesh software library to read in mesh file formats that are either in PLY, OFF, OBJ, STL, and other extensions. This advantage allows us to be able to be universal in applying our smoothing algorithm. However, we controlled the experiment under STL objects. 
 
+
+## Algorithm
+Many algorithms and methodologies have been researched to create a more robust smoothing algorithm. For instance, the HC algorithm is a robust smoothing algorithm developed for optimized computations. The complexity of arithmetic operations on homomorphic encrypted values limits our demands of a smoothing algorithm. We used a method called Laplacian smoothing, an algorithm to smooth polygonal mesh by allowing a center vertex to move towards the average of its adjacent vertices, as shown in Fig. 2. An undesirable effect of iterative Laplacian smoothing is the shrinkage of the mesh. For this research, we did not primarily focus on the correctness of smoothing in the mesh, but on computation efficiency between two FHE schemes compared to a plaintext control.
+
+
 > IEEE preprinted version. 
 
