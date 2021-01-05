@@ -10,6 +10,8 @@ tags:
   - NSF
 last_modified_at: 2020-12-08T16:20:02-05:00
 ---
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"> </script> <script type="text/x-mathjax-config"> MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], processEscapes: true}, jax: ["input/TeX","input/MathML","input/AsciiMath","output/CommonHTML"], extensions: ["tex2jax.js","mml2jax.js","asciimath2jax.js","MathMenu.js","MathZoom.js","AssistiveMML.js", "[Contrib]/a11y/accessibility-menu.js"], TeX: { extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"], equationNumbers: { autoNumber: "AMS" } } }); </script>
+
 ## Abstract
 The development of Fully Homomorphic Encryption (FHE) schemes has generated considerable interest in cryptography. In this paper, we examine the problem of performing a polygonal mesh smoothing on encrypted data. Specifically, we focus on two tasks: developing a polygonal mesh smoothing algorithm under FHE, as well as computing the difference of efficiency of two homomorphic schemes using the identical mesh smoothing algorithm. Due to the high overhead of homomorphic computation, the implementation of the mesh smoothing algorithm was restricted to a naïve Laplacian smoothing approach. We first test low polygons triangular mesh structures on the order of a few thousand vertex points. We construct a working custom implementation of the Laplacian smoothing algorithm that works in both the homomorphic schemes of Cheon-Kim-Kim-Song (CKKS) and Paillier. By taking advantage of CKSS batched computation, we show that it was more efficient than the older Paillier cryptosystem. Lastly, we perform smoothing on encrypted datasets with multiple iterations across the surface of the mesh. By using these methods, we demonstrate the viability of using high-level FHE, not just CKKS, for large scale cloud based mesh smoothing computation and other statistical analysis.
 
@@ -53,11 +55,17 @@ In conjunction with using Paillier and SEAL, this paper used the OpenMesh softwa
 
 ## Algorithm
 Many algorithms and methodologies have been researched to create a more robust smoothing algorithm. For instance, the HC algorithm is a robust smoothing algorithm developed for optimized computations. The complexity of arithmetic operations on homomorphic encrypted values limits our demands of a smoothing algorithm. We used a method called Laplacian smoothing, an algorithm to smooth polygonal mesh by allowing a center vertex to move towards the average of its adjacent vertices, as shown in Fig. 2. An undesirable effect of iterative Laplacian smoothing is the shrinkage of the mesh. For this research, we did not primarily focus on the correctness of smoothing in the mesh, but on computation efficiency between two FHE schemes compared to a plaintext control.
+<figure class="half">
+    <a href="/assets/images/xxx"><img src="/assets/images/xxx"></a>
+    <a href="/assets/images/xxx"><img src="/assets/images/xxx"></a>
+    <figcaption> Application of Laplacian smoothing in one vertex with its adjacent neighbors. The new point(Vnew) is not directly sent to Vc (true center) since lamda is set to .55 .</figcaption>
+</figure>
+
 
 The formula for the Laplacian smoothing follows:
 
 
-Laplacian smoothing can be performed simultaneously or sequentially. Simultaneous change modifies all vertex Vi à Vnew in one step (batching). The second variant, sequential smoothing, modifies each Vi àVnew immediately after the visit (single). In this case, the computation of Vi is dependent on the previous calculations of its adjacent points. The simultaneous calculation of all vertex points requires more storage space for holding all old positions Vi and its neighboring vertices. However, the results are better for simultaneous calculations under homomorphic encryption.
+Laplacian smoothing can be performed simultaneously or sequentially. Simultaneous change modifies all vertex $$ V_i \rightarrow V_new $$ in one step (batching). The second variant, sequential smoothing, modifies each $$ V_i \rightarrow V_new $$ immediately after the visit (single). In this case, the computation of $$ V_i $$ is dependent on the previous calculations of its adjacent points. The simultaneous calculation of all vertex points requires more storage space for holding all old positions $$ V_i $$  and its neighboring vertices. However, the results are better for simultaneous calculations under homomorphic encryption.
 
 ## Results
 As seen from Fig. 4(a) to 4(c), we show that the Paillier, CKKS, and a plaintext algorithm resulted in the same output with 100% accuracy. The difference between the models to the plaintext control was quantified using the Hausdorff distance tool from Meshlab. Hausdorff values of the minimum, maximum, and Root-Mean-Square (RMS) values were 0.000000, showing that the CKKS and Paillier models were identical 100% to the plaintext control.
