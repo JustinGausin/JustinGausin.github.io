@@ -1,7 +1,7 @@
 ---
 title: "Indeed Scraping"
 categories:
-  - projects
+  - project
 tags:
   - data analysis
   - project
