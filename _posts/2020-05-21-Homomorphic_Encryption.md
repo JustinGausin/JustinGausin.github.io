@@ -28,7 +28,7 @@ The development of Fully Homomorphic Encryption (FHE) schemes has generated cons
 + FHE comes with a high overhead, thus having costly computations.
 + Homomorphic encryption schemes like Paillier has been researched in the use of electronic voting.
 
-![image-center](/assets/images/xxx){: .align-center} // insert image here
+![image-center](/assets/images/hEncryption/Snip20210105_1.png){: .align-center} // insert image here
 
 ## Significance
 + Computations on encrypted data does not forsake privacy that may be identifiable to a user or a client. 
@@ -38,7 +38,7 @@ The development of Fully Homomorphic Encryption (FHE) schemes has generated cons
 ## General Theory
 A mesh object is encrypted using a homomorphic encryption scheme. A naïve Laplacian smoothing is implemented at (b) when the data is encrypted using homomorphic encryption. The decrypted mesh (c) should have noticeable smoothen difference than the original.
 
-#### insert image here 
+![image-center](/assets/images/hEncryption/Picture5.png){: .align-center}
 *A naïve Laplacian smoothing is implemented at (b) when the data is encrypted using homomorphic encryption. The decrypted mesh (c) should have noticeable smoothen difference than the original.*
 
 
@@ -56,8 +56,8 @@ In conjunction with using Paillier and SEAL, this paper used the OpenMesh softwa
 ## Algorithm
 Many algorithms and methodologies have been researched to create a more robust smoothing algorithm. For instance, the HC algorithm is a robust smoothing algorithm developed for optimized computations. The complexity of arithmetic operations on homomorphic encrypted values limits our demands of a smoothing algorithm. We used a method called Laplacian smoothing, an algorithm to smooth polygonal mesh by allowing a center vertex to move towards the average of its adjacent vertices, as shown in Fig. 2. An undesirable effect of iterative Laplacian smoothing is the shrinkage of the mesh. For this research, we did not primarily focus on the correctness of smoothing in the mesh, but on computation efficiency between two FHE schemes compared to a plaintext control.
 <figure class="half">
-    <a href="/assets/images/xxx"><img src="/assets/images/xxx"></a>
-    <a href="/assets/images/xxx"><img src="/assets/images/xxx"></a>
+    <a href="/assets/images/hEncryption/Picture11.png"><img src="/assets/images/hEncryption/Picture11.png"></a>
+    <a href="/assets/images/hEncryption/Picture11-1.png"><img src="/assets/images/hEncryption/Picture11-1.png"></a>
     <figcaption> Application of Laplacian smoothing in one vertex with its adjacent neighbors. The new point(Vnew) is not directly sent to Vc (true center) since lamda is set to .55 .</figcaption>
 </figure>
 
@@ -69,11 +69,13 @@ Laplacian smoothing can be performed simultaneously or sequentially. Simultaneou
 
 ## Results
 As seen from Fig. 4(a) to 4(c), we show that the Paillier, CKKS, and a plaintext algorithm resulted in the same output with 100% accuracy. The difference between the models to the plaintext control was quantified using the Hausdorff distance tool from Meshlab. Hausdorff values of the minimum, maximum, and Root-Mean-Square (RMS) values were 0.000000, showing that the CKKS and Paillier models were identical 100% to the plaintext control.
+![image-center](/assets/images/hEncryption/Picture1.png){: .align-center}
 
 > Further results are discussed in the paper. 
 
 ##  Discussion
 accuracy equal to the plaintext control algorithm. However, the Paillier cryptosystem did not perform adequately during the implementation of the Laplacian smoothing. Large data sets took considerable time to process, indicating that Paillier is not an appropriate scheme for large data sets. We approached the Laplacian smoothing in an individual computer as a proof of concept in its future use in the cloud. Hence, a problem arising from this experiment was the lack of experimentation in large data sets consisting of millions of vertex points. With each adjacent neighbor divided into separate vector arrays, a significant amount of memory was utilized. To address this problem for a future study, more powerful hardware is required to replicate the resources of a cloud server. Likewise, the future direction of the research is to develop a hole-filling algorithm that can be implemented in batch homomorphic encryption.
+![image-center](/assets/images/hEncryption/snapshot00.png){: .align-center}
 
 
 #### insert image here
