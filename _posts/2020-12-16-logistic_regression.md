@@ -29,12 +29,10 @@ autoNumber: "AMS"
 }
 });
 </script>
-
-# Building Page....!
-
+# Intro
 Logistic Regression is a Machine Learning classification algorithm that is used to predict the probability of the dependent variable. In logistic regression, the dependent variable is a binary value of either 1 or 0. 
 
-Dataset
+# Dataset
 The data used in this project are simple dimensional inputs for those learning the fundamentals of logistic regression. Suppose we have the data set: inputs X=[-1. -0.8 -0.6 -0.4 -0.2  0 0.2  0.4  0.6  0.8  1] and the corresponding outputs Y=[-5.4 -4.9 -4.5 -3.6 -2.7 -2.  -1.1 -0.1  0.1  1.1  1.5]. Suppose we need to find the linear regression function $y=w_1x+w_0$ according to the regularized least square method. That is, solve the following minimization problem: 
 <br>
 $$\min_{w_0,w_1}F(w_0,w_1)=\sum_{j=1}^{11} (w_1x_j +w_0 - y_j)^2 + \mu (w_0^2+w_1^2),$$
@@ -77,8 +75,9 @@ mI=np.eye(2) # generate the 2x2 idenity matrix, or use np.identity(mA.shape[1])
 vw_st=lu.solve(mA_t@mA + mu*mI, mA_t@Y)
 ```
 
-which will give us w* = [-1.94594595  3.59555556] or in other words, w0 = -1.94594595 and w1 = 3.59555556.
+which will give us w\* = [-1.94594595  3.59555556] or in other words, w0 = -1.94594595 and w1 = 3.59555556.
 
+# Calculating F(w\*)
 Recall that: 
 $$ F(w)=\|Aw-y\|_{\ell^2}^2 + \mu \|w\|_{\ell^2}^2 $$
 
