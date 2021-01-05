@@ -1,5 +1,5 @@
 ---
-title: "Logistic Regreasion Introduction"
+title: "Logistic Regression Introduction"
 categories:
   - project
   
@@ -79,13 +79,10 @@ vw_st=lu.solve(mA_t@mA + mu*mI, mA_t@Y)
 
 which will give us w* = [-1.94594595  3.59555556] or in other words, w0 = -1.94594595 and w1 = 3.59555556.
 
-<br>
-
 Recall that: 
 $$ F(w)=\|Aw-y\|_{\ell^2}^2 + \mu \|w\|_{\ell^2}^2 $$
 
 <br>
-
 In Python we can represent it like:
 ``` python
 ssq = np.sum((mA@vw-Y)**2) + mu*(np.sum(vw**2))
@@ -103,12 +100,11 @@ $$(w^{k+1}_0,w^{k+1}_1)=(w^k_0,w^k_1) - \eta \nabla F(w^k_0,w^k_1) $$
 $$ w^{k+1}=w^k - \eta \nabla F(w^k)$$ 
 
 <br>
-We can include F(w) for each iteration to check if we converge to the real answer we found 'analytically' above (**F(w\*)**). Our stopping criterion is *N* number of iterations (another stopping criterion would be to introduce an *error*):
+We can include F(w) for each iteration to check if we converge to the real answer we found 'analytically' above (**F(w\*)**). Our stopping criterion is *N* number of iterations (another stopping criterion would be to introduce an *error*). In this example, $ \eta $ , or the learning rate, is set to .01.
 
 ``` python
 f_X = lambda __w: 2*(np.transpose(mA@__w)-Y)@mA + mu*2*(np.transpose(__w))
 
-w_0_0 = np.zeros(2)
 w_k = np.zeros([200,2]) 
 #print(w_k)
 iter_N = 200 % We will run this part for 200 iterations
