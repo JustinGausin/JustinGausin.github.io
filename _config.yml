@@ -59,7 +59,7 @@ plugins:
 author:
   name   : "Justin Gausin"
   avatar : "/assets/images/IMG_4294.jpg"
-  bio    : "Old Dominion Graduate: \n -BS Cybersecurity (Dec. 2020), \n -BS Applied Mathematics (Dec. 2020)."
+  bio    : "Old Dominion Graduate:      \n -BS Cybersecurity (Dec. 2020),     \n -BS Applied Mathematics (Dec. 2020)."
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
