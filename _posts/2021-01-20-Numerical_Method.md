@@ -43,20 +43,20 @@ end
 
 end
 ```
-
 ##  Differentiation
 ### Composite Midpoint Rule / Open Newton-Cottes Formula
-
 #### General Theory:
 $$ \int_{a}^{b} f(x) dx = h \sum_{l=1}^{m} f(x_{l}) - \frac{h^2}{24}(b-a)f''(c) $$
 
-### Composite Trapezoidal Rule
+<br>
 
+### Composite Trapezoidal Rule
 #### General Theory:
 $$ \int_{a}^{b} f(x) dx = \frac{h}{2}(f(a) + f(b) + 2 \sum_{l=1}^{m-1} f(x_{l})) - \frac{h^2}{12}(b-a)f''(c) $$
 
-### Composite Simpson's Rule
+<br>
 
+### Composite Simpson's Rule
 #### General Theory:
 $$ \int_{a}^{b} f(x) dx = \frac{h}{2}(f(a) + f(b) + 4 \sum_{j=1}^{m} f(x_{2j-1}) + 2 \sum_{j=1}^{m-1} f(x_{2j}) ) - \frac{h^4}{180}(b-a)f^{4}(c)  $$
 
@@ -85,6 +85,7 @@ csr = (h/3)*(fa+fb + 4*(subtotal_Odd) + 2*(subtotal_Even));
 
 end %requires end for .mlx functions
 ```
+<br>
 
 ### Explicit Trapezoidal Method
 ``` matlab
@@ -111,6 +112,7 @@ fprintf('%1d %18.16g %18.16g \n', t(end), y(end));
 
 end
 ```
+<br>
 
 ### Predictor-Corrector Method
 ``` matlab
@@ -140,3 +142,4 @@ legend('Approximated', 'Exact')
 
 end %last end is required by live scripts
 ```
+<br>
