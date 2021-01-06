@@ -13,10 +13,96 @@ toc_icon: "cog"
 
 # Bulding this page now....
 
-### PREDICTION AND CORRECTNESS
+# In this page is a collection of Matlab codes and numerical method theories.
+> For more info see: Numerical Analysis, 2nd Edition by Sauer, Timothy
+
+## Root finding
+
+### Fixed Point Iteration
+``` matlab
+function fixed(g, x0, tol, n)
+% inputs: g = function g, x0 = starting value, tol = tolerance, n= number of iterations
+iter = 0;
+u=g(x0);
+err = abs(u-x0);
+fprintf(' i xn error\n');
+fprintf(' ----- ------------------ ----------\n');
+fprintf(' %4d %18.16g %12.6g\n', iter, x0, err);
+while(err>tol)&(iter<=n)
+  x1 = u;
+  err = abs(x1-x0);
+  x0 = x1;
+  u = g(x0);
+  iter = iter+1;
+  fprintf(' %4d %18.16g %12.6g\n', iter, x0, err);
+end
+
+if(iter>n)
+  disp('Method failed to converge')
+end
+
+end
+```
+
+##  Integration
+### Composite Simpson's Rule
+``` matlab
+Composite Simpson's Rule
+% Program 5.2x Calculation of Trapezoidal Rule
+% Input: function,
+% a,b integration interval, n=number of rows
+% Output: Approximation
+function csr=SimpsonsRule(f,a,b,n)
+h=(b-a)./(2*n);
+fa = f(a);
+fb = f(b); %endpoints
+subtotal_Even = 0;
+subtotal_Odd = 0;
+for j=1:(2*n)-1
+  x = a + (j*h);
+  if(mod(j,2) == 0) %if even
+    subtotal_Even = subtotal_Even + f(x);
+  else %if odd
+    subtotal_Odd = subtotal_Odd +f(x);
+  end
+  
+end
+csr = (h/3)*(fa+fb + 4*(subtotal_Odd) + 2*(subtotal_Even));
+
+end %requires end for .mlx functions
+```
+
+### Explicit Trapezoidal Method
+``` matlab
+function [t,y]=etm(inter,y0,n,f)
+%inputs: inter= interval [# #],  y0 = initial condition, n= number of panels, f = function to be evaluated
+
+t(1)=inter(1); y(1)=y0;
+h=(inter(2)-inter(1))/n;
+%t values, approximations, and global truncation error
+for i=1:n
+  t(i+1)=t(i)+h;
+  y(i+1)=trapezoidalstep(t(i),y(i),h);
+  %gte(i+1) = abs(y(i+1)-exp(t(i+1)^3/3));
+  trueval(i+1) = f(t(i));
+end
+
+plot(t,y,'bp--',t,trueval)
+legend('Approximated', 'True')
+%plot(t,trueval)
+fprintf(' Last value: \n');
+fprintf(' t approximations \n');
+fprintf('----- ------------------- \n');
+fprintf('%1d %18.16g %18.16g \n', t(end), y(end));
+
+end
+```
+
+### Predictor-Corrector Method
 ``` matlab
 function [t,y] = predcorrect4(inter, ic, n, s,fexact)
-%prediction and correctness with RK4, AB4, AM3, s=4 for 4th order method
+%inputs: inter= interval [# #],  ic = initial condition, n= number of panels, s=4 for 4th order method, fexact = exact solution to the ODE
+%prediction and correctness with RK4, AB4, AM3, 
 h =(inter(2)-inter(1))/n;
 y(1)=ic;
 t(1)=inter(1);
@@ -40,4 +126,3 @@ legend('Approximated', 'Exact')
 
 end %last end is required by live scripts
 ```
-
