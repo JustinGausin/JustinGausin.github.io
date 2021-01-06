@@ -86,8 +86,9 @@ As seen from Fig.(a) to (c), we show that the Paillier, CKKS, and a plaintext al
 
 ##  Discussion
 accuracy equal to the plaintext control algorithm. However, the Paillier cryptosystem did not perform adequately during the implementation of the Laplacian smoothing. Large data sets took considerable time to process, indicating that Paillier is not an appropriate scheme for large data sets. We approached the Laplacian smoothing in an individual computer as a proof of concept in its future use in the cloud. Hence, a problem arising from this experiment was the lack of experimentation in large data sets consisting of millions of vertex points. With each adjacent neighbor divided into separate vector arrays, a significant amount of memory was utilized. To address this problem for a future study, more powerful hardware is required to replicate the resources of a cloud server. Likewise, the future direction of the research is to develop a hole-filling algorithm that can be implemented in batch homomorphic encryption.
-![image-center](/assets/images/hEncryption/Picture12.png "Creating a hole-filling algorithm under homomorphic encryption is a more difficult task"){: .align-center}
-
+![image-center](/assets/images/hEncryption/Picture12.png){: .align-center}
+*Creating a hole-filling algorithm under homomorphic encryption is a more difficult task*
+{% include figure image_path="/assets/images/hEncryption/Picture12.png" caption="Creating a hole-filling algorithm under homomorphic encryption is a more difficult task" %}{: .align-center}
 
 #### insert image here
 > IEEE preprinted version. 
