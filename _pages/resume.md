@@ -7,6 +7,13 @@ title: "Resume"
 <div> Justine Gausin </div>
 <div> Email: jgaus001@odu.edu </div>
 
+<div> 
+  <h2> Download </h2>
+  <div class = "notice--info">
+    <p> Date Posted: September 11, 2020 </p>
+    <a href="/assets/downloads/CYSE_368_Reflection_Paper_1.pdf" class="btn btn--inverse .btn--small"> Download PDF</a> 
+  </div>
+</div>
 
 
 <div>
