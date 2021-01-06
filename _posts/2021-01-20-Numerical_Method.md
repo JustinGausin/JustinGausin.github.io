@@ -19,6 +19,8 @@ toc_icon: "cog"
 ## Root finding
 
 ### Fixed Point Iteration
+#### General Theory:
+#### Code:
 ``` matlab
 function fixed(g, x0, tol, n)
 % inputs: g = function g, x0 = starting value, tol = tolerance, n= number of iterations
