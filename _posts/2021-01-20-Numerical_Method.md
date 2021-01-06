@@ -16,7 +16,7 @@ toc_icon: "cog"
 # In this page is a collection of Matlab codes and numerical method theories.
 > For more info see: Numerical Analysis, 2nd Edition by Sauer, Timothy
 
-## Root finding
+## ROOT FINDING 
 
 ### Fixed Point Iteration
 #### General Theory:
@@ -45,7 +45,7 @@ end
 
 end
 ```
-##  Differentiation
+##  DIFFERENTIATION
 ### Composite Midpoint Rule / Open Newton-Cottes Formula
 #### General Theory:
 $$ \int_{a}^{b} f(x) dx = h \sum_{l=1}^{m} f(x_{l}) - \frac{h^2}{24}(b-a)f''(c) $$
