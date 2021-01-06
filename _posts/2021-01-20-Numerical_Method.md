@@ -45,12 +45,20 @@ end
 ```
 
 ##  Differentiation
+### Composite Midpoint Rule / Open Newton-Cottes Formula
 
+#### General Theory:
+$$ \int_{a}^{b} f(x) dx = h \sum_{l=1}^{m} f(x_{l}) - \frac{h^2}{24}(b-a)f''(c) $$
+
+### Composite Trapezoidal Rule
+
+#### General Theory:
+$$ \int_{a}^{b} f(x) dx = \frac{h}{2}(f(a) + f(b) + 2 \sum_{l=1}^{m-1} f(x_{l})) - \frac{h^2}{12}(b-a)f''(c) $$
 
 ### Composite Simpson's Rule
 
 #### General Theory:
-$$ \int_{a}^{b} f(x) dx = h/2(f(a) + f(b) + 2 \sum_{l=1}^{m-1} f(x_{l})) - h^2/12(b-a)f''(c) $$
+$$ \int_{a}^{b} f(x) dx = \frac{h}{2}(f(a) + f(b) + 4 \sum_{j=1}^{m} f(x_{2j-1}) + 2 \sum_{j=1}^{m-1} f(x_{2j}) ) - \frac{h^4}{180}(b-a)f^{4}(c)  $$
 
 ``` matlab
 Composite Simpson's Rule
