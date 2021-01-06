@@ -8,9 +8,8 @@ title: "Resume"
 <div> Email: jgaus001@odu.edu </div>
 
 <div> 
-  <h2> Download </h2>
+  <h2> Direct Download of Resume </h2>
   <div class = "notice--info">
-    <p> Date Posted: September 11, 2020 </p>
     <a href="/assets/downloads/JustineGausin_ResumePDF.pdf" class="btn btn--inverse .btn--small"> Download PDF</a> 
   </div>
 </div>
