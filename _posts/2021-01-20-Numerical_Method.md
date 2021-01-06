@@ -60,6 +60,8 @@ $$ \int_{a}^{b} f(x) dx = \frac{h}{2}(f(a) + f(b) + 2 \sum_{l=1}^{m-1} f(x_{l}))
 #### General Theory:
 $$ \int_{a}^{b} f(x) dx = \frac{h}{2}(f(a) + f(b) + 4 \sum_{j=1}^{m} f(x_{2j-1}) + 2 \sum_{j=1}^{m-1} f(x_{2j}) ) - \frac{h^4}{180}(b-a)f^{4}(c)  $$
 
+#### Code:
+
 ``` matlab
 Composite Simpson's Rule
 % Program 5.2x Calculation of Trapezoidal Rule
@@ -88,6 +90,7 @@ end %requires end for .mlx functions
 <br>
 
 ### Explicit Trapezoidal Method
+#### Code:
 ``` matlab
 function [t,y]=etm(inter,y0,n,f)
 %inputs: inter= interval [# #],  y0 = initial condition, n= number of panels, f = function to be evaluated
@@ -115,6 +118,7 @@ end
 <br>
 
 ### Predictor-Corrector Method
+#### Code:
 ``` matlab
 function [t,y] = predcorrect4(inter, ic, n, s,fexact)
 %inputs: inter= interval [# #],  ic = initial condition, n= number of panels, s=4 for 4th order method, fexact = exact solution to the ODE
