@@ -6,7 +6,7 @@ title: "Resume"
 
 <div> Justine Gausin </div>
 <div> Email: jgaus001@odu.edu </div>
-<div> Address: </div>
+
 
 
 <div>
@@ -73,7 +73,7 @@ title: "Resume"
          <div> Applied Mathematics</div>
        <div> Minor: Information Technology </div>
        <div> Minor: Computer Science </div>
-       <p> Overall GPA: 3.90 </p>
+       <p> Overall GPA: 3.91 </p>
      </div>
      <div ><span>August 2016 - December 2020</span></div>
     </div>               
@@ -102,7 +102,6 @@ title: "Resume"
       <ul>
            <li> Strong interpersonal skill and oral communication. </li>
            <li> Strong ability to work independently and in groups </li>
-           <li> ----- </li>
        </ul>
      </div>
    </div>   
