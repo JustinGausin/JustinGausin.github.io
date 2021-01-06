@@ -17,9 +17,11 @@ toc_icon: "cog"
 > For more info see: Numerical Analysis, 2nd Edition by Sauer, Timothy
 
 ## ROOT FINDING 
-$$ x_0 \text{ initial guess} \\ x_{n+1} = g(x_{n}) $$
 ### Fixed Point Iteration
 #### General Theory:
+
+$$ x_0 \text{ initial guess} \\ x_{n+1} = g(x_{n}) $$
+
 #### Code:
 ``` matlab
 function fixed(g, x0, tol, n)
@@ -54,7 +56,9 @@ $$ \int_{a}^{b} f(x) dx = h \sum_{l=1}^{m} f(x_{l}) - \frac{h^2}{24}(b-a)f''(c) 
 
 ### Composite Trapezoidal Rule
 #### General Theory:
+
 $$ \int_{a}^{b} f(x) dx = \frac{h}{2}(f(a) + f(b) + 2 \sum_{l=1}^{m-1} f(x_{l})) - \frac{h^2}{12}(b-a)f''(c) $$
+
 #### Code:
 ``` matlab 
 % Program 5.2x Calculation of Trapezoidal Rule
@@ -106,9 +110,49 @@ csr = (h/3)*(fa+fb + 4*(subtotal_Odd) + 2*(subtotal_Even));
 
 end %requires end for .mlx functions
 ```
-<br>
 
+<br>
+## INITIAL VALUE PROBLEMS - ODE
+
+### Euler's Theorem
+#### General Theory:
+$$ w_{i+1} = w_i + h f_i, \text{ where }, f_i = f(t_i,w_i) $$
+
+#### Code:
+``` matlab
+6.1 Euler’s Method for Solving Initial Value Problems
+%Program 6.1 Euler’s Method for Solving Initial Value Problems
+%Use with ydot.m to evaluate rhs of differential equation
+% Input: interval inter, initial value y0, number of steps n
+% Output: time steps t, solution y
+% Example usage: euler([0 1],1,10);
+function [t,y]=euler(inter,y0,n)
+t(1)=inter(1); y(1)=y0;
+h=(inter(2)-inter(1))/n;
+for i=1:n
+  t(i+1)=t(i)+h;
+  y(i+1)=eulerstep(t(i),y(i),h);
+end
+
+plot(t,y)
+fprintf(' Last value: \n');
+fprintf(' t approximations \n');
+fprintf('----- ------------------- \n');
+fprintf('%1d %18.16g \n', t(end), y(end));
+
+end
+```
+
+<br>
 ### Explicit Trapezoidal Method
+#### General Theory:
+
+$$ w_{i+1} = w_{i} + \frac{h}{2}(f_i + f(t_{i+1}, w_i + h f_i) $$
+
+LTE: $\mathcal{O}(h^3)$
+
+GTE: $\mathcal{O}(h^2) $, making it a 2nd order method. 
+
 #### Code:
 ``` matlab
 function [t,y]=etm(inter,y0,n,f)
@@ -137,6 +181,7 @@ end
 <br>
 
 ### Predictor-Corrector Method
+#### General Theory: Prediction and correctness with RK4 (one step), AB4(predict-multistep), AM3(correct-multistep),
 #### Code:
 ``` matlab
 function [t,y] = predcorrect4(inter, ic, n, s,fexact)
