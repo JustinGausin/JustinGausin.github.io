@@ -11,6 +11,7 @@ tags:
 last_modified_at: 2020-12-08T16:20:02-05:00
 ---
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"> </script> <script type="text/x-mathjax-config"> MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], processEscapes: true}, jax: ["input/TeX","input/MathML","input/AsciiMath","output/CommonHTML"], extensions: ["tex2jax.js","mml2jax.js","asciimath2jax.js","MathMenu.js","MathZoom.js","AssistiveMML.js", "[Contrib]/a11y/accessibility-menu.js"], TeX: { extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"], equationNumbers: { autoNumber: "AMS" } } }); </script>
+> IEEE preprinted version. Funded by NSF 
 
 ## Abstract
 The development of Fully Homomorphic Encryption (FHE) schemes has generated considerable interest in cryptography. In this paper, we examine the problem of performing a polygonal mesh smoothing on encrypted data. Specifically, we focus on two tasks: developing a polygonal mesh smoothing algorithm under FHE, as well as computing the difference of efficiency of two homomorphic schemes using the identical mesh smoothing algorithm. Due to the high overhead of homomorphic computation, the implementation of the mesh smoothing algorithm was restricted to a naïve Laplacian smoothing approach. We first test low polygons triangular mesh structures on the order of a few thousand vertex points. We construct a working custom implementation of the Laplacian smoothing algorithm that works in both the homomorphic schemes of Cheon-Kim-Kim-Song (CKKS) and Paillier. By taking advantage of CKSS batched computation, we show that it was more efficient than the older Paillier cryptosystem. Lastly, we perform smoothing on encrypted datasets with multiple iterations across the surface of the mesh. By using these methods, we demonstrate the viability of using high-level FHE, not just CKKS, for large scale cloud based mesh smoothing computation and other statistical analysis.
@@ -28,7 +29,8 @@ The development of Fully Homomorphic Encryption (FHE) schemes has generated cons
 + FHE comes with a high overhead, thus having costly computations.
 + Homomorphic encryption schemes like Paillier has been researched in the use of electronic voting.
 
-![image-center](/assets/images/hEncryption/Snip20210105_1.png){: .align-center} 
+{% include figure image_path="/assets/images/hEncryption/Snip20210105_1.png" caption="Suppose we want to arithmetically add 2 and 3. We enrypt the two numbers using FHE and through decryption, we get 5, which is the same result as in the Reals operation." %}{: .align-center}
+
 
 ## Significance
 + Computations on encrypted data does not forsake privacy that may be identifiable to a user or a client. 
@@ -38,8 +40,8 @@ The development of Fully Homomorphic Encryption (FHE) schemes has generated cons
 ## General Theory
 A mesh object is encrypted using a homomorphic encryption scheme. A naïve Laplacian smoothing is implemented at (b) when the data is encrypted using homomorphic encryption. The decrypted mesh (c) should have noticeable smoothen difference than the original.
 
-![image-center](/assets/images/hEncryption/Picture5.png){: .align-center}
-*A naïve Laplacian smoothing is implemented at (b) when the data is encrypted using homomorphic encryption. The decrypted mesh (c) should have noticeable smoothen difference than the original.*
+{% include figure image_path="/assets/images/hEncryption/Picture5.png" caption="A naïve Laplacian smoothing is implemented at (b) when the data is encrypted using homomorphic encryption. The decrypted mesh (c) should have noticeable smoothen difference than the original." %}{: .align-center}
+
 
 
 ## Softwares and Tools
@@ -85,11 +87,7 @@ As seen from Fig.(a) to (c), we show that the Paillier, CKKS, and a plaintext al
 > Further results are discussed in the paper. 
 
 ##  Discussion
-accuracy equal to the plaintext control algorithm. However, the Paillier cryptosystem did not perform adequately during the implementation of the Laplacian smoothing. Large data sets took considerable time to process, indicating that Paillier is not an appropriate scheme for large data sets. We approached the Laplacian smoothing in an individual computer as a proof of concept in its future use in the cloud. Hence, a problem arising from this experiment was the lack of experimentation in large data sets consisting of millions of vertex points. With each adjacent neighbor divided into separate vector arrays, a significant amount of memory was utilized. To address this problem for a future study, more powerful hardware is required to replicate the resources of a cloud server. Likewise, the future direction of the research is to develop a hole-filling algorithm that can be implemented in batch homomorphic encryption.
-![image-center](/assets/images/hEncryption/Picture12.png){: .align-center}
-*Creating a hole-filling algorithm under homomorphic encryption is a more difficult task*
+The use of CKKS and Paillier achieves 100% accuracy equal to the plaintext control algorithm. However, the Paillier cryptosystem did not perform adequately during the implementation of the Laplacian smoothing. Large data sets took considerable time to process, indicating that Paillier is not an appropriate scheme for large data sets. We approached the Laplacian smoothing in an individual computer as a proof of concept in its future use in the cloud. Hence, a problem arising from this experiment was the lack of experimentation in large data sets consisting of millions of vertex points. With each adjacent neighbor divided into separate vector arrays, a significant amount of memory was utilized. To address this problem for a future study, more powerful hardware is required to replicate the resources of a cloud server. Likewise, the future direction of the research is to develop a hole-filling algorithm that can be implemented in batch homomorphic encryption.
 {% include figure image_path="/assets/images/hEncryption/Picture12.png" caption="Creating a hole-filling algorithm under homomorphic encryption is a more difficult task" %}{: .align-center}
 
-#### insert image here
-> IEEE preprinted version. 
 
