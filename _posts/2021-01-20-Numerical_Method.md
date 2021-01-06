@@ -118,6 +118,10 @@ end %requires end for .mlx functions
 #### General Theory:
 $$ w_{i+1} = w_i + h f_i, \text{ where }, f_i = f(t_i,w_i) $$
 
+LTE: $\mathcal{O}(h^2)$
+
+GTE: $\mathcal{O}(h) $, making it a 1st order method.
+
 #### Code:
 ``` matlab
 6.1 Euler’s Method for Solving Initial Value Problems
@@ -181,7 +185,8 @@ end
 <br>
 
 ### Predictor-Corrector Method
-#### General Theory: Prediction and correctness with RK4 (one step), AB4(predict-multistep), AM3(correct-multistep),
+#### General Theory: 
+Prediction and correctness with RK4 (one step), AB4(predict-multistep), AM3(correct-multistep),
 #### Code:
 ``` matlab
 function [t,y] = predcorrect4(inter, ic, n, s,fexact)
