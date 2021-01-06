@@ -17,7 +17,7 @@ toc_icon: "cog"
 > For more info see: Numerical Analysis, 2nd Edition by Sauer, Timothy
 
 ## ROOT FINDING 
-
+$$ x_0 \text{ initial guess} \\ x_{n+1} = g(x_{n}) $$
 ### Fixed Point Iteration
 #### General Theory:
 #### Code:
@@ -55,15 +55,32 @@ $$ \int_{a}^{b} f(x) dx = h \sum_{l=1}^{m} f(x_{l}) - \frac{h^2}{24}(b-a)f''(c) 
 ### Composite Trapezoidal Rule
 #### General Theory:
 $$ \int_{a}^{b} f(x) dx = \frac{h}{2}(f(a) + f(b) + 2 \sum_{l=1}^{m-1} f(x_{l})) - \frac{h^2}{12}(b-a)f''(c) $$
+#### Code:
+``` matlab 
+% Program 5.2x Calculation of Trapezoidal Rule
+% Input: function,
+% a,b integration interval, n=number of rows
+% Output: Approximation
+function trapz=trapezoidal(f,a,b,n)
+h=(b-a)./n;
+fa = f(a);
+fb = f(b); %endpoints
+subtotal = 0;
+for j=1:n-1
+  subtotal = subtotal + f(a+(j*h));
+end
+
+trapz = (h/2)*(fa+fb + 2*(subtotal));
+end
+```
+
 
 <br>
-
 ### Composite Simpson's Rule
 #### General Theory:
 $$ \int_{a}^{b} f(x) dx = \frac{h}{2}(f(a) + f(b) + 4 \sum_{j=1}^{m} f(x_{2j-1}) + 2 \sum_{j=1}^{m-1} f(x_{2j}) ) - \frac{h^4}{180}(b-a)f^{4}(c)  $$
 
 #### Code:
-
 ``` matlab
 Composite Simpson's Rule
 % Program 5.2x Calculation of Trapezoidal Rule
