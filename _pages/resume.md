@@ -9,7 +9,7 @@ title: "Resume"
 
 <div> 
   <div class = "notice--info">
-    <p> Direct Download of Resume <p>
+    <p> Direct Download of Resume </p>
     <a href="/assets/downloads/JustineGausin_ResumePDF.pdf" class="btn btn--inverse .btn--small"> Download PDF</a> 
   </div>
 </div>
