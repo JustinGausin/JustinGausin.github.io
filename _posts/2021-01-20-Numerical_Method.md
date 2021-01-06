@@ -44,8 +44,14 @@ end
 end
 ```
 
-##  Integration
+##  Differentiation
+
+
 ### Composite Simpson's Rule
+
+#### General Theory:
+$$ \int_{a}^{b} f(x) dx = h/2(f(a) + f(b) + 2 \sum_{l=1}^{m-1} f(x_{l})) - h^2/12(b-a)f''(c) $$
+
 ``` matlab
 Composite Simpson's Rule
 % Program 5.2x Calculation of Trapezoidal Rule
