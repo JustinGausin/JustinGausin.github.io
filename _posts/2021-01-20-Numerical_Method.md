@@ -114,7 +114,7 @@ end %requires end for .mlx functions
 <br>
 ## INITIAL VALUE PROBLEMS - ODE
 
-### Euler's Theorem
+### Euler's Theorem (One Step)
 #### General Theory:
 $$ w_{i+1} = w_i + h f_i, \text{ where }, f_i = f(t_i,w_i) $$
 
@@ -146,9 +146,9 @@ fprintf('%1d %18.16g \n', t(end), y(end));
 
 end
 ```
-
 <br>
-### Explicit Trapezoidal Method
+
+### Explicit Trapezoidal Method (One Step)
 #### General Theory:
 
 $$ w_{i+1} = w_{i} + \frac{h}{2}(f_i + f(t_{i+1}, w_i + h f_i) $$
@@ -184,6 +184,50 @@ end
 ```
 <br>
 
+### Runge-Kutta 4th order Method (One Step)
+#### General Theory:
+$$ w_0 = \alpha \\ w_{i+1} = w_i + \frac{h}{6}(S_1+2S_2 + 2S_3 + S_4)
+
+where:
+
+$$\begin{tabular}{ccc}
+S_1  &=& f_i \\
+S_2  &=& f(t_i + \frac{h}{2}, w_i + frac{h}{2}S_1) \\
+S_3  &=& f(t_i + \frac{h}{2}, w_i + frac{h}{2}S_2) \\
+S_4  &=& f(t_i + h}, w_i + h S_3)
+\end{tabular} $$
+
+
+LTE: $\mathcal{O}(h^5)$
+
+GTE: $\mathcal{O}(h^4) $, making it a 4th order method. 
+
+#### Code:
+``` matlab
+RK4 FORMULA
+function [t,y]=RK4(inter,y0,n)
+t(1)=inter(1); y(1)=y0;
+h=(inter(2)-inter(1))/n;
+%t values, approximations, and global truncation error
+for i=1:n
+  t(i+1)=t(i)+h;
+  y(i+1)=rk4_onestep(t(i),y(i),h);
+  gte(i+1) = abs(y(i+1)-exp(t(i+1)^3/3));
+end
+
+%plot(t,y)
+fprintf(' t approximations GTE \n');
+fprintf('----- ------------------- ------\n');
+for i=1:n+1
+  fprintf('%1d %18.16g %18.16g\n', t(i), y(i), gte(i));
+end
+
+end
+```
+
+
+
+<br>
 ### Predictor-Corrector Method
 #### General Theory: 
 Prediction and correctness with RK4 (one step), AB4(predict-multistep), AM3(correct-multistep),
