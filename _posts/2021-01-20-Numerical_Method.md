@@ -191,8 +191,7 @@ $$ w_0 = \alpha \\ w_{i+1} = w_i + \frac{h}{6}(S_1+2S_2 + 2S_3 + S_4) $$
 
 where:
 
-$ \begin{array}{rcl} S_1  &=& f_i \\ S_2  &=& f(t_i + \frac{h}{2}, w_i + frac{h}{2}S_1) \\ S_3  &=& f(t_i + \frac{h}{2}, w_i + frac{h}{2}S_2) \\ S_4  &=& f(t_i + h, w_i + h S_3) \end{array} $
-
+$$ \begin{array}{rcl} S_1  &=& f_i \\ S_2  &=& f(t_i + \frac{h}{2}, w_i + \frac{h}{2} S_1) \\ S_3  &=& f(t_i + \frac{h}{2}, w_i + \frac{h}{2}S_2) \\ S_4  &=& f(t_i + h, w_i + h S_3) \end{array}  $$
 
 LTE: $\mathcal{O}(h^5)$
 
