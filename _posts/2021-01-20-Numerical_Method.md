@@ -187,6 +187,7 @@ end
 
 ### Runge-Kutta 4th order Method (One Step)
 #### General Theory:
+
 $$ w_0 = \alpha \\ w_{i+1} = w_i + \frac{h}{6}(S_1+2S_2 + 2S_3 + S_4) $$ 
 
 where:
