@@ -227,7 +227,21 @@ end
 
 end
 ```
+### Multi-Step Methods
+> Check for more info:
+#### AB4STEP
+``` matlab
+function z = ab4step(t,i,y,f,h);
+z =y(i)+(h/24)*(55*f(i)-59*f(i-1)+37*f(i-2)-9*f(i-3));
+end
+```
 
+#### AM3STEP
+``` matlab
+function z = am3step(t,i,y,f,h);
+z =y(i)+(h/24)*(9*f(i+1)+19*f(i)-5*f(i-1)+1*f(i-2));
+end
+``` 
 
 
 <br>
@@ -262,4 +276,5 @@ legend('Approximated', 'Exact')
 
 end %last end is required by live scripts
 ```
+
 <br>
