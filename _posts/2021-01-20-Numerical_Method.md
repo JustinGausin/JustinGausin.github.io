@@ -209,7 +209,7 @@ fprintf('%1d %18.16g \n', t(end), y(end));
 
 end
 ```
-it calls the eulere one step function:
+it calls the Euler one-step function:
 ``` matlab
 function y=eulerstep(t,y,h)
 %one step of Euler’s Method
@@ -289,6 +289,20 @@ for i=1:n+1
   fprintf('%1d %18.16g %18.16g\n', t(i), y(i), gte(i));
 end
 
+end
+```
+it calls the RK4 one-step function:
+``` matlab
+function y=rk4(t,y,h)
+%one step of RK4 Method
+%Input: current time t, current value y, stepsize h
+%Output: approximate solution value at time t+h
+% ydot is the function we are evaluating, for example:function z=ydot(t,y) z=-y+2*exp(-t)*cos(2*t); 
+S1 = ydot(t,y);  
+S2 = ydot(t+(h/2),y+(h/2)*S1);
+S3 = ydot(t+(h/2), y+(h/2)*S2);
+S4 = ydot(t+h, y+(h)*S3);
+y= y+(h/6)*(S1+2*S2+2*S3+S4);
 end
 ```
 
