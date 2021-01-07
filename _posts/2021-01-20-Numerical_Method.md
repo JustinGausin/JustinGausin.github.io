@@ -192,12 +192,12 @@ $$ w_0 = \alpha \\ w_{i+1} = w_i + \frac{h}{6}(S_1+2S_2 + 2S_3 + S_4) $$
 where:
 
 $$
-\begin{tabular}{}
+\begin{array}{rcl}
 S_1  &=& f_i \\
 S_2  &=& f(t_i + \frac{h}{2}, w_i + frac{h}{2}S_1) \\
 S_3  &=& f(t_i + \frac{h}{2}, w_i + frac{h}{2}S_2) \\
 S_4  &=& f(t_i + h}, w_i + h S_3)
-\end{tabular}
+\end{array}
 $$
 
 
@@ -227,8 +227,9 @@ end
 
 end
 ```
+
 ### Multi-Step Methods
-> Check for more info:
+> Check for more info: https://en.wikipedia.org/wiki/Linear_multistep_method
 #### AB4STEP
 ``` matlab
 function z = ab4step(t,i,y,f,h);
@@ -276,5 +277,4 @@ legend('Approximated', 'Exact')
 
 end %last end is required by live scripts
 ```
-
 <br>
