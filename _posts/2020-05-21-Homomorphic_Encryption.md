@@ -61,7 +61,7 @@ Many algorithms and methodologies have been researched to create a more robust s
 <figure class="half">
     <a href="/assets/images/hEncryption/Picture11.png"><img src="/assets/images/hEncryption/Picture11.png"></a>
     <a href="/assets/images/hEncryption/Picture11-1.png"><img src="/assets/images/hEncryption/Picture11-1.png"></a>
-    <figcaption> Application of Laplacian smoothing in one vertex with its adjacent neighbors. The new point(Vnew) is not directly sent to Vc (true center) since lamda is set to .55 .</figcaption>
+    <figcaption> Application of Laplacian smoothing in one vertex with its adjacent neighbors. The new point(Vnew) is not directly sent to Vc (true center) since k=.55 .</figcaption>
 </figure>
 
 
