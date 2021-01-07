@@ -116,6 +116,7 @@ end %requires end for .mlx functions
 
 ### Euler's Theorem (One Step)
 #### General Theory:
+
 $$ w_{i+1} = w_i + h f_i, \text{ where }, f_i = f(t_i,w_i) $$
 
 LTE: $\mathcal{O}(h^2)$
@@ -186,16 +187,18 @@ end
 
 ### Runge-Kutta 4th order Method (One Step)
 #### General Theory:
-$$ w_0 = \alpha \\ w_{i+1} = w_i + \frac{h}{6}(S_1+2S_2 + 2S_3 + S_4)
+$$ w_0 = \alpha \\ w_{i+1} = w_i + \frac{h}{6}(S_1+2S_2 + 2S_3 + S_4) $$ 
 
 where:
 
-$$\begin{tabular}{ccc}
+$$
+\begin{tabular}{}
 S_1  &=& f_i \\
 S_2  &=& f(t_i + \frac{h}{2}, w_i + frac{h}{2}S_1) \\
 S_3  &=& f(t_i + \frac{h}{2}, w_i + frac{h}{2}S_2) \\
 S_4  &=& f(t_i + h}, w_i + h S_3)
-\end{tabular} $$
+\end{tabular}
+$$
 
 
 LTE: $\mathcal{O}(h^5)$
