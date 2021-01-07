@@ -47,6 +47,68 @@ end
 
 end
 ```
+### Newton's Method
+#### General Theory:
+
+$$ x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)} $$
+
+Modified Newton's Method: $ x_{n+1} = x_n - \frac{m f(x_n)}{f'(x_n)} $
+
+where m is the multiplicity.(To achieve quadratic convergence)
+
+#### Code:
+``` matlab
+%If not modified m =1, if it is modified newton m is the multiplicity
+function Newton(f, f1, x0, tol, r, n, mod)
+iter = 0;
+u=x0;
+err = abs(u-r);
+m = mod;
+%linear convergent error
+linerr = 0;
+fprintf(' i xn |xn-r| en/e_n-1 \n');
+fprintf(' -- ---------------- ----------- -------- \n');
+fprintf(' %4d %18.16g %12.6g %12.6g \n', iter, u, err, linerr);
+
+while(err>tol)&(iter<=n)
+  xi = u;
+  en_minus1 = err;
+  xi_plus1 = xi - m*((f(xi))/(f1(xi)));
+  u = xi_plus1;
+  iter = iter+1;
+  err = abs(u-r);
+  linerr = err/en_minus1;
+  fprintf(' %4d %18.16g %12.6g %12.6g \n', iter, u, err, linerr);
+end
+```
+
+### Secant Method
+#### General Theory:
+
+$$ x_{n+1} = x_n - f(x_n) \frac{x_n - x_{n-1}}{f(x_n) - f(x_{n-1})} $$
+
+#### Code:
+``` matlab
+function Secant(f, x0, x1, n)
+iter = 0;
+u0 = x0;
+u = x1;
+fprintf(' %4d %18.16g \n', iter , u);
+
+while(iter<=n)
+  xi = u;
+  xi_minus1 = u0;
+  xi_plus1 = xi - ((f(xi)*(xi - xi_minus1))/(f(xi)-f(xi_minus1)));
+  u0 = u;
+  u = xi_plus1;
+  iter = iter+1;
+  fprintf(' %4d %18.16g \n', iter, u);
+end
+
+end
+```
+<br>
+
 ##  DIFFERENTIATION
 ### Composite Midpoint Rule / Open Newton-Cottes Formula
 #### General Theory:
@@ -145,6 +207,15 @@ fprintf(' t approximations \n');
 fprintf('----- ------------------- \n');
 fprintf('%1d %18.16g \n', t(end), y(end));
 
+end
+```
+it calls the eulere one step function:
+``` matlab
+function y=eulerstep(t,y,h)
+%one step of Euler’s Method
+%Input: current time t, current value y, stepsize h
+%Output: approximate solution value at time t+h
+y=y+h*ydot(t,y);  % ydot is the function we are evaluating, for example:function z=ydot(t,y) z=-y+2*exp(-t)*cos(2*t); 
 end
 ```
 <br>
