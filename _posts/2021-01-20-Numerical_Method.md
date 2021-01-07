@@ -112,6 +112,7 @@ end
 ##  DIFFERENTIATION
 ### Composite Midpoint Rule / Open Newton-Cottes Formula
 #### General Theory:
+
 $$ \int_{a}^{b} f(x) dx = h \sum_{l=1}^{m} f(x_{l}) - \frac{h^2}{24}(b-a)f''(c) $$
 
 <br>
