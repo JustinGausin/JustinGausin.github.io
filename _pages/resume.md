@@ -19,14 +19,29 @@ title: "Resume"
 
 <div>
   <h2> EXPERIENCE </h2>
+<!--                                                                                         -->
+<div> </div>
+<div>
   <div>
-   <h3>Cybersecurity Analyst</h3>
-     <div>USN NSWCDD Dam Neck Activity - Virginia Beach, VA</div>
-      <div> <span class="text-color"> August 2020 - Present</span></div>
+   <h3>Cyber Network Engineer (Full-time) </h3>
+      <div>USN NSWCDD Dam Neck Activity - Virginia Beach, VA</div>
+      <div> <span class="text-color"> January 2021 - Present</span></div>
     <p>
     <ul>
       <li> Perform network analysis on computer systems. </li>
-      <li> Developing cybersecurity related software in support of the projects assigned by the division.</li>
+      <li> Perform vulnerability scans and develop reports for legacy systems. </li>
+    </ul>
+    </p>
+   </div>
+</div>
+<!--                                                                                         -->
+  <div>
+   <h3>Cybersecurity Analyst (Intern) </h3>
+     <div>USN NSWCDD Dam Neck Activity - Virginia Beach, VA</div>
+      <div> <span class="text-color"> August 2020 - January 2021 </span></div>
+    <p>
+    <ul>
+      <li> Perform network analysis on computer systems. </li>
       <li> Perform vulnerability scans and develop reports for legacy systems. </li>
     </ul>
     </p>
@@ -36,7 +51,7 @@ title: "Resume"
 <div> </div>
 <div>
   <div>
-   <h3>Data and Operations Analyst</h3>
+   <h3>Data and Operations Analyst </h3>
      <div>OSD Cost Assessment and Program Evaluation (CAPE) - Washington, D.C.</div>
       <div> <span class="text-color"> July 2020 - August 2020 </span></div>
     <p>
