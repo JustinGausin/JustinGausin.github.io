@@ -90,10 +90,8 @@ title: "Resume"
    <div>
      <div>
       <h3>Old Dominion University</h3>
-         <div>Bachelor of Science</div>
-          <div>Cybersecurity</div>
-         <div>Bachelor of Science</div>
-         <div> Applied Mathematics</div>
+         <div>Bachelor of Science: Cybersecurity</div>
+         <div>Bachelor of Science: Applied Mathematics</div>
        <div> Minor: Information Technology </div>
        <div> Minor: Computer Science </div>
        <p> Overall GPA: 3.91 </p>
