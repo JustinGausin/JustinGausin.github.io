@@ -30,10 +30,21 @@ autoNumber: "AMS"
 });
 </script>
 # Building this page....
-# Intro
+## Intro: (Binary Classification)
 Logistic Regression is a Machine Learning classification algorithm that is used to predict the probability of the dependent variable. In logistic regression, the dependent variable is a binary value of either 1 or 0. 
 
-# Dataset
+
+
+
+
+## Intro: (Multi-Class)
+Multi-class logistic regression consist of more two different classes. There are three methods that can be used for multi-class classification:
+1. *1 vs. All: separates one class at a time by binary classification. 
+>Disadvantages: many ways to divide, hence it can result in different labels when starting from different groups. 
+2. 1 vs. 1: separate each possible pairs of classes and uses a "vote" to decide the predicted labels.
+3. L-class determinants: L number of linear functions are considered.
+
+## Dataset
 We will use the pre-existing IRIS data set from the sklearn package. The iris data set consists of 150 data points, each point a 4 dimensional vector. For more <a href="https://en.wikipedia.org/wiki/Iris_flower_data_s"> info </a> 
 
 We can load up the data usig the following command:
