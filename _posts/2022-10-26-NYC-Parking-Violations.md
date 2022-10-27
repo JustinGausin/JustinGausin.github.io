@@ -1,7 +1,7 @@
 ---
 classes : wide 
 header :
-  image : assets/images/RStats/combine.png
+  image : assets/images/RStats/Combine.png
 ---
 
 # Example
