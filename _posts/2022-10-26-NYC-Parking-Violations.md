@@ -1,7 +1,7 @@
 ---
 classes : wide 
 header :
-  image : 
+  image : assets/images/RStats/manhattan.png 
 ---
 
 # Example
