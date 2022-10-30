@@ -1,7 +1,7 @@
 ---
 classes : wide 
 header :
-  image : assets/images/RStats/manhattan.png
+  image : https://giphy.com/gifs/test-gw3IWyGkC0rsazTi
 ---
 
 # Example
