@@ -2,7 +2,7 @@
 classes: wide
 ---
 
-<!DOCTYPE html>
+
 
 <html>
 
