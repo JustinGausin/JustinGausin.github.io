@@ -1,5 +1,6 @@
 ---
 title: "Norfolk Police Incident Report"
+classes: wide
 ---
 
 
