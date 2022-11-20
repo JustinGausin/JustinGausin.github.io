@@ -339,15 +339,11 @@ pre code {
 
 <div id="header">
 
-
-
-<h1 class="title toc-ignore">Norfolk Police Incident Report</h1>
-
 </div>
 
 
 <div id="norfolk-police-incident-report" class="section level1">
-<h1>Norfolk Police Incident Report</h1>
+
 <div id="description" class="section level2">
 <h2>Description</h2>
 <p>This report investigates ploice incidents recorded by the Norfolk Police Department that occurred over the last five years (2017-2022). The following data set was derived at: <a href="https://data.norfolk.gov/Public-Safety/Police-Incident-Reports/r7bn-2egr" class="uri">https://data.norfolk.gov/Public-Safety/Police-Incident-Reports/r7bn-2egr</a></p>
