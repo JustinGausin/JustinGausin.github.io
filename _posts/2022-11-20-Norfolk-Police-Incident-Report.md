@@ -433,7 +433,7 @@ write.csv(flat_location, &quot;NorfolkPoliceIncident.csv&quot;, row.names = FALS
   
 # calendar heat map
 calendarHeat(heatmap_incident$Date, heatmap_incident$n, varname=&quot;Norfolk PD Incident Report&quot;, color = &quot;g2r&quot;)</code></pre>
-<p>&lt;<include image here>&gt;</p>
+<p>  <a href="/assets/images/RStats/NorfolkPolice/CalendarOffense.png"><img src="/assets/images/RStats/NorfolkPolice/CalendarOffense.png"></a> </p>
 </div>
 <div id="point-maps" class="section level3">
 <h3>Point Maps</h3>
