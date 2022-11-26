@@ -369,7 +369,7 @@ library(rlang)</code></pre>
 <div id="norfolk" class="section level2">
 <h2>Norfolk</h2>
 <p>From the previous project, we examined Norfolk and created visualization data such as this:</p>
-<p>Insert Norfolk</p>
+<p><a href="/assets/images/RStats/NorfolkPolice/OffenseByMap.gif"><img src="/assets/images/RStats/NorfolkPolice/OffenseByMap.gif"></a></p>
 <p>We create the general function to be used for the neighboring independent cities.</p>
 <pre class="r"><code>top_50_crime_by_county_yearly &lt;- function(incidentData, 
                                    cityTract, 
