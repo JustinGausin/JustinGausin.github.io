@@ -1,5 +1,8 @@
-<!DOCTYPE html>
+---
+title: "Hampton Roads Incident Reports - R"
+classes: wide
 
+---
 <html>
 
 <head>
@@ -365,7 +368,7 @@ library(rlang)</code></pre>
 <div id="norfolk" class="section level2">
 <h2>Norfolk</h2>
 <p>From the previous project, we examined Norfolk and created visualization data such as this:</p>
-<p>INSERT IMAGE HERE</p>
+<p><a href="/assets/images/RStats/NorfolkPolice/OffenseByMap.gif"><img src="/assets/images/RStats/NorfolkPolice/OffenseByMap.gif"></a></p>
 <p>We create the general function to be used for the neighboring independent cities.</p>
 <pre class="r"><code>top_50_crime_by_county_yearly &lt;- function(incidentData, 
                                    cityTract, 
@@ -428,18 +431,18 @@ vb_top_50_offenses_by_year &lt;- top_50_crime_by_county_yearly(incidentData = vb
                                    waterTract = vb_water, 
                                    countyName = &quot;Virginia Beach&quot;)
 vb_top_50_offenses_by_year</code></pre>
-<p>INSERT IMAGE HERE</p>
-<p>INSERT IMAGE HERE</p>
+<p><a href="/assets/images/RStats/NorfolkPolice/vb_top_50_by_year.gif"><img src="/assets/images/RStats/NorfolkPolice/vb_top_50_by_year.gif"></a></p>
+<p><a href="/assets/images/RStats/NorfolkPolice/vb_50_offense_by_year.png"><img src="/assets/images/RStats/NorfolkPolice/vb_50_offense_by_year.png"></a></p>
 </div>
 <div id="how-about-per-hour" class="section level3">
 <h3>How about per hour???</h3>
 <p>By making minimal changes to the function, we can create the following visualization:</p>
-<p>INSERT IMAGE HERE</p>
+<p><a href="/assets/images/RStats/NorfolkPolice/vb_50_offense_by_hour.gif"><img src="/assets/images/RStats/NorfolkPolice/vb_50_offense_by_hour.gif"></a></p>
 <p>The top 50 crime areas are more active after 12 pm.</p>
 </div>
 <div id="how-about-per-month" class="section level3">
 <h3>How about per month???</h3>
-<p>INSERT IMAGE HERE</p>
+<p><a href="/assets/images/RStats/NorfolkPolice/vb_50_offense_by_month.gif"><img src="/assets/images/RStats/NorfolkPolice/vb_50_offense_by_month.gif"></a></p>
 </div>
 <div id="top-5-offense" class="section level3">
 <h3>Top 5 offense</h3>
@@ -464,7 +467,7 @@ ggplot() +
   labs(title = &quot;Top 5 offenses over the years&quot;)
 
 ggsave(&quot;top_5_offense.png&quot;)</code></pre>
-<p>INSERT IMAGE HERE</p>
+<p><a href="/assets/images/RStats/NorfolkPolice/top_5_offense.png"><img src="/assets/images/RStats/NorfolkPolice/top_5_offense.png"></a></p>
 <p>It’s quite interesting that the top 5 offenses in Virginia Beach are decreasing coming into 2022. A question arises, which Offenses did increase the most between 2019-2022 by percentage?</p>
 <p>Let’s investigate:</p>
 <pre class="r"><code>vb_increased_incident &lt;- vb_incident %&gt;%
@@ -499,7 +502,7 @@ ggplot() +
   labs(title = &quot;Top 5 offenses that increased in highest percentage&quot;)
 
 ggsave(&quot;top_5_offense_percentage.png&quot;)</code></pre>
-<p>INSERT IMAGE HERE</p>
+<p><a href="/assets/images/RStats/NorfolkPolice/top_5_offense_percentage.png"><img src="/assets/images/RStats/NorfolkPolice/top_5_offense_percentage.png"></a></p>
 </div>
 <div id="how-about-the-top-5-offense-that-increase-by-n" class="section level3">
 <h3>How about the top 5 offense that increase by N?</h3>
@@ -542,7 +545,7 @@ vb_increased_incident_by_N</code></pre>
 crime_and_offense
 
 ggsave(&quot;crime_and_offense.png&quot;)</code></pre>
-<p>INSERT IMAGE HERE</p>
+<p><a href="/assets/images/RStats/NorfolkPolice/crime_and_offense.png"><img src="/assets/images/RStats/NorfolkPolice/crime_and_offense.png"></a> </p>
 </div>
 <div id="given-a-longitude-and-latitude-what-crimes-increased-or-decreased-the-most-by-count" class="section level3">
 <h3>Given a longitude and latitude, what crimes increased or decreased the most by count?</h3>
@@ -575,7 +578,7 @@ vb_increased_incident_by_lat_long_N</code></pre>
 ## 10     36.8     -76.0        24
 ## # … with 4,569 more rows</code></pre>
 <p>To visualize:</p>
-<p>INSERT IMAGE HERE</p>
+<p><a href="/assets/images/RStats/NorfolkPolice/crime_increased_byN.png"><img src="/assets/images/RStats/NorfolkPolice/crime_increased_byN.png"></a>  </p>
 </div>
 <div id="decreased" class="section level4">
 <h4>Decreased</h4>
@@ -606,7 +609,7 @@ vb_decreased_incident_by_lat_long_N</code></pre>
 ## 10     36.8     -76.0       -29
 ## # … with 4,569 more rows</code></pre>
 <p>To visualize:</p>
-<p>INSERT IMAGE HERE</p>
+<p><a href="/assets/images/RStats/NorfolkPolice/crime_decreased_byN.png"><img src="/assets/images/RStats/NorfolkPolice/crime_decreased_byN.png"></a></p>
 <p><em>Cons</em>: There is a major problem with the dataset and it is from Offense.Description. As shown in <em>Top 5 offenses over the years</em>, Larceny From Motor Vehicles (Theft isa different category) has decreased compared to Norfolk City. However, it may be due to other cases being misrepresented as <strong>Larceny of MV Parts or Accessories</strong>, which is shown in the previous graph to have increased in cases. Though the cases only total less than 100 (no great impact), it shows the redundance of some values in the Offense.Description.</p>
 <hr />
 </div>
@@ -659,7 +662,7 @@ chpk_top_50_offense_by_year &lt;- top_50_crime_by_county_yearly(incidentData = c
 chpk_top_50_offense_by_year
 anim_save(&quot;chpk_top_50_offense_by_year.gif&quot;)</code></pre>
 <p>Much like VB, the crime rate in Chesapeake decreased.</p>
-<p>INSERT IMAGE HERE</p>
+<p><a href="/assets/images/RStats/NorfolkPolice/chpk_top_50_offense_by_year.gif"><img src="/assets/images/RStats/NorfolkPolice/chpk_top_50_offense_by_year.gif"></a> </p>
 <hr />
 </div>
 </div>
@@ -687,7 +690,7 @@ prtsmth_incident &lt;- prtsmth_incident %&gt;%
 
 # get the water area since its included in the boundary for Portsmouth
 prtsmth_water = area_water(state = &quot;51&quot;, county =&quot;740&quot;)</code></pre>
-<p>INSERT IMAGE HERE</p>
+<p><a href="/assets/images/RStats/NorfolkPolice/prtsmth_50_offense_by_month.gif"><img src="/assets/images/RStats/NorfolkPolice/prtsmth_50_offense_by_month.gif"></a> </p>
 <hr />
 </div>
 <div id="vb-norfolk-chesapeakeand-portsmouth-top-crime-areas-by-month" class="section level3">
@@ -698,7 +701,7 @@ prtsmth_water = area_water(state = &quot;51&quot;, county =&quot;740&quot;)</cod
 
 # get the water area since its included in the boundary for Portsmouth
 water = area_water(state = &quot;51&quot;, county = c(&quot;710&quot;, &quot;740&quot;, &quot;550&quot;,&quot;810&quot;))</code></pre>
-<p>INSERT IMAGE HERE</p>
+<p><a href="/assets/images/RStats/NorfolkPolice/Four_City.gif"><img src="/assets/images/RStats/NorfolkPolice/Four_City.gif"></a> </p>
 </div>
 </div>
 
