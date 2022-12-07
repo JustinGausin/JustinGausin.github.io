@@ -1,5 +1,14 @@
 ---
-title: "Norfolk Police Incident Report"
+title: "Norfolk Police Incident Report - R"
+excerpt: "Examining Police Incident Reports in Norfolk from 2017 to 2022"
+header:
+  overlay_image: /assets/images/RStats/NorfolkPolice/NorfolkPoints.png
+  overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
+  caption: "Photo credit: Plotted in R"
+  actions:
+    - label: "Download csv file"
+      url: "/assets/downloads/Python/NorfolkIncident/NorfolkPoliceIncident.csv"  
+      
 ---
 
 
