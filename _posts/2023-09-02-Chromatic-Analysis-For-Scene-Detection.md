@@ -1,6 +1,7 @@
 ---
 title: "Chromatic Analysis: Using Naive Method in determine frames/scenes"
 excerpt: "Chromatic Analysis: Using Naive Method in determine frames/scenes"
+classes: wide
 header:
   overlay_image: ## insert image here ##
   overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
@@ -15,7 +16,7 @@ While shot detection in films is relatively straightforward using image classifi
 
 In this study, we explore a novel approach to scene detection in films using chromatic analysis. Our focus is on two main tasks: creating a method to identify the time frame of specific frames in a film based on their average RGB values and determining the movie from which a frame originates. This research has practical applications in video search and retrieval.
 
-This research was inspired by Tommaso Buonocore's work, who added machine learning capabilities to this area. You can find more information in his write-up, Part 1 and Part 2. We initially attempted to use Buonocore's R package, chromaR, and its movie database, but encountered issues with dependencies. Therefore, we are starting by implementing our approach based on Part 1 with some modifications.
+This research was inspired by Tommaso Buonocore's work, adding machine learning and genomic data science capabilities. You can find more information in his write-up, Part 1 and Part 2. We initially attempted to use Buonocore's R package, chromaR, and its movie database but encountered issues with dependencies. Therefore, we approached Part 1 with some modifications.
 
 
 
@@ -95,12 +96,12 @@ Sequence alignment, including BLAST, provides valuable insights for building a m
 
 In DNA sequence alignment, nucleotide sequences consist of characters: G, A, T, and C. In our test case, each frame is represented by characters: R, G, and B, determined by the frame's maximum value. For example, if the first frame's maximum value corresponds to red, it is denoted by the character "R."
 
-We utilized the Smith-Waterman algorithm with the "text.alignment" package in R. While our implementation successfully identified substrings accurately, it fell short in finding optimal solutions. The challenge lies in the arbitrary nature of setting match, mismatch, and gap costs (scoring criteria), making it difficult to determine the best solutions. Moreover, our implementation displayed only the highest scoring result, neglecting all other potential solutions.
+We utilized the Smith-Waterman algorithm with the "text.alignment" package in R. While our implementation successfully identified substrings accurately, it fell short in finding optimal solutions. The challenge lies in the arbitrary nature of setting match, mismatch, and gap costs (scoring criteria), making it difficult to determine the best solutions. Moreover, our implementation displayed only the highest-scoring result, neglecting all other potential solutions.
 
 In response to the need for a customized scoring matrix and additional functionalities like string location and verbose output, we developed a proprietary version of the Smith-Waterman algorithm. However, achieving the desired improvements within the allotted time proved challenging and did not yield fruitful results.
 
 To complete this test case, further research and implementation efforts are necessary.
 
-The test case aimed to locate subquery characters within other character strings. While pattern matching tools like grep or regex are typically used for such tasks, our project prioritized closeness over exactness.
+The test case aimed to locate subquery characters within other character strings. While pattern-matching tools like grep or regex are typically used for such tasks, our project prioritized closeness over exactness.
 
 Pattern matching tools like regex focus on exact matches, whereas in sequence alignment, a scoring matrix assesses closeness by considering matches, mismatches, and gaps. This approach allows for the inclusion of noise during data extraction and transformation, which aligns with the project's objectives.
