@@ -16,6 +16,10 @@ While shot detection in films is relatively straightforward using image classifi
 
 In this study, we explore a novel approach to scene detection in films using chromatic analysis. Our focus is on two main tasks: creating a method to identify the time frame of specific frames in a film based on their average RGB values and determining the movie from which a frame originates. This research has practical applications in video search and retrieval.
 
+![Picture1](/assets/images/chromaAnalysis)
+*Suppose given a clip/video as a query, we try to identify the film it originates from and the timeslot.*
+
+
 This research was inspired by Tommaso Buonocore's work, adding machine learning and genomic data science capabilities. You can find more information in his write-up, Part 1 and Part 2. We initially attempted to use Buonocore's R package, chromaR, and its movie database but encountered issues with dependencies. Therefore, we approached Part 1 with some modifications.
 
 
@@ -30,6 +34,9 @@ frame contains three arrays of RGB for each pixel (subpixels), the average was c
 represent the whole frame as shown in Figure (2). The method used Tommaso Buonocore code for extraction:
 
 <script src="https://gist.github.com/detsutut/5c252a4c9b62a7073a1b2c949e6e1acd.js"></script>
+
+Figure 2: A sample clip consists of multiple frames. For each frame, the RGB arrays are averaged, creating 3 columns of values required for our project.
+![image](https://github.com/JustinGausin/JustinGausin.github.io/assets/48871396/64be68ec-c057-4ca9-9085-8ce10b7459f0)
 
 
 ## Transformation  
