@@ -36,7 +36,7 @@ represent the whole frame as shown in Figure (2). The method used Tommaso Buonoc
 <script src="https://gist.github.com/detsutut/5c252a4c9b62a7073a1b2c949e6e1acd.js"></script>
 
 Figure 2: A sample clip consists of multiple frames. For each frame, the RGB arrays are averaged, creating 3 columns of values required for our project.
-![image](https://github.com/JustinGausin/JustinGausin.github.io/assets/48871396/64be68ec-c057-4ca9-9085-8ce10b7459f0)
+
 
 
 ## Transformation  
