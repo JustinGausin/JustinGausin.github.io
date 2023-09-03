@@ -16,7 +16,7 @@ While shot detection in films is relatively straightforward using image classifi
 
 In this study, we explore a novel approach to scene detection in films using chromatic analysis. Our focus is on two main tasks: creating a method to identify the time frame of specific frames in a film based on their average RGB values and determining the movie from which a frame originates. This research has practical applications in video search and retrieval.
 
-![Picture1](/assets/images/chromaAnalysis)
+![image](/assets/images/chromaAnalysis/Picture1.png){: .align-center}
 *Suppose given a clip/video as a query, we try to identify the film it originates from and the timeslot.*
 
 
