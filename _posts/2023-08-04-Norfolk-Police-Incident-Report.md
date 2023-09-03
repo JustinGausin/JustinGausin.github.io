@@ -1,6 +1,7 @@
 ---
 title: "Norfolk Police Incident Report - R"
 excerpt: "Examining Police Incident Reports in Norfolk from 2017 to 2022"
+classes: wide
 header:
   overlay_image: /assets/images/RStats/NorfolkPolice/NorfolkPoints.png
   overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
