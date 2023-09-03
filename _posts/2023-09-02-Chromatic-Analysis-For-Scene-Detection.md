@@ -35,12 +35,17 @@ represent the whole frame as shown in Figure (2). The method used Tommaso Buonoc
 
 <script src="https://gist.github.com/detsutut/5c252a4c9b62a7073a1b2c949e6e1acd.js"></script>
 
-Figure 2: A sample clip consists of multiple frames. For each frame, the RGB arrays are averaged, creating 3 columns of values required for our project.
+
+![image](/assets/images/chromaAnalysis/Picture2.png){: .align-center}
+*Figure 2: A sample clip consists of multiple frames. For each frame, the RGB arrays are averaged, creating 3 columns of values required for our project.*
 
 
 
 ## Transformation  
 After extracting RGB values for each frame from the source, we applied a transformation to reduce the number of rows, as many frames are redundant or nearly identical. Figure 3 (C) illustrates that frame variability is generally low between neighboring frames unless there's a significant change in the setting or scenes. To simplify the process, we assumed a constant frame rate of 25 fps, which is typical for films. By multiplying this frame rate by a predefined capture rate (e.g., 5 seconds), we determined the number of frames to be averaged. For instance, in a video with 851 frames, setting a 5-second capture rate at 25 fps would result in 125 consecutive frames being averaged together, as shown in Figure 3 (B). Even with this 5-second capture rate, Figure 3 (C) demonstrates that the frame variations remain relatively consistent.
+
+![image](/assets/images/chromaAnalysis/Picture3.png){: .align-center}
+*1/11 clip used for training. As seen, the clip was deconstructed to the average values of its frames per 5 seconds. When visualized, the framelines is seen at (C)*
 
 Tommaso Buonocore's code (link) provides an effective solution for data transformation in R. However, we encountered issues with undefined variables, specifically the "groupframes" function. A straightforward fix involves using tidyverse piping to group the frames together:
 
@@ -64,6 +69,9 @@ frameline.redux <- frameline %>%
 ### Small Test Case with kNN and short clips.  
 
 In this section, we extracted and transformed data from 11 small video scenes (mp4) into RGB values for training purposes. We generated framelines for visualization, as depicted in Figure (3) above. Our classification approach utilized k-Nearest Neighbors in Python, where each of the 11 scenes received a unique text label (e.g., beach, mountain).
+
+![image](/assets/images/chromaAnalysis/Picture4.png){: .align-center}
+*Framelines for Cleopatra (1999) Episode 1 with 40 seconds capture rate (each line is 40 seconds). Specific scenes and their framelines across the film are shown.*
 
 Additionally, we created test data based on the training data, incorporating normally distributed noise. The model exhibited a commendable 90% accuracy in correctly identifying scene labels. To enhance accuracy further, we intend to incorporate two additional features: hue and saturation. These attributes, derived from the RGB values, will introduce distinctiveness to the scenes
 
@@ -102,6 +110,9 @@ identify the best alignment at “Mus musculus genome assembly, chromosome 16”
 Sequence alignment, including BLAST, provides valuable insights for building a model to identify specific frames within a film database. Querying nucleotides to a database parallels querying 200 frames to a database with millions of frames. BLAST employs a modified version of the local pairwise alignment algorithm known as the Smith-Waterman algorithm, suitable for comparing sequences of varying lengths.
 
 In DNA sequence alignment, nucleotide sequences consist of characters: G, A, T, and C. In our test case, each frame is represented by characters: R, G, and B, determined by the frame's maximum value. For example, if the first frame's maximum value corresponds to red, it is denoted by the character "R."
+
+![image](/assets/images/chromaAnalysis/Picture5.png){: .align-center}
+*Maximum value of the frames are taken to create a string of characters and then are used with local alignment algorithms to determine the source.*
 
 We utilized the Smith-Waterman algorithm with the "text.alignment" package in R. While our implementation successfully identified substrings accurately, it fell short in finding optimal solutions. The challenge lies in the arbitrary nature of setting match, mismatch, and gap costs (scoring criteria), making it difficult to determine the best solutions. Moreover, our implementation displayed only the highest-scoring result, neglecting all other potential solutions.
 
