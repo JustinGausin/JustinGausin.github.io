@@ -2,6 +2,7 @@
 title: "Numerical Methods-Matlab"
 categories:
   - project
+classes: wide
 tags:
   - Numerical
   - programming
