@@ -3,7 +3,7 @@ title: "Chromatic Analysis: Using Naive Method in determine frames/scenes"
 excerpt: "Chromatic Analysis: Using Naive Method in determine frames/scenes"
 classes: wide
 header:
-  overlay_image: ## insert image here ##
+  overlay_image: /assets/images/chromaAnalysis/Romanempire5.png
   overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
   caption: "Photo credit: Framelines using R"
 ---
