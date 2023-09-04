@@ -17,7 +17,7 @@ While shot detection in films is relatively straightforward using image classifi
 In this study, we explore a novel approach to scene detection in films using chromatic analysis. Our focus is on two main tasks: creating a method to identify the time frame of specific frames in a film based on their average RGB values and determining the movie from which a frame originates. This research has practical applications in video search and retrieval.
 
 ![image](/assets/images/chromaAnalysis/Picture1.png){: .align-center}
-*Suppose given a clip/video as a query, we try to identify the film it originates from and the timeslot.*
+*Figure 1: Suppose given a clip/video as a query, we try to identify the film it originates from and the timeslot.*
 
 
 This research was inspired by Tommaso Buonocore's work, adding machine learning and genomic data science capabilities. You can find more information in his write-up, Part 1 and Part 2. We initially attempted to use Buonocore's R package, chromaR, and its movie database but encountered issues with dependencies. Therefore, we approached Part 1 with some modifications.
@@ -45,7 +45,7 @@ represent the whole frame as shown in Figure (2). The method used Tommaso Buonoc
 After extracting RGB values for each frame from the source, we applied a transformation to reduce the number of rows, as many frames are redundant or nearly identical. Figure 3 (C) illustrates that frame variability is generally low between neighboring frames unless there's a significant change in the setting or scenes. To simplify the process, we assumed a constant frame rate of 25 fps, which is typical for films. By multiplying this frame rate by a predefined capture rate (e.g., 5 seconds), we determined the number of frames to be averaged. For instance, in a video with 851 frames, setting a 5-second capture rate at 25 fps would result in 125 consecutive frames being averaged together, as shown in Figure 3 (B). Even with this 5-second capture rate, Figure 3 (C) demonstrates that the frame variations remain relatively consistent.
 
 ![image](/assets/images/chromaAnalysis/Picture3.png){: .align-center}
-*1/11 clip used for training. As seen, the clip was deconstructed to the average values of its frames per 5 seconds. When visualized, the framelines is seen at (C)*
+*Figure 3: 1/11 clip used for training. As seen, the clip was deconstructed to the average values of its frames per 5 seconds. When visualized, the framelines is seen at (C)*
 
 Tommaso Buonocore's code (link) provides an effective solution for data transformation in R. However, we encountered issues with undefined variables, specifically the "groupframes" function. A straightforward fix involves using tidyverse piping to group the frames together:
 
@@ -71,7 +71,7 @@ frameline.redux <- frameline %>%
 In this section, we extracted and transformed data from 11 small video scenes (mp4) into RGB values for training purposes. We generated framelines for visualization, as depicted in Figure (3) above. Our classification approach utilized k-Nearest Neighbors in Python, where each of the 11 scenes received a unique text label (e.g., beach, mountain).
 
 ![image](/assets/images/chromaAnalysis/Picture4.png){: .align-center}
-*Framelines for Cleopatra (1999) Episode 1 with 40 seconds capture rate (each line is 40 seconds). Specific scenes and their framelines across the film are shown.*
+*Figure 4: Framelines for Cleopatra (1999) Episode 1 with 40 seconds capture rate (each line is 40 seconds). Specific scenes and their framelines across the film are shown.*
 
 Additionally, we created test data based on the training data, incorporating normally distributed noise. The model exhibited a commendable 90% accuracy in correctly identifying scene labels. To enhance accuracy further, we intend to incorporate two additional features: hue and saturation. These attributes, derived from the RGB values, will introduce distinctiveness to the scenes
 
@@ -112,7 +112,7 @@ Sequence alignment, including BLAST, provides valuable insights for building a m
 In DNA sequence alignment, nucleotide sequences consist of characters: G, A, T, and C. In our test case, each frame is represented by characters: R, G, and B, determined by the frame's maximum value. For example, if the first frame's maximum value corresponds to red, it is denoted by the character "R."
 
 ![image](/assets/images/chromaAnalysis/Picture5.png){: .align-center}
-*Maximum value of the frames are taken to create a string of characters and then are used with local alignment algorithms to determine the source.*
+*Figure 5: Maximum value of the frames are taken to create a string of characters and then are used with local alignment algorithms to determine the source.*
 
 We utilized the Smith-Waterman algorithm with the "text.alignment" package in R. While our implementation successfully identified substrings accurately, it fell short in finding optimal solutions. The challenge lies in the arbitrary nature of setting match, mismatch, and gap costs (scoring criteria), making it difficult to determine the best solutions. Moreover, our implementation displayed only the highest-scoring result, neglecting all other potential solutions.
 
