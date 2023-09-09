@@ -76,7 +76,7 @@ In this section, we extracted and transformed data from 11 small video scenes (m
 Additionally, we created test data based on the training data, incorporating normally distributed noise. The model exhibited a commendable 80%-90% accuracy in correctly identifying scene labels. To enhance accuracy further, we intend to incorporate two additional features: hue and saturation. These attributes, derived from the RGB values, will introduce distinctiveness to the scenes.  
 
 As shown below, an excerpt of the code:
-``` python
+~~~
 pd2 = pd.DataFrame()
 content = []
 
@@ -104,7 +104,7 @@ for x in range(1,6):
         if( id_k[1] == counts):
             score  =  score + 1
     print((score / 10)* 100,"%")
-```
+~~~
 One main issue is the limited amount of data set available. 
 
 ### Scaling to a Single Film with Clustering  
