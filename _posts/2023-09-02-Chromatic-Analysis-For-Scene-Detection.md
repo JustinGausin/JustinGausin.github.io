@@ -73,8 +73,39 @@ In this section, we extracted and transformed data from 11 small video scenes (m
 ![image](/assets/images/chromaAnalysis/Picture4.png){: .align-center}
 *Figure 4: Framelines for Cleopatra (1999) Episode 1 with 40 seconds capture rate (each line is 40 seconds). Specific scenes and their framelines across the film are shown.*
 
-Additionally, we created test data based on the training data, incorporating normally distributed noise. The model exhibited a commendable 90% accuracy in correctly identifying scene labels. To enhance accuracy further, we intend to incorporate two additional features: hue and saturation. These attributes, derived from the RGB values, will introduce distinctiveness to the scenes
+Additionally, we created test data based on the training data, incorporating normally distributed noise. The model exhibited a commendable 80%-90% accuracy in correctly identifying scene labels. To enhance accuracy further, we intend to incorporate two additional features: hue and saturation. These attributes, derived from the RGB values, will introduce distinctiveness to the scenes.  
 
+As shown below, an excerpt of the code:
+``` Python
+pd2 = pd.DataFrame()
+content = []
+
+#gather all the csv files into one 
+for reduxframelines in csv_files:
+    temp_training_df = pd.read_csv(reduxframelines, index_col = None)
+    #print(temp_training_df)
+    content.append(temp_training_df)
+
+training_df = pd.concat(content)
+training_df = training_df.drop(["frameId", "seconds", "hexRGB"], axis =1 )
+# Each "folds" or collection of ids are used as a test set with added noise
+# We do the test at least 5 times (i.e each fold are used as a test 5 times)
+for x in range(1,6):
+    score = 0
+    for id_x in range(1,11):
+        testing_data_k = training_df[training_df["id"] == id_x]
+        noise = np.random.normal(0,5, size=testing_data_k.shape)
+        id_k = testing_data_k.iloc[:,-1]
+        testing_data_k = testing_data_k + noise
+        knn.fit(training_df.iloc[:,:-1],training_df.iloc[:,-1] )
+        count_k = knn.predict(testing_data_k.iloc[:,:-1])
+        bincount = np.bincount(count_k)
+        counts = np.argmax(bincount)
+        if( id_k[1] == counts):
+            score  =  score + 1
+    print((score / 10)* 100,"%")
+```
+One main issue is the limited amount of data set available. 
 
 ### Scaling to a Single Film with Clustering  
 We can explore using framelines (PNG images) as input data for our image classification model instead of relying on RGB, hue, and saturation values for scene classification. However, the primary focus of this project is to identify specific frames or scenes within a film that feature various settings and their corresponding timestamps.
