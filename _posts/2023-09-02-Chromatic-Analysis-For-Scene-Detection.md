@@ -3,7 +3,7 @@ title: "Chromatic Analysis: Using Naive Method to determine frames/scenes"
 excerpt: "Chromatic Analysis: Using Naive Method in determining frames/scenes"
 classes: wide
 header:
-  overlay_image: /assets/images/chromaAnalysis/Pic.png
+  overlay_image: /assets/images/chromaAnalysis/cleopatraforPython1second.png
   overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
   caption: "Photo credit: Framelines using R"
 ---
@@ -145,9 +145,57 @@ In DNA sequence alignment, nucleotide sequences consist of characters: G, A, T, 
 ![image](/assets/images/chromaAnalysis/Picture5.png){: .align-center}
 *Figure 5: Maximum value of the frames are taken to create a string of characters and then are used with local alignment algorithms to determine the source.*
 
-We utilized the Smith-Waterman algorithm with the "text.alignment" package in R. While our implementation successfully identified substrings accurately, it fell short in finding optimal solutions. The challenge lies in the arbitrary nature of setting match, mismatch, and gap costs (scoring criteria), making it difficult to determine the best solutions. Moreover, our implementation displayed only the highest-scoring result, neglecting all other potential solutions.
+ADD STUFF HERE
 
-In response to the need for a customized scoring matrix and additional functionalities like string location and verbose output, we developed a proprietary version of the Smith-Waterman algorithm. However, achieving the desired improvements within the allotted time proved challenging and did not yield fruitful results.
+```python
+training_df = pd.read_csv(path, index_col = None)
+long_Seq = training_df.LandSwithrotation.dropna()
+long_SeqString = long_Seq.sum()
+long_SeqString
+```
+
+For a capture rate of 5 seconds, the strings are: >'CCCCCCCCCCCPPPPPPPPPCPPPPPPPPPPPCPPCPPPPPPPPPCCYYPCCCPCPCPCCPPPPPPPPPPCYYPPPPPPPPPCCPPPPPPPPPPYCPYYPPPPPPPPYPPPPPPPPPPPPPPPPPPPPPPPPPYPPYPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPCPYPCPYPPCYYPPPPPPPPPPPPPPPPPPPPPYPPYPPPPYYPPPCYYYYYPPPPPPPPPPPPPPPPPPPPPPPPPPPPCPPYPYYPPYYPCPCPYPCPPPPPPPPPPPPPPPPPPCPPPPPPCCPCCCCPYYYYYYPCCYPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPYPPPPPYYPPPPPPPPCYPPPPPYPCCCCPPYCPPPPPPYPPCPPPPPPPPPPPPPPPPPPPPPPPPCCYPPPPPYYPYYPCPPPPPPYYPPPPPPCPPPPPPPPPPCPPPPPCPPPPPCPYPCCPPPPPPCCCCCCCCCPPPCPPPPYYCPPPPPPPPPPPCPPPPPPPPPPYYCCCCCCCPPPPPPPPYPPCPPPPPPPPPPPPPPPPPPPPPPPPPPPPYPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPCCPPPPPPPPPPPPPPPPPPPPPYYYCPPPCPPPPPPPPPCPYPPPCYCPPPPPPPPPPPPPPPPPPPPYPPCCCC'
+
+```python
+long_Seq2 = training_df.LandSwithoutrotation.dropna()
+long_SeqString2 = long_Seq2.sum()
+long_SeqString2
+```
+For a capture rate of 5 seconds, the strings are:
+>'CCCCCCCCCCCPPPPVPPPPCPPPPPPPPPPPTVVCVPPPPPPPPCCGGPCCCPCPCPCCPPPPPPPPPVTGGPPPPPPPPPCCPPPPPPPPPPYTPGGPPPPPPPPYPPPPPPPPPPPPPPPPVPPPPPPPPYPPYPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPCVGVCPGPPTYYPPPPPPPVVPPPPPPPPPPPPYPPYPPPPYYPPPCGGGGYPVVVVVVVVVVVVVVPVVVVVVPPVVVVTVVGVYYVVYYVTVCPGPCPPPPPPPPPPPPPPPPPPTPPPVVVTTVTTTTVGGGGGGVCCGVPPPPPPPPVVPPPVVPPPPPPPPPPPPPPPPPPPPPPPPPPPPYPPPPPYYPPPPPPVVCGVVVVVYVTTTTVPGCPVVVVPYVVTPPPPPPPPPPPPPPVVVVVVVVVPCCYPPPPPYYPYYPTVPPPPPGYPPPPPPCPVVPPPPVPVTVPPPPCPPPPPCVGVCCPVVPPPCCCCCCCCCPPPCPPPPGGCPPPPPPPPPPPCVVVVVVVVVVGGCCCCCCCPPPPPPPPYPVCPPPPPPPPPPPPPPPPPPPPPPPPPPVVGVPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPCCPPPPPPPPPPPPPPPPPPPPPGGGCPPVCPVPPPPPPPCPGPVVCGCPPPPPPPPPPPPPPPPPPPPGPPCCTT'
+
+Next we use Biopython:
+```python
+aligner = Align.PairwiseAligner()
+aligner.mode = 'local'
+alignments = aligner.align("PPPCVGVCC",long_SeqString2)
+alignment = alignments[0]
+print(alignment.score)
+print(alignment)
+```
+which would give us the following result:
+
+
+
+Of course, we can get the highest score, or the subsequence with the greatest likelihood, by using;
+```python
+alignment = sorted(alignments)[0]
+```
+
+However, my device is limited in memory. Thus, I am unable to continue beyond this part. 
+
+
+### Lack of Uniqueness
+
+
+When the capture rate is 1 second with rotation:
+>'CCCCCCCCCCCCCCCCCCCCCCCCCCCPPCCCCCCCCYYCCCCCCCCCCCCCCCCCCPPPPYCCPPPCPPCPPPPPCYPPPPPPPPPPPPPPPPPPPPPPPYYCCCPPPYPPPPPCPPPPPPPPCPYPYPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPCPPPPPPPPPPPYCCCCCCCPPPYCPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPCCCCPPCCYYYPPYYCYYPPPPCCCCPPCCCYYCYYCPPPPPPPPCCYCPPPPYYYYCPPPPPPPPPYYYYCPPPPPCCCPPPPPPPPPPPPPPPPPYYPPPPCPPPPPPPPPPPPYPCCCPPPPPPPPPPYYYYYYCCCPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPYYYYPPPCYYYCCPPPPPPPPPPPYYYYPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPYPPYYPCPPPCCYYYYYYYYYYPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPYPPPPPPPPYYYPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPCPPPPPPPPPPPPPPPPPPPYPPPPPPPPPPPPPPPPPPPPPPPPYCCPPPPPPPPPPPPPYYYYPPPPPPPPPPPPPPPPPPYYYYYYYYYYPPPPPPPPPPYYYYYPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPCPPPPPPPPPPPPPPPPPPPPPPPPPPPPCPPPPPPPPPYYYYYPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPCPPPPPPPPPPPPPPPPPPPYPYCCCCPPY .... PPPPPPPPPPPPPPPPPPPPPPPPCCCCPPPCPPPPPPPPPPPPPPPPPPYCCCCPPPPYYYYCCCCCPPPPPPPCPCCPPPPPCCCCPPPPPPPPPPPPPPPPPPPPPPPPPPYYPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPCCCPPPPPPPPPPPYYYYPPPPPPPPPPPPCCCCCCCCCC'
+
+
+
+END STUFF
+
+
 
 To complete this test case, further research and implementation efforts are necessary.
 
