@@ -4,7 +4,7 @@ excerpt: "Chromatic Analysis: Using Naive Method in determining frames/scenes"
 classes: wide
 header:
   overlay_image: /assets/images/chromaAnalysis/cleopatraforPython1second.png
-  overlay_filter: 0.8 # same as adding an opacity of 0.5 to a black background
+  overlay_filter: 0.2 # same as adding an opacity of 0.5 to a black background
   caption: "Photo credit: Framelines using R"
 ---
 
