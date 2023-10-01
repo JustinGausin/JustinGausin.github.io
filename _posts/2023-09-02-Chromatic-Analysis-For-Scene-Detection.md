@@ -22,8 +22,7 @@ In this study, we explore a novel approach to scene detection in films using chr
 
 This research was inspired by Tommaso Buonocore's work, adding machine learning and genomic data science capabilities. You can find more information in his write-up, Part 1 and Part 2. We initially attempted to use Buonocore's R package, chromaR, and its movie database but encountered issues with dependencies. Therefore, we approached Part 1 with some modifications.
 
-
-
+While pattern-matching tools like grep or regex are typically used for such tasks, our project prioritized closeness over exactness.Pattern matching tools like regex focus on exact matches, whereas in sequence alignment, a scoring matrix assesses closeness by considering matches, mismatches, and gaps. This approach allows for the inclusion of noise during data extraction and transformation, which aligns with the project's objectives.
 ## Extraction  
 
 The data, consisting of RGB values, were extracted from all the frames from a
@@ -145,16 +144,20 @@ In DNA sequence alignment, nucleotide sequences consist of characters: G, A, T, 
 ![image](/assets/images/chromaAnalysis/Picture5.png){: .align-center}
 *Figure 5: Maximum value of the frames are taken to create a string of characters and then are used with local alignment algorithms to determine the source.*
 
-ADD STUFF HERE
-``` R
+To extract and concatenate to a long string:
+```python
 largest_col = training_df.Largest_Column.dropna()
 largest_colString = largest_col.sum()
 largest_colString
 ```
 
->GGGGGGGGGGGGGGGGGGGGGGGGGGGRRGGGGGGGGGGGGGGGGGGGGGGGGGGBBRRRRG GGRRRBRRGRRRRRBRBBBRRRRRRRRRRRRRRRRRRRRGGGGGRRRRBRRRRGRRRRRRRRG RGRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRBBBBBBBRRBBBRBGGGGBBBBBGGRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR...
+>GGGGGGGGGGGGGGGGGGGGGGGGGGGRRGGGGGGGGGGGGGGGGGGGG
+>GGGGGGBBRRRRGGGRRRBRRGRRRRRBRBBBRRRRRRRRRRRRRRRRR
+>RRRGGGGGRRRRBRRRRGRRRRRRRRGRGRRRRRRRRRRRRRRRRRRRR
+>RRRRRRRRRRRRRRBBBBBBBRRBBBRBGGGGBBBBBGGRRRRRRRRRR
+>RRRRRRRRRRRRRRRRRRRRRRRR...
 
-As shown there is a lack of uniqueness.
+In the excerpt displayed above, a notable lack of uniqueness is observed, primarily because the characters 'R' and 'G' overwhelmingly dominate the concatenated string. When querying a frame using the string "RRRRRRRR," it results in multiple substrings being identified as the correct alignment. Therefore, it becomes imperative to introduce uniqueness into the process. One viable approach to achieve this uniqueness is by extracting the maximum and minimum RGB columns:
 
 ``` R
 # Find max column
@@ -166,6 +169,7 @@ frameline.redux$Smallest_Column<-colnames(frameline.redux)[apply(frameline.redux
 #Concat both the max and the min
 ```
 
+Next, we mapped the following iterations of the maximum and minimum to a single letter, without rotation:
 ``` R
 frameline.redux <- frameline.redux %>%
   mutate(LandSwithrotation = case_when(
@@ -177,6 +181,22 @@ frameline.redux <- frameline.redux %>%
     frameline.redux$LandS == "BR" ~ "P",
   ))
 ```
+```python
+training_df = pd.read_csv(path, index_col = None)
+long_Seq = training_df.LandSwithrotation.dropna()
+long_SeqString = long_Seq.sum()
+long_SeqString
+```
+An excerpt of the output below show more uniqueness but likewise, still more sparse in uniqueness.
+
+>CCCCCCCCCCCPPPPPPPPPCPPPPPPPPPPPCPPCPPPPPPPPPCCYYPC
+CCPCPCPCCPPPPPPPPPPCYYPPPPPPPPPCCPPPPPPPPPPYCPYYPPPP
+>PPPPYPPPPPPPPPPPPPPPPPPPPPPPPPYPPYPPPPPPPPPPPPPPPPP
+>PPPPPPPPPPPPPPPPPPCPYPCPYPPCYYPPPPPPPPPPPPPPPPPPPPP
+>YPPYPPPPYYPPPCYYYYYPPPPPPPPPPPPPPPPPPPPPPPPPPPPCPPY
+>PYYPPYYPCPCPYPCPPPPPPPPPPPPPPPPPPCPPPPPPCCPCCCCPYYY
+
+If we try the  maximum and minimum without rotation, the output delves one level more with uniqueness but is still not enough:
 
 ``` R
 frameline.redux <- frameline.redux %>%
@@ -191,20 +211,11 @@ frameline.redux <- frameline.redux %>%
 ```
 
 ```python
-training_df = pd.read_csv(path, index_col = None)
-long_Seq = training_df.LandSwithrotation.dropna()
-long_SeqString = long_Seq.sum()
-long_SeqString
-```
-
-For a capture rate of 5 seconds, the strings are: >CCCCCCCCCCCPPPPPPPPPCPPPPPPPPPPPCPPCPPPPPPPPPCCYYPCCCPCPCPCCPPPPPPPPPPCYYPPPPPPPPPCCPPPPPPPPPPYCPYYPPPPPPPPYPPPPPPPPPPPPPPPPPPPPPPPPPYPPYPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPCPYPCPYPPCYYPPPPPPPPPPPPPPPPPPPPPYPPYPPPPYYPPPCYYYYYPPPPPPPPPPPPPPPPPPPPPPPPPPPPCPPYPYYPPYYPCPCPYPCPPPPPPPPPPPPPPPPPPCPPPPPPCCPCCCCPYYYYYYPCCYPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPYPPPPPYYPPPPPPPPCYPPPPPYPCCCCPPYCPPPPPPYPPCPPPPPPPPPPPPPPPPPPPPPPPPCCYPPPPPYYPYYPCPPPPPPYYPPPPPPCPPPPPPPPPPCPPPPPCPPPPPCPYPCCPPPPPPCCCCCCCCCPPPCPPPPYYCPPPPPPPPPPPCPPPPPPPPPPYYCCCCCCCPPPPPPPPYPPCPPPPPPPPPPPPPPPPPPPPPPPPPPPPYPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPCCPPPPPPPPPPPPPPPPPPPPPYYYCPPPCPPPPPPPPPCPYPPPCYCPPPPPPPPPPPPPPPPPPPPYPPCCCC
-
-```python
 long_Seq2 = training_df.LandSwithoutrotation.dropna()
 long_SeqString2 = long_Seq2.sum()
 long_SeqString2
 ```
-For a capture rate of 5 seconds, the strings are:
+
 >CCCCCCCCCCCPPPPVPPPPCPPPPPPPPPPPTVVCVPPPPPPPPCCGGPCCCPC
 >PCPCCPPPPPPPPPVTGGPPPPPPPPPCCPPPPPPPPPPYTPGGPPPPPPPPYPP
 >PPPPPPPPPPPPPPVPPPPPPPPYPPYPPPPPPPPPPPPPPPPPPPPPPPPPPPP
@@ -219,59 +230,58 @@ For a capture rate of 5 seconds, the strings are:
 >PPPPPPPPPPPPPPPPPPPPPCCPPPPPPPPPPPPPPPPPPPPPGGGCPPVCPVP
 >PPPPPPCPGPVVCGCPPPPPPPPPPPPPPPPPPPPGPPCCTT
 
+
+
+The previous examples delves levels deeper into adding uniqueness. If we go beyond the deepest spectrum and use the hexRGB, we get the following excerpt of the output:
+
+>#31352F#444A41#3C4339#3D4439#656A5B#777B70#535847#51554C#
+>444B40#363F32#343E2D#37452C#404F33#3F4334#3F4235#434537#46
+>4739#444537#424335#6F7A55#839560#849664#78916A#75916B#6077
+>57#354130#343F31#3C3B34#3E3732#3E413A#454E3D#3E4835#454C35
+>#454A34#444832#41462F#3C4436#364239#374338#4B5645#8D9077#66
+>7348#5E6D3E#5E6547#343927#393E2A#3C412B#3D412C#3D422C#3A3F29 #3C412A#3E442C#41472F#444B32#434833#777479#757478#736761#756257#
+
+
+
 Next we use Biopython:
 ```python
 aligner = Align.PairwiseAligner()
 aligner.mode = 'local'
-alignments = aligner.align("PPPCVGVCC",long_SeqString2)
-alignment = alignments[0]
-print(alignment.score)
-print(alignment)
+stringloc - "849664#78916A#75916B#6077
+>57#354130#343F31#3C3B34#3E3732#3E413A#454E3D#3E4835#454C35
+>#454A34#444832#41462F#3C4436#"
+alignments = aligner.align(stringloc,hexRGBstring)
 ```
-which would give us the following result:
 
-
-
-Of course, we can get the highest score, or the subsequence with the greatest likelihood, by using;
+We can get the highest score, or the subsequence with the greatest likelihood, by using;
 ```python
 alignment = sorted(alignments)[0]
 ```
 
-However, my device is limited in memory. Thus, I am unable to continue beyond this part. 
+However, my device is limited in memory. Thus, I am unable to continue beyond this part. While I may be unable to pursue the project further due to hardware limitations, I infer that the use of hexRGB may provide excessive uniqueness. Depending on the source, the color schemes of identical frames may vary due to potential issues such as pixel count and resolution disparities.
+
+ ## Conclusion
 
 
+To complete this project, further research and implementation efforts are necessary, especially sequence alignment.
 
-The case with making the strings mote unique by using the HEXRGB. 
-
->#31352F#444A41#3C4339#3D4439#656A5B#777B70#535847#51554C# 444B40#363F32#343E2D#37452C#404F33#3F4334#3F4235#434537#46 4739#444537#424335#6F7A55#839560#849664#78916A#75916B#6077 57#354130#343F31#3C3B34#3E3732#3E413A#454E3D#3E4835#454C35 #454A34#444832#41462F#3C4436#364239#374338#4B5645#8D9077#66 7348#5E6D3E#5E6547#343927#393E2A#3C412B#3D412C#3D422C#3A3F29 #3C412A#3E442C#41472F#444B32#434833#777479#757478#736761#756257#
-
-
-### Lack of Uniqueness
-
-
-When the capture rate is 1 second with rotation:
->CCCCCCCCCCCCCCCCCCCCCCCCCCCPPCCCCCCCCYYCCCCCCCCCCCCCCCCCCPPPPYCCPPPCP
-PCPPPPPCYPPPPPPPPPPPPPPPPPPPPPPPYYCCCPPPYPPPPPCPPPPPPPPCPYPYPPPPPPPPP
-PPPPPPPPPPPPPPPPPPPPPPPCPPPPPPPPPPPYCCCCCCCPPPYCPPPPPPPPPPPPPPPPPPPPP
-PPPPPPPPPPPPPPPPPPPCCCCPPCCYYYPPYYCYYPPPPCCCCPPCCCYYCYYCPPPPPPPPCCYC
-PPPPYYYYCPPPPPPPPPYYYYCPPPPPCCCPPPPPPPPPPPPPPPPPYYPPPPCPPPPPPPPPPPPY
-PCCCPPPPPPPPPPYYYYYYCCCPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPY
-YYYPPPCYYYCCPPPPPPPPPPPYYYYPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPYPPYYP
-CPPPCCYYYYYYYYYYPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPYPPPPPPPPYYYPPPPPPPP
-PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPCPPPPPPPPPPPPPPPPPPPYPPPPPPPPPPPPPPP
-PPPPPPPPPYCCPPPPPPPPPPPPPYYYYPPPPPPPPPPPPPPPPPPYYYYYYYYYYPPPPPPPPPPY
-YYYYPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPCPPPPP
-PPPPPPPPPPPPPPPPPPPPPPPCPPPPPPPPPYYYYYPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP
-PPPPPPPPPPPPPPPPPPPPPPPCPPPPPPPPPPPPPPPPPPPYPYCCCCPPY ....
+### Further Study
+- Research and implement sequence alignments (Smith-Waterman algorithm) with a
+better hardware.
+- Train using image classification on the framelines: where might a
+beach/mountain/house scene be in the movie?
+- Possible use the image classification to determine if there is a distinct classification of
+authors or genre.
+- A general image classification to determine the name of the film (as seen in the small
+scenes test case).
+- Reduce the capture rate to seconds to increase accuracy in the transformation phase.
+However, this does increase computation.
 
 
+### Limitations
+- Very difficult to find source materials for training and testing due to licensing and
+legality of films and videos.
+- Open source converters are likely to contain malware.
+- Imitating the capability of BLAST algorithm is difficult due to limited code available.
 
-END STUFF
 
-
-
-To complete this test case, further research and implementation efforts are necessary.
-
-The test case aimed to locate subquery characters within other character strings. While pattern-matching tools like grep or regex are typically used for such tasks, our project prioritized closeness over exactness.
-
-Pattern matching tools like regex focus on exact matches, whereas in sequence alignment, a scoring matrix assesses closeness by considering matches, mismatches, and gaps. This approach allows for the inclusion of noise during data extraction and transformation, which aligns with the project's objectives.
