@@ -69,8 +69,7 @@ frameline.redux <- frameline %>%
 
 In this section, we extracted and transformed data from 11 small video scenes (mp4) into RGB values for training purposes. We generated framelines for visualization, as depicted in Figure (3) above. Our classification approach utilized k-Nearest Neighbors in Python, where each of the 11 scenes received a unique text label (e.g., beach, mountain).
 
-![image](/assets/images/chromaAnalysis/Picture4.png){: .align-center}
-*Figure 4: Framelines for Cleopatra (1999) Episode 1 with 40 seconds capture rate (each line is 40 seconds). Specific scenes and their framelines across the film are shown.*
+
 
 Additionally, we created test data based on the training data, incorporating normally distributed noise. The model exhibited a commendable 80%-90% accuracy in correctly identifying scene labels. To enhance accuracy further, we intend to incorporate two additional features: hue and saturation. These attributes, derived from the RGB values, will introduce distinctiveness to the scenes.  
 
@@ -111,6 +110,8 @@ We can explore using framelines (PNG images) as input data for our image classif
 
 Our initial experiment involves working with a single film, "Cleopatra (Episode 1)" from 1999. In Figure 4, we illustrate the transformation of RGB data into framelines. It's worth noting that unlike previous tests involving smaller scenes, the framelines in this film exhibit a wider range of distinct colors. 
 
+![image](/assets/images/chromaAnalysis/Picture4.png){: .align-center}
+*Figure 4: Framelines for Cleopatra (1999) Episode 1 with 40 seconds capture rate (each line is 40 seconds). Specific scenes and their framelines across the film are shown.*
 
 In the previous test case, each frame had predefined labels, making kNN implementation straightforward. However, in the new test case, specific frames lack labels, making kNN implementation more challenging. In this section, we formed clusters of frames, with the cluster size determined arbitrarily. The test set comprises scene splices from the film, with added Gaussian noise.
 
@@ -247,9 +248,7 @@ Next we use Biopython:
 ```python
 aligner = Align.PairwiseAligner()
 aligner.mode = 'local'
-stringloc - "849664#78916A#75916B#6077
->57#354130#343F31#3C3B34#3E3732#3E413A#454E3D#3E4835#454C35
->#454A34#444832#41462F#3C4436#"
+stringloc = "849664#78916A#75916B#607757#354130#343F31#3C3B34#3E3732#3E413A#454E3D#3E4835#454C35#454A34#444832#41462F#3C4436#"
 alignments = aligner.align(stringloc,hexRGBstring)
 ```
 
