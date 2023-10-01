@@ -147,6 +147,16 @@ In DNA sequence alignment, nucleotide sequences consist of characters: G, A, T, 
 
 ADD STUFF HERE
 ``` R
+largest_col = training_df.Largest_Column.dropna()
+largest_colString = largest_col.sum()
+largest_colString
+```
+
+>GGGGGGGGGGGGGGGGGGGGGGGGGGGRRGGGGGGGGGGGGGGGGGGGGGGGGGGBBRRRRG GGRRRBRRGRRRRRBRBBBRRRRRRRRRRRRRRRRRRRRGGGGGRRRRBRRRRGRRRRRRRRG RGRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRBBBBBBBRRBBBRBGGGGBBBBBGGRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR...
+
+As shown there is a lack of uniqueness.
+
+``` R
 # Find max column
 frameline.redux$Largest_Column<-colnames(frameline.redux)[apply(frameline.redux[,1:3],1,which.max)]
 
@@ -228,6 +238,12 @@ alignment = sorted(alignments)[0]
 ```
 
 However, my device is limited in memory. Thus, I am unable to continue beyond this part. 
+
+
+
+The case with making the strings mote unique by using the HEXRGB. 
+
+>#31352F#444A41#3C4339#3D4439#656A5B#777B70#535847#51554C# 444B40#363F32#343E2D#37452C#404F33#3F4334#3F4235#434537#46 4739#444537#424335#6F7A55#839560#849664#78916A#75916B#6077 57#354130#343F31#3C3B34#3E3732#3E413A#454E3D#3E4835#454C35 #454A34#444832#41462F#3C4436#364239#374338#4B5645#8D9077#66 7348#5E6D3E#5E6547#343927#393E2A#3C412B#3D412C#3D422C#3A3F29 #3C412A#3E442C#41472F#444B32#434833#777479#757478#736761#756257#
 
 
 ### Lack of Uniqueness
