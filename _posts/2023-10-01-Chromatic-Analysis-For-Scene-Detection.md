@@ -1,6 +1,5 @@
 ---
 title: "Chromatic Analysis: Using Naive Method to determine frames/scenes"
-excerpt: "Chromatic Analysis: Using Naive Method in determining frames/scenes"
 classes: wide
 header:
   overlay_image: /assets/images/chromaAnalysis/cleopatraforPython1second.png
@@ -8,7 +7,6 @@ header:
   caption: "Photo credit: Framelines using R"
 ---
 
-# UNDER CONSTRUCTION........................
 ## Introduction
 Color plays a crucial role in film, impacting visual storytelling, atmosphere, tone, branding, and context. It can evoke emotions, set the mood, and emphasize the message's theme. Therefore, mastering color is vital for filmmakers. Films can become memorable through the emotions they evoke and the symbols they express based on their color choices.
 
