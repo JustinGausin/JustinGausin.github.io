@@ -1,5 +1,6 @@
 ---
 title: "Chromatic Analysis: Using Naive Method to determine frames/scenes"
+excerpt: ""
 classes: wide
 header:
   overlay_image: /assets/images/chromaAnalysis/cleopatraforPython1second.png
