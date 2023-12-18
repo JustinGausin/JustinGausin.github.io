@@ -8,6 +8,8 @@ header:
   caption: "Photo credit: Random Walk using Matlab"
 ---
 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"> </script> <script type="text/x-mathjax-config"> MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], processEscapes: true}, jax: ["input/TeX","input/MathML","input/AsciiMath","output/CommonHTML"], extensions: ["tex2jax.js","mml2jax.js","asciimath2jax.js","MathMenu.js","MathZoom.js","AssistiveMML.js", "[Contrib]/a11y/accessibility-menu.js"], TeX: { extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"], equationNumbers: { autoNumber: "AMS" } } }); </script>
+
 ## Summary
 Quantitative Finance is a field of applied mathematics that employs mathematical and statistical
 methods to analyze assets. One of the main concepts of quantitative finance is Brownian motion,
@@ -21,7 +23,10 @@ the basis of the Black-Scholes equation, the current standard of options pricing
 
 ## Introduction 
 
-Brownian Motion is first credited to botanist Robert Brown and decades later, was used by Louis Bachelier to model stock speculation and Albert Einstein to indirectly prove the existence of atoms. Brownian Motion, or specifically Geometric Brownian Motion (logarithmic quantity that follows Brownian Motion), is one of the main concepts of quantitative finance for asset price prediction. 
+Brownian Motion is first credited to botanist Robert Brown and decades later, was used by Louis Bachelier to model stock speculation and Albert Einstein to indirectly prove the existence of atoms. The basis of Brownian motion is a random walk, a mathematical model that describes a sequence of steps or movements, where each step is taken randomly and independently of the previous ones. In a one-dimensional random walk, for example, an entity starts at a certain position and, at each time step, moves either to the up or down with some probability. The cumulative effect of these random steps results in a path that exhibits a certain degree of unpredictability and randomness. When time becomes continuous and step size decreases, a random walk is equal to a brownian motion. Both concepts are examples of a Markov chain, where future behavior is independint of past history.
+
+
+Geometric Brownian Motion is defined as when the logarithmic quantity follows a Brownian Motio. GBM is one of the main concepts of quantitative finance for asset price prediction. 
 The log of the Geometric Brownian motion is as follows:
 $$
 log(S_t) = log(S_0) + (\mu - \frac{\sigma^2}{2})t + \sigma W_t
@@ -65,7 +70,7 @@ GBM forms the basis of the Black-Scholes equation, the current standard of optio
 *Figure 3: 1/11 clip used for training. As seen, the clip was deconstructed to the average values of its frames per 5 seconds. When visualized, the framelines is seen at (C)*
 
 
-``` Matlab
+``` matlab
 % calculatde the return
 score = diff(YTD)./YTD(1:end-1,:);
 
