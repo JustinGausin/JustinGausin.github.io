@@ -30,9 +30,8 @@ Geometric Brownian Motion is defined as when the logarithmic quantity follows a 
 The log of the Geometric Brownian motion is as follows:
 
 
-$$
-log(S_t) = log(S_0) + (\mu - \frac{\sigma^2}{2})t + \sigma W_t
-$$
+$$log(S_t) = log(S_0) + (\mu - \frac{\sigma^2}{2})t + \sigma W_t$$
+
 where:
 
 $ \mu = $ drift of the stock.  
@@ -66,13 +65,13 @@ For this project, 14 Tech companies' stock prices were used. Since the companies
 *Figure 3: Tech stocks YTD. Images will be cleaned up later....juts a placeholder for now*
 
 Once gathering the data, simply log the prices in Matlab:
-``` r
+``` python
 YTD = log(YTD_dly_price_training);
 ```
 ### Calculating drift and volatility
-The drift of the stock, $\mu $, and volatility, $ \sigma $, are the unknown parameters for the equation. The drift of the stock is the *mean of the returns*, which can be calculated by a simple equation: $\frac{1}{T} \sum_{i}^{T} R_t$ where $R_t = \frac{S_t - S_{t-1}}{S_{t-1}}$, such that $S_t$ is the next day log-price, and $S_{t-1}$ is the current day log-price. For volatility, the variance-covariance matrix is calculated from the log returns and subsequently using Cholesky Decomposition. Since the variance-covariance is always symmetric and semi-positive definite, Cholesky Decomposition, $LL^T$, can be used. To get the volatility, we take the diagonal of the resulting $L$.
+The drift of the stock, $\mu $, and volatility, $ \sigma $, are the unknown parameters for the equation. The drift of the stock is the **mean of the returns**, which can be calculated by a simple equation: $\frac{1}{T} \sum_{i}^{T} R_t$ where $R_t = \frac{S_t - S_{t-1}}{S_{t-1}}$, such that $S_t$ is the next day log-price, and $S_{t-1}$ is the current day log-price. For volatility, the variance-covariance matrix is calculated from the log returns and subsequently using Cholesky Decomposition. Since the variance-covariance is always symmetric and semi-positive definite, Cholesky Decomposition, $LL^T$, can be used. To get the volatility, we take the diagonal of the resulting $L$. Note that while it is possible to take the standard deviation by the square root of the diagonal of the var-cov matrix, it would leave information about the correlation between the stocks. 
 
-``` r
+``` python
 % log the whole matrix for brownian motion
 YTD = log(YTD_dly_price_training);
 
@@ -88,9 +87,53 @@ L = chol(variance);
 diag_L = diag(L);
 ```
 
-## Forecasting the data
-Using the GBM formula with the calculated drift, $\mu $, and volatility, $ \sigma $, we can forecast the price of stocks using multiple simulations as shown in Figure(4) - Figure(6). However, the use of GBM is not directly implemented in stocks but on \textit{options}. Options is a financial derivative that gives the buyer the right, but not the obligation, to buy an asset for a given price before a predetermined time (expiry). For this project, we take on a \textit{Risk Neutral Position} (RNP), a position where we ignore the risks, of European-style Options, options that can only be \textit{exercised} on the expiry date. In an RNP, the drift rate of the stock becomes a risk-free interest rate. Using the same GBM, we can forecast the price of the options per strike price. 
+## Forecasting the Stock Prices
+Using the GBM formula with the calculated drift, $\mu $, and volatility, $ \sigma $, we can forecast the price of stocks using multiple simulations. For example, let's start with forecasting a Monte-Carlo simulation (1000 paths) for the next 5 days (end date is 2023-12-15) for Microsoft:
+![image](/assets/images/chromaAnalysis/Picture3.png){: .align-center}
+*Figure 3: Tech stocks YTD. Images will be cleaned up later....juts a placeholder for now*
 
+The prices remain stagnant within the 5 days. However, we can see the overral simulations possible minimum and maximum values. In a given scenario, an analyst may only include 95% confidence rate, but here we take the overral 100%. Next, we extend the forecast to +200 days for Microsoft and NVDIA. 
+![image](/assets/images/chromaAnalysis/Picture3.png){: .align-center}
+*Figure 3: Tech stocks YTD. Images will be cleaned up later....juts a placeholder for now*
+
+As shown above, the next 200 days of NVDIA and MSFT differs. While MSFT is shown to forecast an increase on average $20, NVDIA is poised to increase around $80. They both have the same volatility, but the values of the mean of returns vary only to the ten-thousands place. If the small value of the drift can have a large impact, so will be the volatility. Hence, Cholesky Decomposition's numerically stability is important when calculating the volatility. Any pertrubration causing a slight error up to the ten-thousands place can have major impact in price prediction. 
+
+## Forecasting the Option Prices
+However, the use of GBM is not directly implemented in stocks but on *options*. Options is a financial derivative that gives the buyer the right, but not the obligation, to buy an asset for a given price before a predetermined time (expiry). For this project, we take on a *Risk Neutral Position* (RNP), a position where we ignore the risks, of European-style Options, options that can only be *exercised* on the expiry date. In an RNP, the drift rate of the stock becomes a risk-free interest rate. Using the same GBM, we can forecast the price of the options per strike price. 
+
+Here is a sample of an option contract:
+![image](/assets/images/chromaAnalysis/Picture3.png){: .align-center}
+*Figure 3: Tech stocks YTD. Images will be cleaned up later....juts a placeholder for now*
+
+
+The price of the contract is at 34.10 for a call option of $340 for a MSFT option expring on 2023/12/15. 
+
+The code to calculate the differnce between the forecasted price and the actual option price:
+
+``` python
+%December 15 - MSFT option prices for the strike 
+%hardcoded since they change over time
+strike_prices = [340 342.5 345 347.50 350 352.50 355 357.50 360];
+
+%actual option price per strike price of Microsoft
+actual_option_price = [34.10 28.65 29.49 25.85 24.70 21.70 19.79 16.77 15.03];
+
+forecasted_stock = [];
+dicount_factor = exp(-r * day_forecast);
+
+% get the forecasted price for each strike price
+for i=1:size(strike_prices,2)
+    arry_stckprice = strike_prices(i)*ones(npaths,1);
+    paystrikes = payoff((y(end,:))',arry_stckprice);
+    price = dicount_factor*(sum(paystrikes)/npaths);
+    forecasted_stock(end+1) = price;
+end
+
+function pay = payoff(S_t, Strikeprice)
+    pay = max(S_t-Strikeprice,0);
+end
+
+```
 
 The forecast price was relatively close to the actual price, albeit for two data points (strike price at $ \$342.5$ and $ \$347.5)$ as shown in Figure(1). Probable cause for this error may be due to: 
 
