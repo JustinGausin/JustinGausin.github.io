@@ -94,12 +94,12 @@ Using the GBM formula with the calculated drift, $\mu $, and volatility, $ \sigm
 
 The prices remain stagnant within the 5 days. However, we can see the overral simulations possible minimum and maximum values. In a given scenario, an analyst may only include 95% confidence rate, but here we take the overral 100%. Next, we extend the forecast to +200 days for Microsoft and NVDIA. 
 <figure class="half">
-    <a href="(/assets/images/BrownianMotion/MSFT_200daysforecast.png"><img src="(/assets/images/BrownianMotion/MSFT_200daysforecast.png"></a>
+    <a href="/assets/images/BrownianMotion/MSFT_200daysforecast.png"><img src="/assets/images/BrownianMotion/MSFT_200daysforecast.png"></a>
     <a href="/assets/images/BrownianMotion/NVDA_200daysforecast.png"><img src="/assets/images/BrownianMotion/NVDA_200daysforecast.png"></a>
     <figcaption>Left: MSFT vs NVDIA +200 days stock prediction</figcaption>
 </figure>
 
-As shown above, the next 200 days of NVDIA and MSFT differs. While MSFT is shown to forecast an increase on average \$20, NVDIA is poised to increase around \$80. They both have the same volatility, but the values of the mean of returns vary only to the ten-thousands place. If the small value of the drift can have a large impact, so will be the volatility. Hence, Cholesky Decomposition's numerically stability is important when calculating the volatility. Any pertrubration causing a slight error up to the ten-thousands place can have major impact in price prediction. 
+As shown above, the next 200 days of NVDIA and MSFT differs. While MSFT is shown to forecast an increase on average \\$20, NVDIA is poised to increase around \\$80. They both have the same volatility, but the values of the mean of returns vary only to the ten-thousands place. If the small value of the drift can have a large impact, so will be the volatility. Hence, Cholesky Decomposition's numerically stability is important when calculating the volatility. Any pertrubration causing a slight error up to the ten-thousands place can have major impact in price prediction. 
 
 The following code are as follows:
 ``` python
@@ -131,7 +131,7 @@ Here is a sample of an option contract:
 *Figure 3: Tech stocks YTD. Images will be cleaned up later....juts a placeholder for now*
 
 
-The price of the contract is at \$34.10 for a call option of \$340 for a MSFT option expring on 2023/12/15. 
+The price of the contract is at \\$34.10 for a call option of \\$340 for a MSFT option expring on 2023/12/15. 
 
 The code to calculate the differnce between the forecasted price and the actual option price:
 
@@ -160,7 +160,7 @@ end
 
 ```
 
-The forecast price was relatively close to the actual price, albeit for two data points (strike price at \$342.5 and $ \$347.5 as shown.
+The forecast price was relatively close to the actual price, albeit for two data points, strike price at \\$342.5 and  \\$347.5 as shown.
 
 ![image](/assets/images/BrownianMotion/Snip20231210_3.png){: .align-center}
 
@@ -174,8 +174,33 @@ Probable cause for this error may be due to:
     
 3. Dividends were assumed to be small. However, in the Black-Scholes model and GBM, assets are assumed to have no dividends. 
 
+## Black-Sholes Equation
+In essence, the following project was a simluation not with GBM but actually the Black sholes equation. The Black-Scholes equation, developed by economists Fischer Black, Myron Scholes, and Robert Merton in the early 1970s, is a pioneering mathematical model for pricing European-style options. This equation, a partial differential equation, takes into account factors such as the current stock price, the option's strike price, the time to expiration, the risk-free interest rate, and the underlying asset's volatility. The Black-Scholes model provides a theoretical framework for estimating the fair market value of options
 
+## Limitations
+Geometric Brownian Motion (GBM) is a widely used model in finance, particularly in the context of option pricing, but it comes with several limitations that can affect its accuracy in capturing market dynamics for option price discovery:
+
+1. Constant Volatility and Drift: GBM assumes constant volatility and drift over time. In reality, these parameters often change, especially during periods of market turbulence. The model fails to capture the volatility clustering observed in real financial markets.
+
+2. Normal Distribution of Returns: GBM assumes that stock returns are normally distributed. However, empirical evidence suggests that stock returns exhibit fat tails and skewness, meaning extreme events occur more frequently than a normal distribution would predict.
+
+3. Market Frictions: The GBM model does not account for transaction costs, taxes, or other market frictions. In reality, these factors can significantly impact option prices and trading strategies.
+
+4. Risk-Neutral Assumption: The model is based on the assumption of risk neutrality, meaning that investors are indifferent to risk. In practice, investors often exhibit risk aversion, especially during times of uncertainty, leading to deviations from the model's predictions.
+
+5. Continuous Time Assumption: GBM operates in continuous time, assuming that prices change continuously. In reality, financial markets operate in discrete time, with prices changing in intervals. Discrepancies between continuous-time models like GBM and the actual market behavior can impact option pricing accuracy.
+
+6. Non-Stationary Trends: GBM assumes a stationary process, meaning that statistical properties do not change over time. Financial markets, however, exhibit non-stationary trends, making it challenging for GBM to capture evolving market conditions accurately.
+
+7. Lack of Jumps: GBM does not incorporate price jumps, which are abrupt and large movements in asset prices. In reality, jumps occur, especially during significant news events or market shocks, and their absence in the model can lead to inaccuracies in option pricing. The jumps are "discontinuous" points, which are prevalent in stock market movements. It is one the early critics with using the GBM as model for price speculation.
+
+8. Assumption of Log-Normality: GBM assumes that the underlying asset's price follows a log-normal distribution. This assumption may not always hold true, particularly in the presence of extreme market events.
+
+### Gamestop
+An example of this, is Gamestop:
+![image](/assets/images/BrownianMotion/Snip20231210_3.png){: .align-center}
+
+As shown, the price jump in January 2021 is very unpredictable and improbable for GBM and Black-scholes to predict. This movement caused huge financial losses to market makers and option sellers.
+
+## Conclusion
 GBM forms the basis of the Black-Scholes equation, the current standard of options pricing today. GBM and Black-Scholes are a simplification of a complex financial system. For example, stock prices are non-stationary time series, with changing volatility and drift. Likewise, GBM and Black-Scholes are incapable of forecasting unpredictable events in the real world. Lastly, with the increased use of High-Frequency Trading (HFT) for price discovery, quantitative finance is becoming more dominant in the current market, increasing speculation. The recent increase in speculation has likewise increased volatility, which has been considered to be one cause of the recent recessions. The current state of quantitative finance is the application of machine learning, however, whether it improves the state of the market is still questionable.
-
-
-
