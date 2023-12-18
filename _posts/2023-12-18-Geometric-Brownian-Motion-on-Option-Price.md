@@ -1,5 +1,5 @@
 ---
-title: "Geometric Brownian Motion on Stock and Option Price Discovery"
+title: "Geometric Brownian Motion on Stock and Option Price Discovery - Matlab"
 excerpt: ""
 classes: wide
 header:
@@ -23,11 +23,13 @@ the basis of the Black-Scholes equation, the current standard of options pricing
 
 ## Introduction 
 
-Brownian Motion is first credited to botanist Robert Brown and decades later, was used by Louis Bachelier to model stock speculation and Albert Einstein to indirectly prove the existence of atoms. The basis of Brownian motion is a random walk, a mathematical model that describes a sequence of steps or movements, where each step is taken randomly and independently of the previous ones. In a one-dimensional random walk, for example, an entity starts at a certain position and, at each time step, moves either to the up or down with some probability. The cumulative effect of these random steps results in a path that exhibits a certain degree of unpredictability and randomness. When time becomes continuous and step size decreases, a random walk is equal to a brownian motion. Both concepts are examples of a Markov chain, where future behavior is independint of past history.
+Brownian Motion is first credited to botanist Robert Brown and decades later, was used by Louis Bachelier to model stock speculation and Albert Einstein to indirectly prove the existence of atoms. The basis of Brownian motion is a random walk, a mathematical model that describes a sequence of steps or movements, where each step is taken randomly and independently of the previous ones. In a one-dimensional random walk, for example, an entity starts at a certain position and, at each time step, moves either to the up or down with some probability. The cumulative effect of these random steps results in a path that exhibits a certain degree of unpredictability and randomness. When time becomes continuous and step size decreases, a random walk is equal to a brownian motion. Both concepts are examples of a Markov chain, where future behavior is independent of past history.
 
 
 Geometric Brownian Motion is defined as when the logarithmic quantity follows a Brownian Motio. GBM is one of the main concepts of quantitative finance for asset price prediction. 
 The log of the Geometric Brownian motion is as follows:
+
+
 $$
 log(S_t) = log(S_0) + (\mu - \frac{\sigma^2}{2})t + \sigma W_t
 $$
@@ -43,13 +45,50 @@ $ S_t = $ forecast price.
 
 $ t = $ small interval time. 
 
-$ W_t = $ Wiener process.
+$ W_t = $ Wiener process (Normal Distribution).
 
 The drift of the stock, $\mu $, and volatility, $ \sigma $, are the unknown parameters for the equation. The drift of the stock is the mean of the returns, which can be calculated by a simple equation: $\frac{1}{T} \sum_{i}^{T} R_t$ where $R_t = \frac{S_t - S_{t-1}}{S_{t-1}}$, such that $S_t$ is the next day log-price, and $S_{t-1}$ is the current day log-price. For volatility, the variance-covariance matrix is calculated from the log returns and subsequently using Cholesky Decomposition. Since the variance-covariance is always symmetric and semi-positive definite, Cholesky Decomposition, $LL^T$, can be used. To get the volatility, we take the diagonal of the resulting $L$.
 
- 
-For this project, 14 Tech companies' stock prices were used. Since the companies are in the same sector (Tech), the prices will be correlated. While data are already adjusted for stock splits and stock consolidation, they do not adjust for dividends. Hence, we will assume that dividends are relatively small and do not affect the overall price of the stock. 
+ ## General Steps  
+The general steps for this project is as follows:
 
+1. Gather Data (NASDAQ).
+2. Log(training_data)
+3. Calculate the log returns
+4. Calculate the drift using the log returns
+5. Calculate the variance-covariance matrix using the log returns
+6. Use Cholesky Decomposition on the variance-covariance matrix for volatility. 
+
+### Gathering data
+For this project, 14 Tech companies' stock prices were used. Since the companies are in the same sector (Tech), the prices will be correlated. While data are already adjusted for stock splits and stock consolidation, they do not adjust for dividends. Hence, we will assume that dividends are relatively small and do not affect the overall price of the stock. This is important, because even in Black-Scholes model (discuss later), dividends are assumed to be nonexistent. The 14 Tech companies are as follows: ASML, AMD, AAPL, AMZN, MSFT, META, AVGO, NVDA, CRM, ADBE, IBM, GOOG, TSM, INTC. The stock prices timeframe were from: 2022/12/27 - 2023/12/08, one day increments.
+
+![image](/assets/images/chromaAnalysis/Picture3.png){: .align-center}
+*Figure 3: Tech stocks YTD. Images will be cleaned up later....juts a placeholder for now*
+
+Once gathering the data, simply log the prices in Matlab:
+``` r
+YTD = log(YTD_dly_price_training);
+```
+### Calculating drift and volatility
+The drift of the stock, $\mu $, and volatility, $ \sigma $, are the unknown parameters for the equation. The drift of the stock is the *mean of the returns*, which can be calculated by a simple equation: $\frac{1}{T} \sum_{i}^{T} R_t$ where $R_t = \frac{S_t - S_{t-1}}{S_{t-1}}$, such that $S_t$ is the next day log-price, and $S_{t-1}$ is the current day log-price. For volatility, the variance-covariance matrix is calculated from the log returns and subsequently using Cholesky Decomposition. Since the variance-covariance is always symmetric and semi-positive definite, Cholesky Decomposition, $LL^T$, can be used. To get the volatility, we take the diagonal of the resulting $L$.
+
+``` r
+% log the whole matrix for brownian motion
+YTD = log(YTD_dly_price_training);
+
+% calculate the return
+score = diff(YTD)./YTD(1:end-1,:);
+
+%calculate the drift for each column (company)
+meanx = mean(score,1);
+
+%calculate volatility
+variance = cov(score);
+L = chol(variance);
+diag_L = diag(L);
+```
+
+## Forecasting the data
 Using the GBM formula with the calculated drift, $\mu $, and volatility, $ \sigma $, we can forecast the price of stocks using multiple simulations as shown in Figure(4) - Figure(6). However, the use of GBM is not directly implemented in stocks but on \textit{options}. Options is a financial derivative that gives the buyer the right, but not the obligation, to buy an asset for a given price before a predetermined time (expiry). For this project, we take on a \textit{Risk Neutral Position} (RNP), a position where we ignore the risks, of European-style Options, options that can only be \textit{exercised} on the expiry date. In an RNP, the drift rate of the stock becomes a risk-free interest rate. Using the same GBM, we can forecast the price of the options per strike price. 
 
 
@@ -70,7 +109,7 @@ GBM forms the basis of the Black-Scholes equation, the current standard of optio
 *Figure 3: 1/11 clip used for training. As seen, the clip was deconstructed to the average values of its frames per 5 seconds. When visualized, the framelines is seen at (C)*
 
 
-``` matlab
+``` r
 % calculatde the return
 score = diff(YTD)./YTD(1:end-1,:);
 
