@@ -9,7 +9,7 @@ header:
 ---
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"> </script> <script type="text/x-mathjax-config"> MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], processEscapes: true}, jax: ["input/TeX","input/MathML","input/AsciiMath","output/CommonHTML"], extensions: ["tex2jax.js","mml2jax.js","asciimath2jax.js","MathMenu.js","MathZoom.js","AssistiveMML.js", "[Contrib]/a11y/accessibility-menu.js"], TeX: { extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"], equationNumbers: { autoNumber: "AMS" } } }); </script>
-
+# UNDER CONSTRUCTIONNNNNNNN....
 ## Summary
 Quantitative Finance is a field of applied mathematics that employs mathematical and statistical
 methods to analyze assets. One of the main concepts of quantitative finance is Brownian motion,
@@ -61,7 +61,7 @@ The general steps for this project is as follows:
 ### Gathering data
 For this project, 14 Tech companies' stock prices were used. Since the companies are in the same sector (Tech), the prices will be correlated. While data are already adjusted for stock splits and stock consolidation, they do not adjust for dividends. Hence, we will assume that dividends are relatively small and do not affect the overall price of the stock. This is important, because even in Black-Scholes model (discuss later), dividends are assumed to be nonexistent. The 14 Tech companies are as follows: ASML, AMD, AAPL, AMZN, MSFT, META, AVGO, NVDA, CRM, ADBE, IBM, GOOG, TSM, INTC. The stock prices timeframe were from: 2022/12/27 - 2023/12/08, one day increments.
 
-![image](/assets/images/chromaAnalysis/Picture3.png){: .align-center}
+![image](/assets/images/BrownianMotion/YTD.png){: .align-center}
 *Figure 3: Tech stocks YTD. Images will be cleaned up later....juts a placeholder for now*
 
 Once gathering the data, simply log the prices in Matlab:
@@ -89,24 +89,49 @@ diag_L = diag(L);
 
 ## Forecasting the Stock Prices
 Using the GBM formula with the calculated drift, $\mu $, and volatility, $ \sigma $, we can forecast the price of stocks using multiple simulations. For example, let's start with forecasting a Monte-Carlo simulation (1000 paths) for the next 5 days (end date is 2023-12-15) for Microsoft:
-![image](/assets/images/chromaAnalysis/Picture3.png){: .align-center}
+![image](/assets/images/BrownianMotion/Fivedaysforecast.png){: .align-center}
 *Figure 3: Tech stocks YTD. Images will be cleaned up later....juts a placeholder for now*
 
 The prices remain stagnant within the 5 days. However, we can see the overral simulations possible minimum and maximum values. In a given scenario, an analyst may only include 95% confidence rate, but here we take the overral 100%. Next, we extend the forecast to +200 days for Microsoft and NVDIA. 
-![image](/assets/images/chromaAnalysis/Picture3.png){: .align-center}
-*Figure 3: Tech stocks YTD. Images will be cleaned up later....juts a placeholder for now*
+<figure class="half">
+    <a href="(/assets/images/BrownianMotion/MSFT_200daysforecast.png"><img src="(/assets/images/BrownianMotion/MSFT_200daysforecast.png"></a>
+    <a href="/assets/images/BrownianMotion/NVDA_200daysforecast.png"><img src="/assets/images/BrownianMotion/NVDA_200daysforecast.png"></a>
+    <figcaption>Left: MSFT vs NVDIA +200 days stock prediction</figcaption>
+</figure>
 
-As shown above, the next 200 days of NVDIA and MSFT differs. While MSFT is shown to forecast an increase on average $20, NVDIA is poised to increase around $80. They both have the same volatility, but the values of the mean of returns vary only to the ten-thousands place. If the small value of the drift can have a large impact, so will be the volatility. Hence, Cholesky Decomposition's numerically stability is important when calculating the volatility. Any pertrubration causing a slight error up to the ten-thousands place can have major impact in price prediction. 
+As shown above, the next 200 days of NVDIA and MSFT differs. While MSFT is shown to forecast an increase on average \$20, NVDIA is poised to increase around \$80. They both have the same volatility, but the values of the mean of returns vary only to the ten-thousands place. If the small value of the drift can have a large impact, so will be the volatility. Hence, Cholesky Decomposition's numerically stability is important when calculating the volatility. Any pertrubration causing a slight error up to the ten-thousands place can have major impact in price prediction. 
+
+The following code are as follows:
+``` python
+%gets the last values
+YTD_end = YTD_dly_price_training(end, :);
+npaths = 1000; %1000 simulations
+stockindex = 5; %Microsoft is the 5th column
+r = meanx(stockindex);
+day_forecast = 5; %forecast Dec 15 
+dicount_factor = exp(-r * day_forecast);
+t = (0:1:day_forecast);
+y0 = YTD_end(stockindex)*ones(npaths,1);
+opts = sdeset('RandSeed', 20231209, 'SDEType', 'Ito');
+% function in the SDE toolbox from github
+y = sde_gbm(meanx(stockindex), diag_L(stockindex), t, y0, opts);
+figure;
+plot(t,y,'b',t,y0*exp(r*t),'r--');
+xlabel('t');
+ylabel('y(t)');
+title(['Geometric Brownian Motion for MSFT stock +' int2str(day_forecast) ' days: \newline' int2str(npaths)  ' simulated path, \mu ='   num2str(r) ', \sigma = ' num2str(diag_L(6))])
+```
+Note: It is possible to just write self-owned function using the Geometric Brownian Motion, however, I used a github library already existing due to simplicity and optimization. Here we use SDEtools: https://github.com/horchler/SDETools. 
 
 ## Forecasting the Option Prices
-However, the use of GBM is not directly implemented in stocks but on *options*. Options is a financial derivative that gives the buyer the right, but not the obligation, to buy an asset for a given price before a predetermined time (expiry). For this project, we take on a *Risk Neutral Position* (RNP), a position where we ignore the risks, of European-style Options, options that can only be *exercised* on the expiry date. In an RNP, the drift rate of the stock becomes a risk-free interest rate. Using the same GBM, we can forecast the price of the options per strike price. 
+The use of GBM is not directly implemented in stocks but on *options*. Options is a financial derivative that gives the buyer the right, but not the obligation, to buy an asset for a given price before a predetermined time (expiry). For this project, we take on a *Risk Neutral Position* (RNP), a position where we ignore the risks, of European-style Options, options that can only be *exercised* on the expiry date. In an RNP, the drift rate of the stock becomes a risk-free interest rate. Using the same GBM, we can forecast the price of the options per strike price. 
 
 Here is a sample of an option contract:
 ![image](/assets/images/chromaAnalysis/Picture3.png){: .align-center}
 *Figure 3: Tech stocks YTD. Images will be cleaned up later....juts a placeholder for now*
 
 
-The price of the contract is at 34.10 for a call option of $340 for a MSFT option expring on 2023/12/15. 
+The price of the contract is at \$34.10 for a call option of \$340 for a MSFT option expring on 2023/12/15. 
 
 The code to calculate the differnce between the forecasted price and the actual option price:
 
@@ -135,7 +160,12 @@ end
 
 ```
 
-The forecast price was relatively close to the actual price, albeit for two data points (strike price at $ \$342.5$ and $ \$347.5)$ as shown in Figure(1). Probable cause for this error may be due to: 
+The forecast price was relatively close to the actual price, albeit for two data points (strike price at \$342.5 and $ \$347.5 as shown.
+
+![image](/assets/images/BrownianMotion/Snip20231210_3.png){: .align-center}
+
+Probable cause for this error may be due to: 
+
 
 
 1. Volatility and Drift may have been calculated differently. For example, drift and volatility may have been calculated using a much bigger data set. 
@@ -148,21 +178,4 @@ The forecast price was relatively close to the actual price, albeit for two data
 GBM forms the basis of the Black-Scholes equation, the current standard of options pricing today. GBM and Black-Scholes are a simplification of a complex financial system. For example, stock prices are non-stationary time series, with changing volatility and drift. Likewise, GBM and Black-Scholes are incapable of forecasting unpredictable events in the real world. Lastly, with the increased use of High-Frequency Trading (HFT) for price discovery, quantitative finance is becoming more dominant in the current market, increasing speculation. The recent increase in speculation has likewise increased volatility, which has been considered to be one cause of the recent recessions. The current state of quantitative finance is the application of machine learning, however, whether it improves the state of the market is still questionable.
 
 
-![image](/assets/images/chromaAnalysis/Picture3.png){: .align-center}
-*Figure 3: 1/11 clip used for training. As seen, the clip was deconstructed to the average values of its frames per 5 seconds. When visualized, the framelines is seen at (C)*
-
-
-``` r
-% calculatde the return
-score = diff(YTD)./YTD(1:end-1,:);
-
-%calculate the drift
-meanx = mean(score,1);
-
-%calculate variance
-variance = cov(score);
-L = chol(variance);
-diag_L = diag(L);
-diag_L;
-```
 
