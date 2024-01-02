@@ -3,7 +3,7 @@ title: "Geometric Brownian Motion on Stock and Option Price Discovery - Matlab"
 excerpt: ""
 classes: wide
 header:
-  overlay_image: /assets/images/chromaAnalysis/cleopatraforPython1second.png
+  overlay_image: /assets/images/BrownianMotion/NVDA_200daysforecast.png.png
   overlay_filter: 0.2 # same as adding an opacity of 0.5 to a black background
   caption: "Photo credit: Random Walk using Matlab"
 ---
@@ -127,7 +127,7 @@ Note: It is possible to just write self-owned function using the Geometric Brown
 The use of GBM is not directly implemented in stocks but on *options*. Options is a financial derivative that gives the buyer the right, but not the obligation, to buy an asset for a given price before a predetermined time (expiry). For this project, we take on a *Risk Neutral Position* (RNP), a position where we ignore the risks, of European-style Options, options that can only be *exercised* on the expiry date. In an RNP, the drift rate of the stock becomes a risk-free interest rate. Using the same GBM, we can forecast the price of the options per strike price. 
 
 Here is a sample of an option contract:
-![image](/assets/images/chromaAnalysis/Picture3.png){: .align-center}
+![image](/assets/images/chromaAnalysis/stock.png){: .align-center}
 *Figure 3: Tech stocks YTD. Images will be cleaned up later....juts a placeholder for now*
 
 
@@ -198,7 +198,7 @@ Geometric Brownian Motion (GBM) is a widely used model in finance, particularly 
 
 ### Gamestop
 An example of this, is Gamestop:
-![image](/assets/images/BrownianMotion/Snip20231210_3.png){: .align-center}
+![image](/assets/images/BrownianMotion/gamestop.png){: .align-center}
 
 As shown, the price jump in January 2021 is very unpredictable and improbable for GBM and Black-scholes to predict. This movement caused huge financial losses to market makers and option sellers.
 
