@@ -51,7 +51,7 @@ title: "Resume"
 <div> </div>
 <div>
   <div>
-   <h3>Data and Operations Analyst </h3>
+   <h3>Operations Research Analyst </h3>
      <div>OSD Cost Assessment and Program Evaluation (CAPE) - Washington, D.C.</div>
       <div> <span class="text-color"> July 2020 - August 2020 </span></div>
     <p>
@@ -87,6 +87,14 @@ title: "Resume"
 
 <div>
  <h2>EDUCATION</h2>
+  <div>
+     <div>
+      <h3>Old Dominion University</h3>
+         <div>Master of Science: Computation Applied Mathematics - Mathematics of Data Science</div>
+       <p> Overall GPA: 3.93 </p>
+     </div>
+     <div ><span>August 2021 - December 2023</span></div>
+    </div> 
    <div>
      <div>
       <h3>Old Dominion University</h3>
