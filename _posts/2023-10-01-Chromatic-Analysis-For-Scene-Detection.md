@@ -1,5 +1,5 @@
 ---
-title: "Chromatic Analysis: Using Naive Method to determine frames/scenes"
+title: "Chromatic Analysis: Using Naive Method to determine frames/scenes - Python"
 excerpt: ""
 classes: wide
 header:
