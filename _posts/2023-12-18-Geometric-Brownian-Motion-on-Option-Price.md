@@ -3,9 +3,9 @@ title: "Geometric Brownian Motion on Stock and Option Price Discovery - Matlab"
 excerpt: ""
 classes: wide
 header:
-  overlay_image: /assets/images/BrownianMotion/NVDA_200daysforecast.png.png
+  overlay_image: /assets/images/BrownianMotion/NVDA_200daysforecast.png
   overlay_filter: 0.2 # same as adding an opacity of 0.5 to a black background
-  caption: "Photo credit: Random Walk using Matlab"
+  caption: "Photo credit: NVIDIA stock forecast"
 ---
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"> </script> <script type="text/x-mathjax-config"> MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], processEscapes: true}, jax: ["input/TeX","input/MathML","input/AsciiMath","output/CommonHTML"], extensions: ["tex2jax.js","mml2jax.js","asciimath2jax.js","MathMenu.js","MathZoom.js","AssistiveMML.js", "[Contrib]/a11y/accessibility-menu.js"], TeX: { extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"], equationNumbers: { autoNumber: "AMS" } } }); </script>
