@@ -59,7 +59,7 @@ plugins:
 author:
   name   : "Justin Gausin"
   avatar : "/assets/images/IMG_4294.jpg"
-  bio    : "Old Dominion Universtiy:      \n -M.S. Applied Mathematics - Data Science  (Present)"
+  bio    : "Old Dominion Universtiy:      \n -M.S. Applied Mathematics - Mathematics of Data Science"
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
