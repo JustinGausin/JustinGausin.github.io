@@ -49,7 +49,7 @@ $ W_t = $ Wiener process (Normal Distribution).
 The drift of the stock, $\mu $, and volatility, $ \sigma $, are the unknown parameters for the equation. 
 
 
- ## General Steps  
+ ##  General Steps  
  
 The general steps for this project are as follows:
 
@@ -88,7 +88,7 @@ L = chol(variance);
 diag_L = diag(L);
 ```
 
-## Forecasting the Stock Prices
+### Forecasting the Stock Prices
 Using the GBM formula with the calculated drift, $\mu $, and volatility, $ \sigma $, we can forecast the price of stocks using multiple simulations. For example, let's start with forecasting a Monte-Carlo simulation (1000 paths) for the next 5 days (end date is 2023-12-15) for Microsoft:
 ![image](/assets/images/BrownianMotion/Fivedaysforecast.png){: .align-center}
 
@@ -123,7 +123,7 @@ title(['Geometric Brownian Motion for MSFT stock +' int2str(day_forecast) ' days
 ```
 Note: It is possible to just write a self-owned function using the Geometric Brownian Motion, however, I used a GitHub library already existing due to simplicity and optimization. Here we use SDEtools: https://github.com/horchler/SDETools. 
 
-## Forecasting the Option Prices
+### Forecasting the Option Prices
 The use of GBM is not directly implemented in stocks but in *options*. Options is a financial derivative that gives the buyer the right, but not the obligation, to buy an asset for a given price before a predetermined time (expiry). For this project, we take on a *Risk Neutral Position* (RNP), a position where we ignore the risks, of European-style Options, options that can only be *exercised* on the expiry date. In an RNP, the drift rate of the stock becomes a risk-free interest rate. Using the same GBM, we can forecast the price of the options per strike price. 
 
 Here is a sample of an option contract:
