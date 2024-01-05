@@ -9,7 +9,7 @@ header:
 ---
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"> </script> <script type="text/x-mathjax-config"> MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], processEscapes: true}, jax: ["input/TeX","input/MathML","input/AsciiMath","output/CommonHTML"], extensions: ["tex2jax.js","mml2jax.js","asciimath2jax.js","MathMenu.js","MathZoom.js","AssistiveMML.js", "[Contrib]/a11y/accessibility-menu.js"], TeX: { extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"], equationNumbers: { autoNumber: "AMS" } } }); </script>
-# UNDER CONSTRUCTIONNNNNNNN....
+
 ## Summary
 Quantitative Finance is a field of applied mathematics that employs mathematical and statistical
 methods to analyze assets. One of the main concepts of quantitative finance is Brownian motion,
@@ -23,10 +23,10 @@ the basis of the Black-Scholes equation, the current standard of options pricing
 
 ## Introduction 
 
-Brownian Motion is first credited to botanist Robert Brown and decades later, was used by Louis Bachelier to model stock speculation and Albert Einstein to indirectly prove the existence of atoms. The basis of Brownian motion is a random walk, a mathematical model that describes a sequence of steps or movements, where each step is taken randomly and independently of the previous ones. In a one-dimensional random walk, for example, an entity starts at a certain position and, at each time step, moves either to the up or down with some probability. The cumulative effect of these random steps results in a path that exhibits a certain degree of unpredictability and randomness. When time becomes continuous and step size decreases, a random walk is equal to a brownian motion. Both concepts are examples of a Markov chain, where future behavior is independent of past history.
+Brownian Motion is first credited to botanist Robert Brown and decades later, was used by Louis Bachelier to model stock speculation and Albert Einstein to indirectly prove the existence of atoms. The basis of Brownian motion is a random walk, a mathematical model that describes a sequence of steps or movements, where each step is taken randomly and independently of the previous ones. In a one-dimensional random walk, for example, an entity starts at a certain position and, at each time step, moves either to the up or down with some probability. The cumulative effect of these random steps results in a path that exhibits a certain degree of unpredictability and randomness. When time becomes continuous and step size decreases, a random walk equals a Brownian motion. Both concepts are examples of a Markov chain, where future behavior is independent of past history.
 
 
-Geometric Brownian Motion is defined as when the logarithmic quantity follows a Brownian Motio. GBM is one of the main concepts of quantitative finance for asset price prediction. 
+Geometric Brownian Motion is defined as when the logarithmic quantity follows a Brownian Motion. GBM is one of the main concepts of quantitative finance for asset price prediction. 
 The log of the Geometric Brownian motion is as follows:
 
 
@@ -46,13 +46,13 @@ $ t = $ small interval time.
 
 $ W_t = $ Wiener process (Normal Distribution).
 
-The drift of the stock, $\mu $, and volatility, $ \sigma $, are the unknown parameters for the equation. The drift of the stock is the mean of the returns, which can be calculated by a simple equation: $\frac{1}{T} \sum_{i}^{T} R_t$ where $R_t = \frac{S_t - S_{t-1}}{S_{t-1}}$, such that $S_t$ is the next day log-price, and $S_{t-1}$ is the current day log-price. For volatility, the variance-covariance matrix is calculated from the log returns and subsequently using Cholesky Decomposition. Since the variance-covariance is always symmetric and semi-positive definite, Cholesky Decomposition, $LL^T$, can be used. To get the volatility, we take the diagonal of the resulting $L$.
+The drift of the stock, $\mu $, and volatility, $ \sigma $, are the unknown parameters for the equation. The drift of the stock is the mean of the returns, which can be calculated by a simple equation: $\frac{1}{T} \sum_{i}^{T} R_t$ where $R_t = \frac{S_t - S_{t-1}}{S_{t-1}}$, such that $S_t$ is the next day log-price, and $S_{t-1}$ is the current day log-price. For volatility, the variance-covariance matrix is calculated from the log returns and subsequently using Cholesky Decomposition. Since the variance-covariance is always symmetric and semi-positive definite, Cholesky Decomposition, $LL^T$, can be used. To get the volatility, we take the diagonal of the resulting $L$. The value of the variance exists in the original variance-covariance matrix in the diagonal, and it is possible to square root said values. However, it does not retain the covariance information, i.e. the whole market movement is ignored. Hence, the reason for the use of Cholesky as an approach. 
 
 
 
  ## General Steps  
  
-The general steps for this project is as follows:
+The general steps for this project are as follows:
 
 1. Gather Data (NASDAQ).
 2. Log(training_data)
@@ -65,7 +65,6 @@ The general steps for this project is as follows:
 For this project, 14 Tech companies' stock prices were used. Since the companies are in the same sector (Tech), the prices will be correlated. While data are already adjusted for stock splits and stock consolidation, they do not adjust for dividends. Hence, we will assume that dividends are relatively small and do not affect the overall price of the stock. This is important, because even in Black-Scholes model (discuss later), dividends are assumed to be nonexistent. The 14 Tech companies are as follows: ASML, AMD, AAPL, AMZN, MSFT, META, AVGO, NVDA, CRM, ADBE, IBM, GOOG, TSM, INTC. The stock prices timeframe were from: 2022/12/27 - 2023/12/08, one day increments.
 
 ![image](/assets/images/BrownianMotion/YTD.png){: .align-center}
-*Figure 3: Tech stocks YTD. Images will be cleaned up later....juts a placeholder for now*
 
 Once gathering the data, simply log the prices in Matlab:
 ``` python
@@ -75,7 +74,7 @@ YTD = log(YTD_dly_price_training);
 The drift of the stock, $\mu $, and volatility, $ \sigma $, are the unknown parameters for the equation. The drift of the stock is the **mean of the returns**, which can be calculated by a simple equation: $\frac{1}{T} \sum_{i}^{T} R_t$ where $R_t = \frac{S_t - S_{t-1}}{S_{t-1}}$, such that $S_t$ is the next day log-price, and $S_{t-1}$ is the current day log-price. For volatility, the variance-covariance matrix is calculated from the log returns and subsequently using Cholesky Decomposition. Since the variance-covariance is always symmetric and semi-positive definite, Cholesky Decomposition, $LL^T$, can be used. To get the volatility, we take the diagonal of the resulting $L$. Note that while it is possible to take the standard deviation by the square root of the diagonal of the var-cov matrix, it would leave information about the correlation between the stocks. 
 
 ``` python
-% log the whole matrix for brownian motion
+% log the whole matrix for Brownian motion
 YTD = log(YTD_dly_price_training);
 
 % calculate the return
@@ -93,7 +92,6 @@ diag_L = diag(L);
 ## Forecasting the Stock Prices
 Using the GBM formula with the calculated drift, $\mu $, and volatility, $ \sigma $, we can forecast the price of stocks using multiple simulations. For example, let's start with forecasting a Monte-Carlo simulation (1000 paths) for the next 5 days (end date is 2023-12-15) for Microsoft:
 ![image](/assets/images/BrownianMotion/Fivedaysforecast.png){: .align-center}
-*Figure 3: Tech stocks YTD. Images will be cleaned up later....juts a placeholder for now*
 
 The prices remain stagnant within the 5 days. However, we can see the overral simulations possible minimum and maximum values. In a given scenario, an analyst may only include 95% confidence rate, but here we take the overral 100%. Next, we extend the forecast to +200 days for Microsoft and NVDIA. 
 <figure class="half">
@@ -131,12 +129,11 @@ The use of GBM is not directly implemented in stocks but on *options*. Options i
 
 Here is a sample of an option contract:
 ![image](/assets/images/chromaAnalysis/stock.png){: .align-center}
-*Figure 3: Tech stocks YTD. Images will be cleaned up later....juts a placeholder for now*
 
 
-The price of the contract is at \\$34.10 for a call option of \\$340 for a MSFT option expring on 2023/12/15. 
+The price of the contract is at \\$34.10 for a call option of \\$340 for an MSFT option expiring on 2023/12/15. 
 
-The code to calculate the differnce between the forecasted price and the actual option price:
+The code to calculate the difference between the forecasted price and the actual option price:
 
 ``` python
 %December 15 - MSFT option prices for the strike 
