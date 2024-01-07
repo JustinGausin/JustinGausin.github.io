@@ -1740,7 +1740,8 @@ pheatmap(assay(kicr_rlog2)[select, ],scale = &quot;row&quot;,
 </div>
 <div id="pathway-analysis" class="section level2">
 <h2>Pathway Analysis</h2>
-<p>The next step is to perform a pathway analysis using the deferentially expressed genes. Note that the gene names in the expression data include two types of IDs separated by a “|”. Hence, we need to extract only the 1st part, for example, for a gene ID “XCR1|2829” you need to extract “XCR1”</p>
+<p>Pathway analysis in Genomic Data Science involves the systematic examination of biological pathways to understand how genes work together in specific cellular processes. It begins with the identification of genes that exhibit significant changes in expression or other genomic features through methods like differential analysis. These identified genes are then mapped onto predefined biological pathways, such as those from databases like KEGG or Reactome. Statistical methods are applied to assess the enrichment of these genes in particular pathways, helping researchers infer the functional significance of the genomic alterations. Pathway analysis is valuable for gaining insights into the broader biological context of genomic data, uncovering the relationships between genes, and elucidating the molecular mechanisms underlying different conditions or experimental treatments. </p>
+       <p>The next step is to perform a pathway analysis using the diferentially expressed genes. Note that the gene names in the expression data include two types of IDs separated by a “|”. Hence, we need to extract only the 1st part, for example, for a gene ID “XCR1|2829” you need to extract “XCR1”</p>
 <pre class="r"><code># extract only the first part
 rownames(kicr_selected_genes) = sub(&quot;\\|.*&quot;, &quot;&quot;, rownames(kicr_selected_genes))
 
