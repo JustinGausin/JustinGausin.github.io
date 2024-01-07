@@ -1760,12 +1760,9 @@ write.table(rownames(kicr_selected_genes), &quot;inputtoDavid.txt&quot;,
 </ol>
 <p>Below is the enrichment result for the KEGG pathways, with EASE of .05 and at least 2 pathways genes in a list. There are 6 pathways that are significant.</p>
 </div>
-<div id="kegg-pathways-here" class="section level2">
 <a href="/assets/images/GenomicDataScience/pathways.png"><img src="/assets/images/GenomicDataScience/pathways.png"></a>
        
 <p>It seems to indicate that KIRC may have an effect on cell proliferation and glucose uptake.</p>
-<hr />
-</div>
 <div id="prediction." class="section level2">
 <h2>Prediction.</h2>
 <p>In this section, we build a classifier using the three genes with IDs (“CDKN2A|1029”, “TNFAIP6|7130”, “FABP6|2172”) to predict the groups of the samples.</p>
