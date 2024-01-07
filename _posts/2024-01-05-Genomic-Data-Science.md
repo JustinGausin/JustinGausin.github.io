@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+---
+title: "Differential Analysis in Genomic Data Science - R"
+classes: wide
+
+---
 
 <html>
 
@@ -1618,8 +1622,10 @@ pre code {
 
 <div id="summary" class="section level2">
 <h2>Summary</h2>
-<p>This project aims at investigating a genomic data science file. This file includes expression data for KIRC (kidney renal clear cell carcinoma) patients where some patients did not receive any treatment (control) while others received a treatment (treatment). In the expression data, the first 20 columns correspond to “control” samples while the next 20 to “treatment” samples. An analysis is performed to identify the genes that are differentially expressed between these two groups and identify the genes that are significant at p&lt;0.01 after multiplicity correction (Benjamini-Hochberg).</p>
+<p>Differential analysis in Genomic Data Science involves comparing gene expression or other genomic features between different experimental conditions. Genomic data, often obtained through technologies like RNA sequencing, undergoes preprocessing and normalization to ensure accuracy. Statistical methods are then applied to identify genes or genomic regions that exhibit significant differences in expression, with multiple testing corrections used to minimize false positives. The results are visualized to highlight significant changes, providing insights into the biological processes underlying different conditions such as diseases or treatments. This analysis is crucial for understanding how the genome responds to various factors and revealing key genes or pathways involved in specific biological contexts. </p>
+    <p>This project aims to investigate a genomic data science file. This file includes expression data for KIRC (kidney renal clear cell carcinoma) patients where some patients did not receive any treatment (control) while others received a treatment (treatment). In the expression data, the first 20 columns correspond to “control” samples while the next 20 to “treatment” samples. An analysis is performed to identify the genes that are differentially expressed between these two groups and identify the genes that are significant at p&lt;0.01 after multiplicity correction (Benjamini-Hochberg).</p>
 </div>
+
 <div id="load-library" class="section level2">
 <h2>Load Library</h2>
 <pre class="r"><code>library(glmnet)
