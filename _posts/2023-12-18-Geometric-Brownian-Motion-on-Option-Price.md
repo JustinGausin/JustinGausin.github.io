@@ -48,8 +48,8 @@ $ W_t = $ Wiener process (Normal Distribution).
 
 The drift of the stock, $\mu $, and volatility, $ \sigma $, are the unknown parameters for the equation. 
 
+##  General Steps  
 
- ##  General Steps 
 The general steps for this project are as follows:
 1. Gather Data (NASDAQ).
 2. Log(training_data)
