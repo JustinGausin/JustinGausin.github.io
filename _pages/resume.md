@@ -146,13 +146,6 @@ title: "Resume"
    </div>               
 </div>
 
-<div>
- <h2>Interests</h2>
-   <p> 
-    I am an individual who loves to try new things; one of the proof is this website, which was created by my pure interest. However, with the limited time I have, I try new things at an intermittent pace. For example, I dedicate about 30 minutes daily to building this site for my enjoyment. Additionally, I am an avid pool player, but not as professional as some of my friends are. I like to be physically active (powerlifting and workout) as a method of stress management. Lastly, I love to enjoy the minimalistic appeal of nature. As I say: "who are we if we aren't able to enjoy the appeal of the present, the beauty of nature, and the soon forgotten moment?".  
-   </p> 
-</div>
-
 
 
 <div>
