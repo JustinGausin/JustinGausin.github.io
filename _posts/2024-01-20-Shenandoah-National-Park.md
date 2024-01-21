@@ -1,5 +1,5 @@
 ---
-title: "Using Rayshader for Shenandoah National Park Hikes - Matlab"
+title: "Using Rayshader for Shenandoah National Park Hikes - R"
 excerpt: ""
 classes: wide
 header:
