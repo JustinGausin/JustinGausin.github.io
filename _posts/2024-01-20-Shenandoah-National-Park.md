@@ -14,4 +14,4 @@ header:
 </video>
 
 
-![](assets/images/rayshaderShenNatPark/mcafeeknob.mp4)
+![](https://github.com/JustinGausin/JustinGausin.github.io/assets/images/rayshaderShenNatPark/oldrag.mp4)
