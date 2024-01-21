@@ -9,7 +9,7 @@ header:
 ---
 
 # Under Construction
-<video width="320" height="240">
+<video width="320" height="240" autoplay>
   <source src="https://github.com/JustinGausin/JustinGausin.github.io/assets/images/rayshaderShenNatPark/oldrag.mp4" type="video/mp4">
 </video>
 
