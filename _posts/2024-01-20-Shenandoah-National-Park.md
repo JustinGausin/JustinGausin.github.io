@@ -10,8 +10,7 @@ header:
 
 # Under Construction
 <video width="320" height="240" autoplay>
-  <source src="https://github.com/JustinGausin/JustinGausin.github.io/assets/images/rayshaderShenNatPark/oldrag.mp4" type="video/mp4">
+  <source src="https://github.com/JustinGausin/JustinGausin.github.io/blob/master/assets/images/rayshaderShenNatPark/mcafeeknob.mp4" type="video/mp4">
 </video>
 
 
-![](https://github.com/JustinGausin/JustinGausin.github.io/assets/images/rayshaderShenNatPark/oldrag.mp4)
