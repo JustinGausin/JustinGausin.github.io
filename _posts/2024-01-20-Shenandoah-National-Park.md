@@ -29,3 +29,18 @@ McAfee Knob, situated within Shenandoah National Park in Virginia, is a renowned
 Old Rag Trail is one of the most popular and challenging hikes in Shenandoah National Park, Virginia. Renowned for its rugged terrain and stunning views, this 9.2-mile loop takes hikers on an exhilarating journey through rocky outcrops, dense forests, and exposed ridges. The highlight of the trail is the summit of Old Rag Mountain, which stands at 3,291 feet and provides unparalleled panoramic views of the surrounding landscapes.
 
 ![Old-Rag](/assets/images/rayshaderShenNatPark/oldrag.mp4){: .align-center}
+
+
+## Hawskbill Summit Trail
+Hawksbill Trail in Shenandoah National Park is a short yet rewarding hike leading to the highest peak in the park, Hawksbill Summit.  Once at the top, hikers are treated to stunning views of the surrounding Blue Ridge Mountains and Shenandoah Valley. The relatively moderate difficulty level makes Hawksbill Trail accessible to a wide range of visitors, making it a popular choice for those seeking a shorter hike with a spectacular payoff in Shenandoah National Park.
+
+There are many trails possible to reach the summit. In the video below, Upper Hawksbill Trail and the Lower Hawksbill Trail are colored in red, while the Skyline Drive is represented by the grey line.
+![Old-Rag](/assets/images/rayshaderShenNatPark/hawksbillloop.mp4){: .align-center}
+
+## Dark Hallow Falls Trail
+Dark Hollow Falls Trail in Shenandoah National Park is a brief but enchanting hike leading to the captivating Dark Hollow Falls. The trail is approximately 1.4 miles round trip, descending through a lush forest to reach the base of the falls. The cascading waters of Dark Hollow Falls create a serene and picturesque setting, making it a favorite spot for nature lovers and photographers. The ease of access and the beauty of the falls make this trail a popular choice for visitors looking to experience the natural wonders of Shenandoah National Park in a short and enjoyable excursion. 
+
+Beyond the Dark Hallow Falls is the Rose Rive Trails not shown in the video below.
+
+
+
