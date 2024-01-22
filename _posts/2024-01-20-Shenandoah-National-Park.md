@@ -15,16 +15,15 @@ Shenandoah National Park, located in the state of Virginia, is a breathtaking ex
 
 
 The image below showcase the Shenandoah National Park sprawling mountains. At the top left are the George Washingtion National Forest and at very top left, are the Appalachian Mountains in West Virginia. Data was taken from USGS, and visualized using rayshader, following the work of [Spencer Schien](https://spencerschien.info/post/data_viz_how_to/high_quality_rayshader_visuals/).
-![McaFee-Knob](/assets/images/rayshaderShenNatPark/mcafeeknob.mp4){: .align-center}
 
+![Shenandoah-National-Park](/assets/images/rayshaderShenNatPark/shenandoah_highresTrim.png){: .align-center}
 
 Part of my motivation in this project is due to the many hikes I have done in the Shenandoah National Park. A few of these trails are visualized below. 
 
 ## McAfee Knob Trail
 
 McAfee Knob, situated within Shenandoah National Park in Virginia, is a renowned and iconic landmark along the Appalachian Trail. This prominent rocky outcrop offers breathtaking panoramic views of the surrounding Blue Ridge Mountains and the Shenandoah Valley. Hikers and nature enthusiasts are drawn to McAfee Knob for its stunning scenery and the rewarding hike it takes to reach the summit.
-![McaFee-Knob](/assets/images/rayshaderShenNatPark/shenandoah_highresTrim.png){: .align-center}
-
+![McaFee-Knob](/assets/images/rayshaderShenNatPark/mcafeeknob.mp4){: .align-center}
 
 ## Old Rag Trail 
 Old Rag Trail is one of the most popular and challenging hikes in Shenandoah National Park, Virginia. Renowned for its rugged terrain and stunning views, this 9.2-mile loop takes hikers on an exhilarating journey through rocky outcrops, dense forests, and exposed ridges. The highlight of the trail is the summit of Old Rag Mountain, which stands at 3,291 feet and provides unparalleled panoramic views of the surrounding landscapes.
