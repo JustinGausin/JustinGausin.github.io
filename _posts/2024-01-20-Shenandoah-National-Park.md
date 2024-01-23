@@ -23,7 +23,8 @@ gallery:
     title: "Image 3 title caption"
     
 ---
-{% include gallery caption="This is a sample gallery with **Markdown support**." %}
+
+[The videos embedded use html formatting instead of kramdown since kramdown does not support different browsers well when doing videos. If you are using safari, please refer to the bottom of the page for the videos. ]{: .notice--info}
 
 
 # Under Construction
@@ -136,3 +137,5 @@ base_map <- elev_med_mat %>%
 filename_movie = "mcafeetrail.mp4"
 render_movie(filename = filename_movie)
 ~~~
+
+{% include gallery caption="This is a sample gallery with **Markdown support**." %}
