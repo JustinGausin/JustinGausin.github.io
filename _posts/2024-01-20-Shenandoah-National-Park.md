@@ -7,7 +7,21 @@ header:
   overlay_filter: 0.4 # same as adding an opacity of 0.5 to a black background
   caption: "Using Rayshader rendering"
 ---
-<link rel="stylesheet" href="/assets/new.css">
+
+gallery:
+  - url: /assets/images/rayshaderShenNatPark/mcafeeknob.mp4
+    image_path: /assets/images/rayshaderShenNatPark/mcafeeknob.mp4
+    alt: "placeholder image 1"
+    title: "Image 1 title caption"
+  - url: /assets/images/rayshaderShenNatPark/mcafeeknob.mp4
+    image_path: /assets/images/rayshaderShenNatPark/mcafeeknob.mp4
+    alt: "placeholder image 2"
+    title: "Image 2 title caption"
+  - url: /assets/images/rayshaderShenNatPark/mcafeeknob.mp4
+    image_path: /assets/images/rayshaderShenNatPark/mcafeeknob.mp4
+    alt: "placeholder image 3"
+    title: "Image 3 title caption"
+    
 # Under Construction
 
 # Shenandoah National Park
