@@ -43,14 +43,14 @@ Part of my motivation in this project is due to the many hikes I have done in th
 
 McAfee Knob, situated within Shenandoah National Park in Virginia, is a renowned and iconic landmark along the Appalachian Trail. This prominent rocky outcrop offers breathtaking panoramic views of the surrounding Blue Ridge Mountains and the Shenandoah Valley. Hikers and nature enthusiasts are drawn to McAfee Knob for its stunning scenery and the rewarding hike it takes to reach the summit.
 
-<video controls="" width="800" height="500" muted="" loop="" autoplay="">
+<video controls="" width="100%" height="500" muted="" loop="" autoplay="">
 <source src="/assets/images/rayshaderShenNatPark/mcafeeknob.mp4" type="video/mp4">
 </video>
 
 ## Old Rag Trail 
 Old Rag Trail is one of the most popular and challenging hikes in Shenandoah National Park, Virginia. Renowned for its rugged terrain and stunning views, this 9.2-mile loop takes hikers on an exhilarating journey through rocky outcrops, dense forests, and exposed ridges. The highlight of the trail is the summit of Old Rag Mountain, which stands at 3,291 feet and provides unparalleled panoramic views of the surrounding landscapes.
 
-<video controls="" width="800" height="500" muted="" loop="" autoplay="">
+<video controls="" width="100%" height="500" muted="" loop="" autoplay="">
 <source src="/assets/images/rayshaderShenNatPark/oldrag.mp4" type="video/mp4">
 </video>
 
@@ -58,7 +58,7 @@ Old Rag Trail is one of the most popular and challenging hikes in Shenandoah Nat
 Hawksbill Trail in Shenandoah National Park is a short yet rewarding hike leading to the highest peak in the park, Hawksbill Summit.  Once at the top, hikers are treated to stunning views of the surrounding Blue Ridge Mountains and Shenandoah Valley. The relatively moderate difficulty level makes Hawksbill Trail accessible to a wide range of visitors, making it a popular choice for those seeking a shorter hike with a spectacular payoff in Shenandoah National Park.
 
 There are many trails possible to reach the summit. In the video below, Upper Hawksbill Trail and the Lower Hawksbill Trail are colored in red, while the Skyline Drive is represented by the grey line.
-<video controls="" width="800" height="500" muted="" loop="" autoplay="">
+<video controls="" width="100%" height="500" muted="" loop="" autoplay="">
 <source src="/assets/images/rayshaderShenNatPark/hawksbillloop.mp4" type="video/mp4">
 </video>
 
