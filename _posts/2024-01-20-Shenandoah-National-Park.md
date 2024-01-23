@@ -5,30 +5,14 @@ classes: wide
 header:
   overlay_image: /assets/images/rayshaderShenNatPark/shenandoah_highresTrim.png
   overlay_filter: 0.4 # same as adding an opacity of 0.5 to a black background
-  caption: "Using Rayshader rendering"
-
-  
-gallery:
-  - url: /assets/images/rayshaderShenNatPark/mcafeeknob.mp4
-    image_path: /assets/images/rayshaderShenNatPark/mcafeeknob.mp4
-    alt: "placeholder image 1"
-    title: "Image 1 title caption"
-  - url: /assets/images/rayshaderShenNatPark/mcafeeknob.mp4
-    image_path: /assets/images/rayshaderShenNatPark/mcafeeknob.mp4
-    alt: "placeholder image 2"
-    title: "Image 2 title caption"
-  - url: /assets/images/rayshaderShenNatPark/mcafeeknob.mp4
-    image_path: /assets/images/rayshaderShenNatPark/mcafeeknob.mp4
-    alt: "placeholder image 3"
-    title: "Image 3 title caption"
-    
+  caption: "Using Rayshader rendering"  
 ---
 
-The videos embedded use html formatting instead of kramdown since kramdown does not support different browsers well when doing videos. If you are using safari, please refer to the bottom of the page for the videos.
+The videos embedded use both html formatting and kramdown. Since different browsers parse kramdown and html tags differently, I added both the html and kramdown version for full coverage (so that most browsers can view the videos regardless). Hence, if there is a broken link icon next to a video, please ignore - that's just the same copy. 
 {: .notice--info}
 
 
-# Under Construction
+# Under Construction....
 
 # Shenandoah National Park
 Shenandoah National Park, located in the state of Virginia, is a breathtaking expanse of natural beauty that encompasses the crest of the Blue Ridge Mountains. Established in 1935, the park covers over 200,000 acres and is renowned for its stunning vistas, dense forests, and diverse wildlife. Skyline Drive, a scenic highway that stretches for 105 miles along the park's spine, offers visitors panoramic views of the Shenandoah Valley to the west and the Piedmont region to the east. Hiking enthusiasts can explore a network of over 200 miles of trails, including a portion of the famous Appalachian Trail. The park is a haven for outdoor recreation, with opportunities for camping, birdwatching, and observing the vibrant fall foliage. Shenandoah National Park provides a serene escape into nature, allowing visitors to connect with the great outdoors and experience the tranquility of this protected wilderness.
@@ -77,7 +61,12 @@ Beyond the Dark Hallow Falls is the Rose Rive Trails not shown in the video belo
 
 ![dark-hallow](/assets/images/rayshaderShenNatPark/darkhallow.mp4)
 
+
+## Code Excerpt
+
+The code below is for McAfee Knob Trail. 
 ~~~ r
+#load library 
 library(osmdata)
 library(rayshader)
 library(MetBrewer)
@@ -89,6 +78,7 @@ library(elevatr)
 library(glue)
 library(ambient)
 
+#creating a box for target. Latitude and Longtitude required
 xmi = -80.1
 xma = -80.0
 ymi = 37.370
@@ -117,9 +107,11 @@ med_roads <- med_bbox %>%
 pal <- "Hokusai3"
 colors <- met.brewer(pal)
 
+#To get specific trails and lines. 
 med_roads_lines <- med_roads$osm_lines
 mcafee_trails= med_roads_lines %>% 
   filter(osm_id == "286275011" | osm_id == "286275020" | osm_id == "286275041" | osm_id == "20449146")
+
 base_map <- elev_med_mat %>% 
   height_shade(texture = grDevices::colorRampPalette(colors)(256)) %>% 
   add_overlay(
@@ -143,5 +135,3 @@ base_map <- elev_med_mat %>%
 filename_movie = "mcafeetrail.mp4"
 render_movie(filename = filename_movie)
 ~~~
-
-{% include gallery caption="This is a sample gallery with **Markdown support**." %}
