@@ -6,8 +6,8 @@ header:
   overlay_image: /assets/images/rayshaderShenNatPark/shenandoah_highresTrim.png
   overlay_filter: 0.4 # same as adding an opacity of 0.5 to a black background
   caption: "Using Rayshader rendering"
----
 
+  
 gallery:
   - url: /assets/images/rayshaderShenNatPark/mcafeeknob.mp4
     image_path: /assets/images/rayshaderShenNatPark/mcafeeknob.mp4
@@ -22,6 +22,10 @@ gallery:
     alt: "placeholder image 3"
     title: "Image 3 title caption"
     
+---
+{% include gallery caption="This is a sample gallery with **Markdown support**." %}
+
+
 # Under Construction
 
 # Shenandoah National Park
