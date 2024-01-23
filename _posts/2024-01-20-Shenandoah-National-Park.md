@@ -24,7 +24,7 @@ gallery:
     
 ---
 
-[The videos embedded use html formatting instead of kramdown since kramdown does not support different browsers well when doing videos. If you are using safari, please refer to the bottom of the page for the videos. ]{: .notice--info}
+The videos embedded use html formatting instead of kramdown since kramdown does not support different browsers well when doing videos. If you are using safari, please refer to the bottom of the page for the videos.{: .notice--info}
 
 
 # Under Construction
