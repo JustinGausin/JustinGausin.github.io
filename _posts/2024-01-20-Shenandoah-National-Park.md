@@ -31,7 +31,7 @@ McAfee Knob, situated within Shenandoah National Park in Virginia, is a renowned
 <video controls="" width="100%" height="100%" muted="" loop="" autoplay="">
 <source src="/assets/images/rayshaderShenNatPark/mcafeeknob.mp4" type="video/mp4">
 </video>
-
+![mcafee-knob](/assets/images/rayshaderShenNatPark/mcafeeknob.mp4)
 ## Old Rag Trail 
 Old Rag Trail is one of the most popular and challenging hikes in Shenandoah National Park, Virginia. Renowned for its rugged terrain and stunning views, this 9.2-mile loop takes hikers on an exhilarating journey through rocky outcrops, dense forests, and exposed ridges. The highlight of the trail is the summit of Old Rag Mountain, which stands at 3,291 feet and provides unparalleled panoramic views of the surrounding landscapes.
 
