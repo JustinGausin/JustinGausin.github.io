@@ -24,7 +24,8 @@ gallery:
     
 ---
 
-The videos embedded use html formatting instead of kramdown since kramdown does not support different browsers well when doing videos. If you are using safari, please refer to the bottom of the page for the videos.{: .notice--info}
+The videos embedded use html formatting instead of kramdown since kramdown does not support different browsers well when doing videos. If you are using safari, please refer to the bottom of the page for the videos.
+{: .notice--info}
 
 
 # Under Construction
@@ -37,7 +38,7 @@ The image below showcase the Shenandoah National Park sprawling mountains. At th
 
 ![Shenandoah-National-Park](/assets/images/rayshaderShenNatPark/shenandoah_highresTrim.png){: .align-center}
 
-Part of my motivation in this project is due to the many hikes I have done in the Shenandoah National Park. A few of these trails are visualized below. 
+Part of my motivation in this project is due to the many hikes I have done in the Shenandoah National Park. A few of these trails are visualized below using Openstreetmap via R. An excerpt of the code is all the way below. 
 
 ## McAfee Knob Trail
 
@@ -50,26 +51,31 @@ McAfee Knob, situated within Shenandoah National Park in Virginia, is a renowned
 ## Old Rag Trail 
 Old Rag Trail is one of the most popular and challenging hikes in Shenandoah National Park, Virginia. Renowned for its rugged terrain and stunning views, this 9.2-mile loop takes hikers on an exhilarating journey through rocky outcrops, dense forests, and exposed ridges. The highlight of the trail is the summit of Old Rag Mountain, which stands at 3,291 feet and provides unparalleled panoramic views of the surrounding landscapes.
 
-<video controls="" width="100%" height="90%" muted="" loop="" autoplay="">
+<video controls="" width="100%" height="100%" muted="" loop="" autoplay="">
 <source src="/assets/images/rayshaderShenNatPark/oldrag.mp4" type="video/mp4">
 </video>
+
+![old-rag](/assets/images/rayshaderShenNatPark/oldrag.mp4)
 
 ## Hawskbill Summit Trail
 Hawksbill Trail in Shenandoah National Park is a short yet rewarding hike leading to the highest peak in the park, Hawksbill Summit.  Once at the top, hikers are treated to stunning views of the surrounding Blue Ridge Mountains and Shenandoah Valley. The relatively moderate difficulty level makes Hawksbill Trail accessible to a wide range of visitors, making it a popular choice for those seeking a shorter hike with a spectacular payoff in Shenandoah National Park.
 
 There are many trails possible to reach the summit. In the video below, Upper Hawksbill Trail and the Lower Hawksbill Trail are colored in red, while the Skyline Drive is represented by the grey line.
-<video controls="" width="100%" height="80%" muted="" loop="" autoplay="">
+<video controls="" width="100%" height="100%" muted="" loop="" autoplay="">
 <source src="/assets/images/rayshaderShenNatPark/hawksbillloop.mp4" type="video/mp4">
 </video>
+
+![hawksbill-loop](/assets/images/rayshaderShenNatPark/hawksbillloop.mp4)
 
 ## Dark Hallow Falls Trail
 Dark Hollow Falls Trail in Shenandoah National Park is a brief but enchanting hike leading to the captivating Dark Hollow Falls. The trail is approximately 1.4 miles round trip, descending through a lush forest to reach the base of the falls. The cascading waters of Dark Hollow Falls create a serene and picturesque setting, making it a favorite spot for nature lovers and photographers. The ease of access and the beauty of the falls make this trail a popular choice for visitors looking to experience the natural wonders of Shenandoah National Park in a short and enjoyable excursion. 
 
 Beyond the Dark Hallow Falls is the Rose Rive Trails not shown in the video below.
-<video controls="" width="100%" height="400" muted="" loop="" autoplay="">
+<video controls="" width="100%" height="100%" muted="" loop="" autoplay="">
 <source src="/assets/images/rayshaderShenNatPark/darkhallow.mp4" type="video/mp4">
 </video>
 
+![dark-hallow](/assets/images/rayshaderShenNatPark/darkhallow.mp4)
 
 ~~~ r
 library(osmdata)
