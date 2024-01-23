@@ -7,7 +7,7 @@ header:
   overlay_filter: 0.4 # same as adding an opacity of 0.5 to a black background
   caption: "Using Rayshader rendering"
 ---
-
+<link rel="stylesheet" href="mystyle.css">
 # Under Construction
 
 # Shenandoah National Park
@@ -47,7 +47,7 @@ There are many trails possible to reach the summit. In the video below, Upper Ha
 Dark Hollow Falls Trail in Shenandoah National Park is a brief but enchanting hike leading to the captivating Dark Hollow Falls. The trail is approximately 1.4 miles round trip, descending through a lush forest to reach the base of the falls. The cascading waters of Dark Hollow Falls create a serene and picturesque setting, making it a favorite spot for nature lovers and photographers. The ease of access and the beauty of the falls make this trail a popular choice for visitors looking to experience the natural wonders of Shenandoah National Park in a short and enjoyable excursion. 
 
 Beyond the Dark Hallow Falls is the Rose Rive Trails not shown in the video below.
-<video controls="" muted="" loop="" autoplay="">
+<video controls="" width="800" height="500" muted="" loop="" autoplay="">
 <source src="/assets/images/rayshaderShenNatPark/darkhallow.mp4" type="video/mp4">
 </video>
 
