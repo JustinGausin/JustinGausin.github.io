@@ -9,3 +9,9 @@
 .dateStamp{
   color:    color: #bd5d38 !important;
 }
+
+video {
+  max-width: 100%;
+  height: auto;
+}
+
