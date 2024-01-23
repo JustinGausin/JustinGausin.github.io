@@ -106,34 +106,9 @@ med_roads <- med_bbox %>%
   add_osm_feature(key = "highway") %>%
   osmdata_sf()
 
-med_roads_lines <- med_roads$osm_lines
-
 #derrain is good, hokusai3, pissaro
 pal <- "Hokusai3"
 colors <- met.brewer(pal)
-
-
-med_roads_lines <- med_roads$osm_lines
-mcafee_trails= med_roads_lines %>% 
-  filter(osm_id == "286275011" | osm_id == "286275020" | osm_id == "286275041" | osm_id == "20449146")
-base_map <- elev_med_mat %>% 
-  height_shade(texture = grDevices::colorRampPalette(colors)(256)) %>% 
-  add_overlay(
-    generate_line_overlay(
-      mcafee_trails, extent = extent_zoomed,
-      linewidth = 1, color = "red",
-      heightmap = elev_med_mat
-    )) %>%
-  plot_3d(elev_med_mat, 
-          zscale = 10, 
-          windowsize = c(1200, 1000),
-          soliddepth = -max(elev_med_mat)/10, 
-          wateralpha = 0,
-          theta = 25, 
-          phi = 30, 
-          zoom = 0.65, 
-          fov = 60, 
-          solid= TRUE)
 
 med_roads_lines <- med_roads$osm_lines
 mcafee_trails= med_roads_lines %>% 
