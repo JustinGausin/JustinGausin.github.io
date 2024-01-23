@@ -69,3 +69,95 @@ Beyond the Dark Hallow Falls is the Rose Rive Trails not shown in the video belo
 <source src="/assets/images/rayshaderShenNatPark/darkhallow.mp4" type="video/mp4">
 </video>
 
+
+~~~ r
+library(osmdata)
+library(rayshader)
+library(MetBrewer)
+library(sf)
+library(dplyr)
+library(raster)
+library(magick)
+library(elevatr)
+library(glue)
+library(ambient)
+
+xmi = -80.1
+xma = -80.0
+ymi = 37.370
+yma = 37.395
+
+
+med_bbox <- st_bbox(c(xmin = xmi, xmax = xma, 
+                      ymin = ymi, ymax = yma),
+                    crs = 4326)
+med_bbox_df <- data.frame(x = c(xmi, xma),
+                       y = c(ymi, yma))
+
+
+extent_zoomed <- raster::extent(med_bbox)
+prj_dd <- "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
+
+elev_med <- get_elev_raster(med_bbox_df, prj =  prj_dd, z = 12, clip = "bbox")
+
+elev_med_mat <- raster_to_matrix(elev_med)
+med_roads <- med_bbox %>%
+  opq() %>%
+  add_osm_feature(key = "highway") %>%
+  osmdata_sf()
+
+med_roads_lines <- med_roads$osm_lines
+
+#derrain is good, hokusai3, pissaro
+pal <- "Hokusai3"
+colors <- met.brewer(pal)
+
+
+med_roads_lines <- med_roads$osm_lines
+mcafee_trails= med_roads_lines %>% 
+  filter(osm_id == "286275011" | osm_id == "286275020" | osm_id == "286275041" | osm_id == "20449146")
+base_map <- elev_med_mat %>% 
+  height_shade(texture = grDevices::colorRampPalette(colors)(256)) %>% 
+  add_overlay(
+    generate_line_overlay(
+      mcafee_trails, extent = extent_zoomed,
+      linewidth = 1, color = "red",
+      heightmap = elev_med_mat
+    )) %>%
+  plot_3d(elev_med_mat, 
+          zscale = 10, 
+          windowsize = c(1200, 1000),
+          soliddepth = -max(elev_med_mat)/10, 
+          wateralpha = 0,
+          theta = 25, 
+          phi = 30, 
+          zoom = 0.65, 
+          fov = 60, 
+          solid= TRUE)
+
+med_roads_lines <- med_roads$osm_lines
+mcafee_trails= med_roads_lines %>% 
+  filter(osm_id == "286275011" | osm_id == "286275020" | osm_id == "286275041" | osm_id == "20449146")
+base_map <- elev_med_mat %>% 
+  height_shade(texture = grDevices::colorRampPalette(colors)(256)) %>% 
+  add_overlay(
+    generate_line_overlay(
+      mcafee_trails, extent = extent_zoomed,
+      linewidth = 1, color = "red",
+      heightmap = elev_med_mat
+    )) %>%
+  plot_3d(elev_med_mat, 
+          zscale = 10, 
+          windowsize = c(1200, 1000),
+          soliddepth = -max(elev_med_mat)/10, 
+          wateralpha = 0,
+          theta = 25, 
+          phi = 30, 
+          zoom = 0.65, 
+          fov = 60, 
+          solid= TRUE)
+
+
+filename_movie = "mcafeetrail.mp4"
+render_movie(filename = filename_movie)
+~~~
