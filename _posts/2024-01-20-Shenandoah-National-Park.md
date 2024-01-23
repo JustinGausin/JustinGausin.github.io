@@ -1,5 +1,5 @@
 ---
-title: "Using Rayshader for Shenandoah National Park Hikes - R"
+title: "Using Rayshader, GIS, and OpenstreetMap for Shenandoah National Park Hikes - R"
 excerpt: ""
 classes: wide
 header:
