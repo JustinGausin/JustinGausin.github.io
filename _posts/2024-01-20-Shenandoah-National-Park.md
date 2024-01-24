@@ -8,13 +8,17 @@ header:
   caption: "Using Rayshader rendering"  
 ---
 
-The videos embedded use both html formatting and kramdown. Since different browsers parse kramdown and html tags differently, I added both the html and kramdown version for full coverage (so that most browsers can view the videos regardless). Hence, if there is a broken link icon next to a video, please ignore - that's just the same copy. 
-{: .notice--info}
+
 
 
 # Under Construction....
 
 # Shenandoah National Park
+
+The videos embedded use both html formatting and kramdown. Since different browsers parse kramdown and html tags differently, I added both the html and kramdown version for full coverage (so that most browsers can view the videos regardless). Hence, if there is a broken link icon next to a video, please ignore - that's just the same copy. 
+{: .notice--info}
+
+
 Shenandoah National Park, located in the state of Virginia, is a breathtaking expanse of natural beauty that encompasses the crest of the Blue Ridge Mountains. Established in 1935, the park covers over 200,000 acres and is renowned for its stunning vistas, dense forests, and diverse wildlife. Skyline Drive, a scenic highway that stretches for 105 miles along the park's spine, offers visitors panoramic views of the Shenandoah Valley to the west and the Piedmont region to the east. Hiking enthusiasts can explore a network of over 200 miles of trails, including a portion of the famous Appalachian Trail. The park is a haven for outdoor recreation, with opportunities for camping, birdwatching, and observing the vibrant fall foliage. Shenandoah National Park provides a serene escape into nature, allowing visitors to connect with the great outdoors and experience the tranquility of this protected wilderness.
 
 
@@ -31,7 +35,9 @@ McAfee Knob, situated within Shenandoah National Park in Virginia, is a renowned
 <video controls="" width="80%" height="80%" muted="" loop="" autoplay="">
 <source src="/assets/images/rayshaderShenNatPark/mcafeeknob.mp4" type="video/mp4">
 </video>
+
 ![mcafee-knob](/assets/images/rayshaderShenNatPark/mcafeeknob.mp4)
+
 ## Old Rag Trail 
 Old Rag Trail is one of the most popular and challenging hikes in Shenandoah National Park, Virginia. Renowned for its rugged terrain and stunning views, this 9.2-mile loop takes hikers on an exhilarating journey through rocky outcrops, dense forests, and exposed ridges. The highlight of the trail is the summit of Old Rag Mountain, which stands at 3,291 feet and provides unparalleled panoramic views of the surrounding landscapes.
 
