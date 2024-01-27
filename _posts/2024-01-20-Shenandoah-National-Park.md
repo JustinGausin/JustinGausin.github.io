@@ -63,7 +63,7 @@ Beyond the Dark Hallow Falls is the Rose Rive Trails not shown in the video belo
 
 ![dark-hallow](/assets/images/rayshaderShenNatPark/darkhallow.mp4)
 
-## Dark Hallow Falls Trail Loop
+## Dark Hallow Falls Loop Trail
 White Oak Canyon Trail is a breathtaking hiking experience nestled within Shenandoah National Park, offering outdoor enthusiasts a captivating journey through lush forests and stunning landscapes. This popular trail is renowned for its cascading waterfalls, with a series of six major falls, each more impressive than the last, creating a symphony of sounds as water rushes over moss-covered rocks. The trail spans approximately 4.6 miles and is well-marked, providing both novice and seasoned hikers with an invigorating adventure. As you traverse the path, you'll encounter picturesque views of the Blue Ridge Mountains and the Shenandoah Valley, making it a photographer's paradise. The trail's diverse ecosystems showcase the region's rich biodiversity, and the soothing sounds of flowing water contribute to the overall serene ambiance. 
 
 As shown below, there are three possible starting point for the loop. Two coming from Skyline drive and one coming from Weakley Hollow Road (not shown but where the river diverges into three paths). Red indicates the trail, grey line iundicate Skyline drive, and the white dashed lines indicate the river lines. The Skyline drive may seem familiar - and it is, the upper trail head of the loop is in the opposite side of the Upper Hawksbill Summit Trail!
@@ -76,30 +76,17 @@ As shown below, there are three possible starting point for the loop. Two coming
 
 ## Code Excerpt
 
-The code below is for McAfee Knob Trail. On all the trails above, most effort was done with the filtration of the trail features. 
+The code below is for White Oak Canyon Loop Trail . On all the trails above, most effort was done with the filtration of the trail features. 
 ~~~ r
-#load library 
-library(osmdata)
-library(rayshader)
-library(MetBrewer)
-library(sf)
-library(dplyr)
-library(raster)
-library(magick)
-library(elevatr)
-library(glue)
-library(ambient)
-
-#creating a box for target. Latitude and Longtitude required
-xmi = -80.1
-xma = -80.0
-ymi = 37.370
-yma = 37.395
-
+xmi = -78.396850
+xma = -78.336507
+ymi = 38.534471
+yma = 38.567735
 
 med_bbox <- st_bbox(c(xmin = xmi, xmax = xma, 
                       ymin = ymi, ymax = yma),
                     crs = 4326)
+                    
 med_bbox_df <- data.frame(x = c(xmi, xma),
                        y = c(ymi, yma))
 
@@ -110,25 +97,57 @@ prj_dd <- "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
 elev_med <- get_elev_raster(med_bbox_df, prj =  prj_dd, z = 12, clip = "bbox")
 
 elev_med_mat <- raster_to_matrix(elev_med)
+
 med_roads <- med_bbox %>%
   opq() %>%
   add_osm_feature(key = "highway") %>%
   osmdata_sf()
 
-#derrain is good, hokusai3, pissaro
-pal <- "Hokusai3"
-colors <- met.brewer(pal)
-
-#To get specific trails and lines. 
 med_roads_lines <- med_roads$osm_lines
-mcafee_trails= med_roads_lines %>% 
-  filter(osm_id == "286275011" | osm_id == "286275020" | osm_id == "286275041" | osm_id == "20449146")
+
+
+skylinedrive_= med_roads_lines %>% 
+  filter(name %in% c("Skyline Drive"))
+
+med_water <- med_bbox %>%
+  opq() %>%
+  add_osm_feature(key = "waterway") %>%
+  osmdata_sf()
+
+med_water_lines <- med_water$osm_lines
+
+
+whiteoak_trails= med_roads_lines %>% 
+  filter(name %in% c("White Oak Canyon Trail", "Cedar Run Trail", "Whiteoak Canyon Fire Road"))
+
+whiteoak_trails2 = med_roads_lines %>% 
+  filter(osm_id %in% c("41881138"))
+
+pal <- "Manet"
+colors <- (met.brewer(pal))
 
 base_map <- elev_med_mat %>% 
   height_shade(texture = grDevices::colorRampPalette(colors)(256)) %>% 
   add_overlay(
     generate_line_overlay(
-      mcafee_trails, extent = extent_zoomed,
+      skylinedrive_, extent = extent_zoomed,
+      linewidth = 2, color = "grey",
+      heightmap = elev_med_mat
+    )) %>%
+    add_overlay(generate_line_overlay(
+      med_water_lines, extent = extent_zoomed,
+      linewidth = 1, lty = 3, color = "white",
+      heightmap = elev_med_mat
+    )) %>%
+  add_overlay(
+    generate_line_overlay(
+      whiteoak_trails, extent = extent_zoomed,
+      linewidth = 1, color = "red",
+      heightmap = elev_med_mat
+    )) %>%
+  add_overlay(
+    generate_line_overlay(
+      whiteoak_trails2, extent = extent_zoomed,
       linewidth = 1, color = "red",
       heightmap = elev_med_mat
     )) %>%
@@ -143,7 +162,6 @@ base_map <- elev_med_mat %>%
           fov = 60, 
           solid= TRUE)
 
-
-filename_movie = "mcafeetrail.mp4"
+filename_movie = "whiteoak.mp4"
 render_movie(filename = filename_movie)
 ~~~
