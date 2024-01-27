@@ -56,7 +56,7 @@ There are many trails possible to reach the summit. In the video below, Upper Ha
 ## Dark Hallow Falls Trail
 Dark Hollow Falls Trail in Shenandoah National Park is a brief but enchanting hike leading to the captivating Dark Hollow Falls. The trail is approximately 1.4 miles round trip, descending through a lush forest to reach the base of the falls. The cascading waters of Dark Hollow Falls create a serene and picturesque setting, making it a favorite spot for nature lovers and photographers. The ease of access and the beauty of the falls make this trail a popular choice for visitors looking to experience the natural wonders of Shenandoah National Park in a short and enjoyable excursion. 
 
-Beyond the Dark Hallow Falls is the Rose Rive Trails not shown in the video below.
+Beyond the Dark Hallow Falls is the Rose River Trails not shown in the video below. White dashed lines are the river lines, and the grey line represents Skyline Drive. 
 <video controls="" width="80%" height="80%" muted="" loop="" autoplay="">
 <source src="/assets/images/rayshaderShenNatPark/darkhallow.mp4" type="video/mp4">
 </video>
