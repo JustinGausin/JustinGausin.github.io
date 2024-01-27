@@ -9,10 +9,6 @@ header:
 ---
 
 
-
-
-# Under Construction....
-
 # Shenandoah National Park
 
 The videos embedded use both html formatting and kramdown. Since different browsers parse kramdown and html tags differently, I added both the html and kramdown version for full coverage (so that most browsers can view the videos regardless). Hence, if there is a broken link icon next to a video, please ignore - that's just the same copy. 
