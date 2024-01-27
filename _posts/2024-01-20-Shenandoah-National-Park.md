@@ -63,7 +63,7 @@ Beyond the Dark Hallow Falls is the Rose River Trails not shown in the video bel
 
 ![dark-hallow](/assets/images/rayshaderShenNatPark/darkhallow.mp4)
 
-## Dark Hallow Falls Loop Trail
+## White Oak Canyon Loop Trail
 White Oak Canyon Trail is a breathtaking hiking experience nestled within Shenandoah National Park, offering outdoor enthusiasts a captivating journey through lush forests and stunning landscapes. This popular trail is renowned for its cascading waterfalls, with a series of six major falls, each more impressive than the last, creating a symphony of sounds as water rushes over moss-covered rocks. The trail spans approximately 4.6 miles and is well-marked, providing both novice and seasoned hikers with an invigorating adventure. As you traverse the path, you'll encounter picturesque views of the Blue Ridge Mountains and the Shenandoah Valley, making it a photographer's paradise. The trail's diverse ecosystems showcase the region's rich biodiversity, and the soothing sounds of flowing water contribute to the overall serene ambiance. 
 
 As shown below, there are three possible starting point for the loop. Two coming from Skyline drive and one coming from Weakley Hollow Road (not shown but where the river diverges into three paths). Red indicates the trail, grey line iundicate Skyline drive, and the white dashed lines indicate the river lines. The Skyline drive may seem familiar - and it is, the upper trail head of the loop is in the opposite side of the Upper Hawksbill Summit Trail!
@@ -72,7 +72,7 @@ As shown below, there are three possible starting point for the loop. Two coming
 <source src="/assets/images/rayshaderShenNatPark/whiteoak.mp4" type="video/mp4">
 </video>
 
-![dark-hallow](/assets/images/rayshaderShenNatPark/whiteoak.mp4)
+![white-oak](/assets/images/rayshaderShenNatPark/whiteoak.mp4)
 
 ## Code Excerpt
 
