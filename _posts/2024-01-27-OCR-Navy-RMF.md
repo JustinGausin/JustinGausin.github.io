@@ -12,7 +12,7 @@ The Navy Risk Management Framework (RMF) is a structured approach aimed at manag
 The RMF process emphasizes a commitment to ongoing risk management, periodic assessments, and continuous improvement throughout the lifecycle of information systems. By addressing emerging vulnerabilities and staying aligned with evolving security requirements, the Navy aims to maintain a robust cybersecurity posture in its information systems.
 
 
-# Boundary/Topollgy Diagram
+# Boundary/Topology Diagram
 The Navy Risk Management Framework (RMF) process, when incorporating boundary diagrams, involves several key steps. Initially, a boundary diagram is created to define the scope and context of the information system. The process starts with system preparation, where the system and its purpose are identified, and the boundary diagram helps establish clear system boundaries.Throughout the Navy RMF process, the boundary diagram serves as a visual aid to ensure a clear understanding of the information system's components, relationships, and interactions. This visual representation contributes to effective risk management and compliance with security standards.
 
 The boundary diagram adheres to a specific standard and is consistently cross-referenced with an asset list. I won't delve into the detailed requirements of the boundary diagram but I will aim to simplify it. This project, functioning as a proof of concept, may seem overly excessive in its application. Nevertheless, it serves as a venture driven by my curiosity and a commitment to refining my skills in Machine Learning.
