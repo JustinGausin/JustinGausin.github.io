@@ -26,7 +26,7 @@ Most requirements follow the [DISN CPG](https://www.disa.mil/~/media/files/disa/
 3. Apply OCR in the Topology Diagram
 4. Cross Reference result in Asset List.
 5. Determine missing data.
-6. Add other functironalioty to verify that the diagram adheres to requirements set forth by DISN CPG.
+6. Add other functionality to verify that the diagram adheres to requirements set forth by DISN CPG.
 
 
 
