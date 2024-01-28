@@ -258,10 +258,10 @@ alignment = sorted(alignments)[0]
 
 However, my device is limited in memory. Thus, I am unable to continue beyond this part. While I may be unable to pursue the project further due to hardware limitations, I infer that the use of hexRGB may provide excessive uniqueness. Depending on the source, the color schemes of identical frames may vary due to potential issues such as pixel count and resolution disparities.
 
- ## Conclusion
+## Conclusion  
+To complete this project, further research and implementation efforts are necessary, especially sequence alignment. 
 
-
-To complete this project, further research and implementation efforts are necessary, especially sequence alignment.
+I am currently waiting to upgrade my PC and hopefully get a GPU to help with the calculations to finish this project. Hopefully by February 2024. {: .notice--info}
 
 ### Further Study
 - Research and implement sequence alignments (Smith-Waterman algorithm) with a
