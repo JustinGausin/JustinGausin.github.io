@@ -78,6 +78,18 @@ As shown below, there are three possible starting point for the loop. Two coming
 
 The code below is for White Oak Canyon Loop Trail . On all the trails above, most effort was done with the filtration of the trail features. Some steps follow these source [link1](https://rpubs.com/Linh-LTP/891261), [link2](https://wcmbishop.github.io/rayshader-demo/), [link3](https://www.tylermw.com/posts/data_visualization/adding-open-street-map-data-to-rayshader-maps-in-r.html).
 ~~~ r
+library(osmdata)
+library(rayshader)
+library(MetBrewer)
+library(sf)
+library(dplyr)
+library(raster)
+library(magick)
+library(elevatr)
+library(glue)
+library(ambient)
+
+
 xmi = -78.396850
 xma = -78.336507
 ymi = 38.534471
