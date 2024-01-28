@@ -1,5 +1,5 @@
 ---
-title: "[Current Project] - Using OCR for validating RMF Boundary diagrams"
+title: "[Current Project] - Using OCR for validating RMF Boundary Diagrams"
 excerpt: ""
 classes: wide
 ---
