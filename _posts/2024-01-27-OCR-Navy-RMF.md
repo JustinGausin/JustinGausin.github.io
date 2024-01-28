@@ -4,7 +4,7 @@ excerpt: ""
 classes: wide
 ---
 
-#Page under construction...
+# Page under construction...
 
 # NAVY RMF
 The Navy Risk Management Framework (RMF) is a structured approach aimed at managing cybersecurity risks within information systems. The process encompasses system identification, categorization based on impact levels, and the selection and implementation of security controls. Through rigorous assessments, the effectiveness of these controls is evaluated, leading to authorization decisions by an Authorizing Official (AO). Continuous monitoring and documentation are integral parts of the process, ensuring that information systems not only meet security standards but also adapt to evolving threats.
