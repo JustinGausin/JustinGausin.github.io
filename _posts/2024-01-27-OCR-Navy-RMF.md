@@ -1,5 +1,5 @@
 ---
-title: "[Current Project] - Using OCR for validating RMF Boundary Diagrams"
+title: "[Current Project] - Using OCR for validating RMF Boundary Diagrams - Python"
 excerpt: ""
 classes: wide
 ---
