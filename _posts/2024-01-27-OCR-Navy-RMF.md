@@ -32,7 +32,7 @@ Most requirements follow the [DISN CPG](https://www.disa.mil/~/media/files/disa/
 
 # Topology Diagram
 In this section, I created a sample topology diagram following some requirements in the DISN CPG. In the diagram below, we have 3 external devices, and 4 devices withinn the delineated authorization boundary marked in red. Note that within the boundary, Device names, Manufacturer, Model, OS, and IP Address are clearly expressed. 
-![topology-diagram](assets/images/RMF/TopologyDiagram.pdf)
+![topology-diagram](/assets/images/RMF/TopologyDiagram.pdf)
 
 
 # Asset List 
