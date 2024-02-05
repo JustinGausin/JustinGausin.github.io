@@ -2,6 +2,24 @@
 title: "[Current Project] - Using OCR for validating RMF Boundary Diagrams - Python"
 excerpt: ""
 classes: wide
+
+gallery:
+  - url: /assets/images/RMF/Perfect.PNG
+    image_path: /assets/images/RMF/Perfect.PNG
+    alt: "perfect"
+    title: "Perfect List"
+  - url: /assets/images/RMF/NotPerfect.PNG
+    image_path: /assets/images/RMF/NotPerfect.PNG
+    alt: "notperfect"
+    title: "Not a Perfect List"
+  - url: /assets/images/RMF/MissingDeviceList.PNG
+    image_path: /assets/images/RMF/MissingDeviceList.PNG
+    alt: "missingdevicelist"
+    title: "Nissing Devices from List"
+  - url: /assets/images/RMF/MissingDeviceDiagram.PNG
+    image_path: /assets/images/RMF/MissingDeviceDiagram.PNG
+    alt: "missingdevicediagram"
+    title: "Missing Devices from diagram"
 ---
 
 # Page under construction...
@@ -38,4 +56,5 @@ In this section, I created a sample topology diagram following some requirements
 # Asset List 
 The next step is to create a sample asset list in excel to depict the devices within the delineated diagram. I will create three different asset list, albeit only differing slighlty: One asset list will contain all the devices in the diagram, another with one devices missing from the diagram, and another that shows the asset list missing a device shown in the diagram. After applying OCR, the three asset list will serve as the reference for testing. 
 
+{% include gallery caption="From Left to right: Perfect List, Not a Perfect List (Values are wrong), Missing Device from List, and Missing Device from Diagram" %}
 
