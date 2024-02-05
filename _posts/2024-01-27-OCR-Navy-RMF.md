@@ -58,3 +58,5 @@ The next step is to create a sample asset list in excel to depict the devices wi
 
 {% include gallery caption="From Left to right: Perfect List, Not a Perfect List (Values are wrong), Missing Device from List, and Missing Device from Diagram" %}
 
+# Applying OCR in the Topology Diagram  
+Placeholder for now....
