@@ -54,9 +54,20 @@ In this section, I created a sample topology diagram following some requirements
 <object data="../assets/images/RMF/TopologyDiagram.pdf" width="50%" height="50%" type='application/pdf'></object>
 
 # Asset List 
-The next step is to create a sample asset list in excel to depict the devices within the delineated diagram. I will create three different asset list, albeit only differing slighlty: One asset list will contain all the devices in the diagram, another with one devices missing from the diagram, and another that shows the asset list missing a device shown in the diagram. After applying OCR, the three asset list will serve as the reference for testing. 
+The next step is to create a sample asset list in excel to depict the devices within the delineated diagram. I will create three different asset list, albeit only differing slighlty: One asset list will be perfect, another list with a missing row, another list with incorrect details, and lastly, a list with extra device not shown in the diagram. After applying OCR, the four asset list will serve as the reference for testing. 
 
 {% include gallery caption="From Left to right: Perfect List, Not a Perfect List (Values are wrong), Missing Device from List, and Missing Device from Diagram" %}
+
+# A Simple Method  
+Since the network topology diagram is (usually) created digitally, then tools such as [pdfminer](https://pypi.org/project/pdfminer/) or [pdfminer.six](https://github.com/pdfminer/pdfminer.six) allows for easy method to mine text in the pdf file. For example, simply executing such commands:
+~~~ python
+from pdfminer.high_level import extract_text
+
+text = extract_text("example.pdf")
+print(text)\
+~~~
+would give us the all text within the document. However, the text are not at organized. The method would excel at find and compare method for testing. 
+
 
 # Applying OCR in the Topology Diagram  
 Placeholder for now....
