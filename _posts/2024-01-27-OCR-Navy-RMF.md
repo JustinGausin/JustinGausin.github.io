@@ -80,5 +80,5 @@ I will be using OpenCV to determine the edges, however, there are some obstacles
 3) Not all boxes are captured or too much are captured.
 
 Below is an example of case (3). In the image below, while not properly using the right parameters, it is easy to capture every possible means openCV captures a "rectangle". Hence, it is essential to find a way to either use multiple imaging processes and/or use better parameters. 
-
+![image](/assets/images/RMF/Figure_1.png)
 [under construction]
