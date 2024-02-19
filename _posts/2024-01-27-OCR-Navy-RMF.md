@@ -54,7 +54,7 @@ In this section, I created a sample topology diagram following some requirements
 <object data="../assets/images/RMF/TopologyDiagram.pdf" width="50%" height="50%" type='application/pdf'></object>
 
 # Asset List 
-The next step is to create a sample asset list in excel to depict the devices within the delineated diagram. I will create three different asset list, albeit only differing slighlty: One asset list will be perfect (Test Case 1), another list with a missing row (Test Case 1), another list with incorrect details(Test Case 3), and lastly, a list with extra device not shown in the diagram (Test Case 4). After applying OCR, the four asset list will serve as the reference for testing. 
+The next step is to create a sample asset list in excel to depict the devices within the delineated diagram. I will create four different asset list, albeit only differing slighlty: One asset list will be perfect (Test Case 1), another list with a missing row (Test Case 1), another list with incorrect details(Test Case 3), and lastly, a list with extra device not shown in the diagram (Test Case 4). After applying OCR, the four asset list will serve as the reference for testing. 
 
 {% include gallery caption="From Left to right: Perfect List, Not a Perfect List (Values are wrong), Missing Device from List, and Missing Device from Diagram" %}
 
