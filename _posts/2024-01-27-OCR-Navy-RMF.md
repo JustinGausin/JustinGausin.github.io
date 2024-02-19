@@ -77,6 +77,8 @@ I will be using OpenCV to determine the edges, however, there are some obstacles
 
 1) I want the program to be general use, hence, not only should it work for my diagram but also others.
 2) Since data flow between boxes (devices) exist, OpenCV will sometimes commit to thinking that it is an edge/contour boundary.
-3) Not all boxes are captured. 
+3) Not all boxes are captured or too much are captured.
+
+Below is an example of case (3). In the image below, while not properly using the right parameters, it is easy to capture every possible means openCV captures a "rectangle". Hence, it is essential to find a way to either use multiple imaging processes and/or use better parameters. 
 
 [under construction]
